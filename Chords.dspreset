@@ -35,7 +35,7 @@
     </keyboard>
   </ui>
   <groups attack="0.000" decay="0" sustain="1.0" release="0.1" volume="1">
-    <group>
+    <group tags="monophonic" silencingMode="normal">
       <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Chords/Chords_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Chords/Chords_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="38" hiNote="38" rootNote="38" path="Samples/Chords/Chords_1D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
@@ -128,5 +128,7 @@
   </effects>
   <midi />
   <modulators />
-  <tags />
+  <tags>
+    <tag name="monophonic" polyphony="1" />
+  </tags>
 </DecentSampler>
