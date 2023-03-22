@@ -4,110 +4,124 @@
   <ui bgImage="UI/bg_temp10_keyboard.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
     <tab name="main">
 
-
-    
-      <button x="153" y="45" width="45" height="41" style="image" value="0" >
-        <state name="Monophonic" mainImage="UI/button_poly-off.png" hoverImage="UI/button_poly-off.png" clickImage="UI/button_poly-on.png">
-            <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="true" />
-            <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+      <!-- Voices -->
+      <button x="417" y="40" width="45" height="41" style="image" value="0">
+        <state name="Monophonic" mainImage="UI/button_red-off.png" hoverImage="UI/button_red-off.png" clickImage="UI/button_red-on.png">
+          <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+          <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+          <binding type="control" level="ui" position="1" parameter="PATH" translation="fixed_value" translationValue="UI/light_on.png" />
+          <binding type="control" level="ui" position="2" parameter="PATH" translation="fixed_value" translationValue="UI/light_off.png" />
         </state>
-        <state name="Polyphonic" mainImage="UI/button_poly-on.png" hoverImage="UI/button_poly-on.png" clickImage="UI/button_poly-off.png">
-            <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
-            <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+        <state name="Polyphonic" mainImage="UI/button_red-on.png" hoverImage="UI/button_red-on.png" clickImage="UI/button_red-off.png">
+          <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+          <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+          <binding type="control" level="ui" position="1" parameter="PATH" translation="fixed_value" translationValue="UI/light_off.png" />
+          <binding type="control" level="ui" position="2" parameter="PATH" translation="fixed_value" translationValue="UI/light_on.png" />
         </state>
       </button>
-    
-    
+      <image x="464" y="29" width="15" height="15" path="UI/light_on.png" aspectRatioMode="preserve" />
+      <image x="464" y="76" width="15" height="15" path="UI/light-off.png" aspectRatioMode="preserve" />
+
+      <!-- Effects -->
+      <control x="417" y="142" width="49" height="49" parameterName="Lowpass" type="float" minValue="150" maxValue="15000" textColor="FF000000" value="15000.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY" />
+      </control>
+      <control x="510" y="140" width="49" height="49" parameterName="Reverb" type="percent" minValue="0" maxValue="100" textColor="FF000000" value="0.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL" factor="0.01" />
+      </control>
+      <button x="323" y="145" width="45" height="41" style="image" value="0">
+        <state name="Off" mainImage="UI/button_blue-off.png" hoverImage="UI/button_blue-off.png" clickImage="UI/button_blue-on.png">
+          <binding type="effect" level="instrument" effectIndex="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+          <binding type="effect" level="instrument" effectIndex="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+          <binding type="control" level="ui" position="6" parameter="PATH" translation="fixed_value" translationValue="UI/light_off.png" />
+        </state>
+        <state name="On" mainImage="UI/button_blue-on.png" hoverImage="UI/button_blue-on.png" clickImage="UI/button_blue-off.png">
+          <binding type="effect" level="instrument" effectIndex="0" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+          <binding type="effect" level="instrument" effectIndex="1" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+          <binding type="control" level="ui" position="6" parameter="PATH" translation="fixed_value" translationValue="UI/light_on.png" />
+        </state>
+      </button>
+      <image x="302" y="119" width="15" height="15" path="UI/light_off.png" aspectRatioMode="preserve" />
+
     </tab>
-    <keyboard/>
+    <keyboard />
   </ui>
-  <groups attack="0.000" decay="0" sustain="1.0" release="0.1" volume="1">
-    <group tags="monophonic">
-      <effects>
-        <effect type="lowpass" frequency="60" resonance="1"/>
-      </effects>
-      <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Keyboard/Keyboard_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564030" loopStart="445"/>
-      <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Keyboard/Keyboard_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563886" loopStart="246"/>
-      <sample loNote="38" hiNote="38" rootNote="38" path="Samples/Keyboard/Keyboard_1D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563875" loopStart="400"/>
-      <sample loNote="39" hiNote="39" rootNote="39" path="Samples/Keyboard/Keyboard_1D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564015" loopStart="380"/>
-      <sample loNote="40" hiNote="40" rootNote="40" path="Samples/Keyboard/Keyboard_1E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564027" loopStart="217"/>
-      <sample loNote="41" hiNote="41" rootNote="41" path="Samples/Keyboard/Keyboard_1F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564022" loopStart="344"/>
-      <sample loNote="42" hiNote="42" rootNote="42" path="Samples/Keyboard/Keyboard_1F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563964" loopStart="200"/>
-      <sample loNote="43" hiNote="43" rootNote="43" path="Samples/Keyboard/Keyboard_1G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="315"/>
-      <sample loNote="44" hiNote="44" rootNote="44" path="Samples/Keyboard/Keyboard_1G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564073" loopStart="190"/>
-      <sample loNote="45" hiNote="45" rootNote="45" path="Samples/Keyboard/Keyboard_1A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="290"/>
-      <sample loNote="46" hiNote="46" rootNote="46" path="Samples/Keyboard/Keyboard_1A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563950" loopStart="380"/>
-      <sample loNote="47" hiNote="47" rootNote="47" path="Samples/Keyboard/Keyboard_1B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563870" loopStart="262"/>
-      <sample loNote="48" hiNote="48" rootNote="48" path="Samples/Keyboard/Keyboard_2C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563958" loopStart="259"/>
-      <sample loNote="49" hiNote="49" rootNote="49" path="Samples/Keyboard/Keyboard_2C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563883" loopStart="247"/>
-      <sample loNote="50" hiNote="50" rootNote="50" path="Samples/Keyboard/Keyboard_2D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="320"/>
-      <sample loNote="51" hiNote="51" rootNote="51" path="Samples/Keyboard/Keyboard_2D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="305"/>
-      <sample loNote="52" hiNote="52" rootNote="52" path="Samples/Keyboard/Keyboard_2E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564002" loopStart="360"/>
-      <sample loNote="53" hiNote="53" rootNote="53" path="Samples/Keyboard/Keyboard_2F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563927" loopStart="430"/>
-      <sample loNote="54" hiNote="54" rootNote="54" path="Samples/Keyboard/Keyboard_2F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563977" loopStart="398"/>
-      <sample loNote="55" hiNote="55" rootNote="55" path="Samples/Keyboard/Keyboard_2G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563917" loopStart="378"/>
-      <sample loNote="56" hiNote="56" rootNote="56" path="Samples/Keyboard/Keyboard_2G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="419"/>
-      <sample loNote="57" hiNote="57" rootNote="57" path="Samples/Keyboard/Keyboard_2A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563976" loopStart="380"/>
-      <sample loNote="58" hiNote="58" rootNote="58" path="Samples/Keyboard/Keyboard_2A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563943" loopStart="376"/>
-      <sample loNote="59" hiNote="59" rootNote="59" path="Samples/Keyboard/Keyboard_2B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563953" loopStart="360"/>
-      <sample loNote="60" hiNote="60" rootNote="60" path="Samples/Keyboard/Keyboard_3C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563892" loopStart="400"/>
-      <sample loNote="61" hiNote="61" rootNote="61" path="Samples/Keyboard/Keyboard_3C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563910" loopStart="335"/>
-      <sample loNote="62" hiNote="62" rootNote="62" path="Samples/Keyboard/Keyboard_3D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="280"/>
-      <sample loNote="63" hiNote="63" rootNote="63" path="Samples/Keyboard/Keyboard_3D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563878" loopStart="384"/>
-      <sample loNote="64" hiNote="64" rootNote="64" path="Samples/Keyboard/Keyboard_3E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563895" loopStart="362"/>
-      <sample loNote="65" hiNote="65" rootNote="65" path="Samples/Keyboard/Keyboard_3F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563909" loopStart="350"/>
-      <sample loNote="66" hiNote="66" rootNote="66" path="Samples/Keyboard/Keyboard_3F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="370"/>
-      <sample loNote="67" hiNote="67" rootNote="67" path="Samples/Keyboard/Keyboard_3G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="352"/>
+  <groups attack="0.000" decay="0" sustain="1.0" release="0.1" volume="1" ampVelTrack="0">
+    <group tags="monophonic" silencingMode="normal">
+      <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Keyboard/Keyboard_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564030" loopStart="445" />
+      <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Keyboard/Keyboard_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563886" loopStart="246" />
+      <sample loNote="38" hiNote="38" rootNote="38" path="Samples/Keyboard/Keyboard_1D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563875" loopStart="400" />
+      <sample loNote="39" hiNote="39" rootNote="39" path="Samples/Keyboard/Keyboard_1D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564015" loopStart="380" />
+      <sample loNote="40" hiNote="40" rootNote="40" path="Samples/Keyboard/Keyboard_1E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564027" loopStart="217" />
+      <sample loNote="41" hiNote="41" rootNote="41" path="Samples/Keyboard/Keyboard_1F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564022" loopStart="344" />
+      <sample loNote="42" hiNote="42" rootNote="42" path="Samples/Keyboard/Keyboard_1F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563964" loopStart="200" />
+      <sample loNote="43" hiNote="43" rootNote="43" path="Samples/Keyboard/Keyboard_1G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="315" />
+      <sample loNote="44" hiNote="44" rootNote="44" path="Samples/Keyboard/Keyboard_1G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564073" loopStart="190" />
+      <sample loNote="45" hiNote="45" rootNote="45" path="Samples/Keyboard/Keyboard_1A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="290" />
+      <sample loNote="46" hiNote="46" rootNote="46" path="Samples/Keyboard/Keyboard_1A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563950" loopStart="380" />
+      <sample loNote="47" hiNote="47" rootNote="47" path="Samples/Keyboard/Keyboard_1B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563870" loopStart="262" />
+      <sample loNote="48" hiNote="48" rootNote="48" path="Samples/Keyboard/Keyboard_2C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563958" loopStart="259" />
+      <sample loNote="49" hiNote="49" rootNote="49" path="Samples/Keyboard/Keyboard_2C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563883" loopStart="247" />
+      <sample loNote="50" hiNote="50" rootNote="50" path="Samples/Keyboard/Keyboard_2D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="320" />
+      <sample loNote="51" hiNote="51" rootNote="51" path="Samples/Keyboard/Keyboard_2D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="305" />
+      <sample loNote="52" hiNote="52" rootNote="52" path="Samples/Keyboard/Keyboard_2E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564002" loopStart="360" />
+      <sample loNote="53" hiNote="53" rootNote="53" path="Samples/Keyboard/Keyboard_2F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563927" loopStart="430" />
+      <sample loNote="54" hiNote="54" rootNote="54" path="Samples/Keyboard/Keyboard_2F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563977" loopStart="398" />
+      <sample loNote="55" hiNote="55" rootNote="55" path="Samples/Keyboard/Keyboard_2G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563917" loopStart="378" />
+      <sample loNote="56" hiNote="56" rootNote="56" path="Samples/Keyboard/Keyboard_2G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="419" />
+      <sample loNote="57" hiNote="57" rootNote="57" path="Samples/Keyboard/Keyboard_2A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563976" loopStart="380" />
+      <sample loNote="58" hiNote="58" rootNote="58" path="Samples/Keyboard/Keyboard_2A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563943" loopStart="376" />
+      <sample loNote="59" hiNote="59" rootNote="59" path="Samples/Keyboard/Keyboard_2B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563953" loopStart="360" />
+      <sample loNote="60" hiNote="60" rootNote="60" path="Samples/Keyboard/Keyboard_3C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563892" loopStart="400" />
+      <sample loNote="61" hiNote="61" rootNote="61" path="Samples/Keyboard/Keyboard_3C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563910" loopStart="335" />
+      <sample loNote="62" hiNote="62" rootNote="62" path="Samples/Keyboard/Keyboard_3D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="280" />
+      <sample loNote="63" hiNote="63" rootNote="63" path="Samples/Keyboard/Keyboard_3D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563878" loopStart="384" />
+      <sample loNote="64" hiNote="64" rootNote="64" path="Samples/Keyboard/Keyboard_3E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563895" loopStart="362" />
+      <sample loNote="65" hiNote="65" rootNote="65" path="Samples/Keyboard/Keyboard_3F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563909" loopStart="350" />
+      <sample loNote="66" hiNote="66" rootNote="66" path="Samples/Keyboard/Keyboard_3F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="370" />
+      <sample loNote="67" hiNote="67" rootNote="67" path="Samples/Keyboard/Keyboard_3G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="352" />
     </group>
     <group>
-      <effects>
-        <effect type="lowpass" frequency="60" resonance="1"/>
-      </effects>
-      <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Keyboard/Keyboard_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564030" loopStart="445"/>
-      <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Keyboard/Keyboard_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563886" loopStart="246"/>
-      <sample loNote="38" hiNote="38" rootNote="38" path="Samples/Keyboard/Keyboard_1D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563875" loopStart="400"/>
-      <sample loNote="39" hiNote="39" rootNote="39" path="Samples/Keyboard/Keyboard_1D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564015" loopStart="380"/>
-      <sample loNote="40" hiNote="40" rootNote="40" path="Samples/Keyboard/Keyboard_1E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564027" loopStart="217"/>
-      <sample loNote="41" hiNote="41" rootNote="41" path="Samples/Keyboard/Keyboard_1F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564022" loopStart="344"/>
-      <sample loNote="42" hiNote="42" rootNote="42" path="Samples/Keyboard/Keyboard_1F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563964" loopStart="200"/>
-      <sample loNote="43" hiNote="43" rootNote="43" path="Samples/Keyboard/Keyboard_1G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="315"/>
-      <sample loNote="44" hiNote="44" rootNote="44" path="Samples/Keyboard/Keyboard_1G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564073" loopStart="190"/>
-      <sample loNote="45" hiNote="45" rootNote="45" path="Samples/Keyboard/Keyboard_1A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="290"/>
-      <sample loNote="46" hiNote="46" rootNote="46" path="Samples/Keyboard/Keyboard_1A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563950" loopStart="380"/>
-      <sample loNote="47" hiNote="47" rootNote="47" path="Samples/Keyboard/Keyboard_1B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563870" loopStart="262"/>
-      <sample loNote="48" hiNote="48" rootNote="48" path="Samples/Keyboard/Keyboard_2C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563958" loopStart="259"/>
-      <sample loNote="49" hiNote="49" rootNote="49" path="Samples/Keyboard/Keyboard_2C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563883" loopStart="247"/>
-      <sample loNote="50" hiNote="50" rootNote="50" path="Samples/Keyboard/Keyboard_2D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="320"/>
-      <sample loNote="51" hiNote="51" rootNote="51" path="Samples/Keyboard/Keyboard_2D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="305"/>
-      <sample loNote="52" hiNote="52" rootNote="52" path="Samples/Keyboard/Keyboard_2E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564002" loopStart="360"/>
-      <sample loNote="53" hiNote="53" rootNote="53" path="Samples/Keyboard/Keyboard_2F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563927" loopStart="430"/>
-      <sample loNote="54" hiNote="54" rootNote="54" path="Samples/Keyboard/Keyboard_2F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563977" loopStart="398"/>
-      <sample loNote="55" hiNote="55" rootNote="55" path="Samples/Keyboard/Keyboard_2G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563917" loopStart="378"/>
-      <sample loNote="56" hiNote="56" rootNote="56" path="Samples/Keyboard/Keyboard_2G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="419"/>
-      <sample loNote="57" hiNote="57" rootNote="57" path="Samples/Keyboard/Keyboard_2A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563976" loopStart="380"/>
-      <sample loNote="58" hiNote="58" rootNote="58" path="Samples/Keyboard/Keyboard_2A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563943" loopStart="376"/>
-      <sample loNote="59" hiNote="59" rootNote="59" path="Samples/Keyboard/Keyboard_2B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563953" loopStart="360"/>
-      <sample loNote="60" hiNote="60" rootNote="60" path="Samples/Keyboard/Keyboard_3C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563892" loopStart="400"/>
-      <sample loNote="61" hiNote="61" rootNote="61" path="Samples/Keyboard/Keyboard_3C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563910" loopStart="335"/>
-      <sample loNote="62" hiNote="62" rootNote="62" path="Samples/Keyboard/Keyboard_3D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="280"/>
-      <sample loNote="63" hiNote="63" rootNote="63" path="Samples/Keyboard/Keyboard_3D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563878" loopStart="384"/>
-      <sample loNote="64" hiNote="64" rootNote="64" path="Samples/Keyboard/Keyboard_3E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563895" loopStart="362"/>
-      <sample loNote="65" hiNote="65" rootNote="65" path="Samples/Keyboard/Keyboard_3F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563909" loopStart="350"/>
-      <sample loNote="66" hiNote="66" rootNote="66" path="Samples/Keyboard/Keyboard_3F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="370"/>
-      <sample loNote="67" hiNote="67" rootNote="67" path="Samples/Keyboard/Keyboard_3G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="352"/>
+      <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Keyboard/Keyboard_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564030" loopStart="445" />
+      <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Keyboard/Keyboard_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563886" loopStart="246" />
+      <sample loNote="38" hiNote="38" rootNote="38" path="Samples/Keyboard/Keyboard_1D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563875" loopStart="400" />
+      <sample loNote="39" hiNote="39" rootNote="39" path="Samples/Keyboard/Keyboard_1D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564015" loopStart="380" />
+      <sample loNote="40" hiNote="40" rootNote="40" path="Samples/Keyboard/Keyboard_1E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564027" loopStart="217" />
+      <sample loNote="41" hiNote="41" rootNote="41" path="Samples/Keyboard/Keyboard_1F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564022" loopStart="344" />
+      <sample loNote="42" hiNote="42" rootNote="42" path="Samples/Keyboard/Keyboard_1F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563964" loopStart="200" />
+      <sample loNote="43" hiNote="43" rootNote="43" path="Samples/Keyboard/Keyboard_1G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="315" />
+      <sample loNote="44" hiNote="44" rootNote="44" path="Samples/Keyboard/Keyboard_1G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564073" loopStart="190" />
+      <sample loNote="45" hiNote="45" rootNote="45" path="Samples/Keyboard/Keyboard_1A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="290" />
+      <sample loNote="46" hiNote="46" rootNote="46" path="Samples/Keyboard/Keyboard_1A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563950" loopStart="380" />
+      <sample loNote="47" hiNote="47" rootNote="47" path="Samples/Keyboard/Keyboard_1B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563870" loopStart="262" />
+      <sample loNote="48" hiNote="48" rootNote="48" path="Samples/Keyboard/Keyboard_2C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563958" loopStart="259" />
+      <sample loNote="49" hiNote="49" rootNote="49" path="Samples/Keyboard/Keyboard_2C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563883" loopStart="247" />
+      <sample loNote="50" hiNote="50" rootNote="50" path="Samples/Keyboard/Keyboard_2D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563930" loopStart="320" />
+      <sample loNote="51" hiNote="51" rootNote="51" path="Samples/Keyboard/Keyboard_2D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="305" />
+      <sample loNote="52" hiNote="52" rootNote="52" path="Samples/Keyboard/Keyboard_2E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="564002" loopStart="360" />
+      <sample loNote="53" hiNote="53" rootNote="53" path="Samples/Keyboard/Keyboard_2F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563927" loopStart="430" />
+      <sample loNote="54" hiNote="54" rootNote="54" path="Samples/Keyboard/Keyboard_2F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563977" loopStart="398" />
+      <sample loNote="55" hiNote="55" rootNote="55" path="Samples/Keyboard/Keyboard_2G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563917" loopStart="378" />
+      <sample loNote="56" hiNote="56" rootNote="56" path="Samples/Keyboard/Keyboard_2G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="419" />
+      <sample loNote="57" hiNote="57" rootNote="57" path="Samples/Keyboard/Keyboard_2A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563976" loopStart="380" />
+      <sample loNote="58" hiNote="58" rootNote="58" path="Samples/Keyboard/Keyboard_2A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563943" loopStart="376" />
+      <sample loNote="59" hiNote="59" rootNote="59" path="Samples/Keyboard/Keyboard_2B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563953" loopStart="360" />
+      <sample loNote="60" hiNote="60" rootNote="60" path="Samples/Keyboard/Keyboard_3C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563892" loopStart="400" />
+      <sample loNote="61" hiNote="61" rootNote="61" path="Samples/Keyboard/Keyboard_3C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563910" loopStart="335" />
+      <sample loNote="62" hiNote="62" rootNote="62" path="Samples/Keyboard/Keyboard_3D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563967" loopStart="280" />
+      <sample loNote="63" hiNote="63" rootNote="63" path="Samples/Keyboard/Keyboard_3D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563878" loopStart="384" />
+      <sample loNote="64" hiNote="64" rootNote="64" path="Samples/Keyboard/Keyboard_3E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563895" loopStart="362" />
+      <sample loNote="65" hiNote="65" rootNote="65" path="Samples/Keyboard/Keyboard_3F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563909" loopStart="350" />
+      <sample loNote="66" hiNote="66" rootNote="66" path="Samples/Keyboard/Keyboard_3F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563890" loopStart="370" />
+      <sample loNote="67" hiNote="67" rootNote="67" path="Samples/Keyboard/Keyboard_3G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" end="564074" loopEnabled="1" loopCrossfade="10" loopEnd="563894" loopStart="352" />
     </group>
   </groups>
   <effects>
-    <effect type="lowpass" frequency="22000.0"/>
-    <effect type="reverb" wetLevel="0.0"/>
+    <effect type="lowpass" frequency="22000.0" />
+    <effect type="reverb" wetLevel="0.0" />
   </effects>
-  <midi>
-    <velocity>
-      <binding modAmount="0.3" level="group" parameter="FX_FILTER_FREQUENCY" position="0" type="effect"/>
-      <binding modAmount="0.5" level="group" parameter="AMP_VOLUME" type="amp"/>
-    </velocity>
-  </midi>
-  <modulators/>
+  <midi />
+  <modulators />
   <tags>
     <tag name="monophonic" polyphony="1" />
   </tags>
