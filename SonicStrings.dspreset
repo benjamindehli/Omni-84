@@ -39,6 +39,9 @@
   <image x="302" y="119"  width="15" height="15" path="UI/light_effects-off.png" aspectRatioMode="preserve" />
 
     </tab>
+    <keyboard>
+      <color loNote="42" hiNote="101" color="FFb7b5ae" />
+    </keyboard>
   </ui>
   <groups attack="0.000" decay="0" sustain="0" release="25" volume="1" ampVelTrack="0">
     <group>
