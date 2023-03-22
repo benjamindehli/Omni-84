@@ -34,7 +34,7 @@
       <color loNote="108" hiNote="119" color="FFCA8A04" />
     </keyboard>
   </ui>
-  <groups attack="0.000" decay="0" sustain="1.0" release="0.1" volume="1">
+  <groups attack="0.000" decay="0" sustain="1.0" release="0.1" volume="1" ampVelTrack="0">
     <group tags="monophonic" silencingMode="normal">
       <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Chords/Chords_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Chords/Chords_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
