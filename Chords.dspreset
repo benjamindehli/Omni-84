@@ -4,7 +4,7 @@
   <ui bgImage="UI/bg_temp10_chords.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
     <tab>
       <!-- Effects -->
-      <control x="417" y="142" width="49" height="49" parameterName="Lowpass" type="float" minValue="150" maxValue="15000" textColor="FF000000" value="15000.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
+      <control x="417" y="140" width="49" height="49" parameterName="Lowpass" type="float" minValue="150" maxValue="15000" textColor="FF000000" value="15000.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
         <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY" />
       </control>
       <control x="510" y="140" width="49" height="49" parameterName="Reverb" type="percent" minValue="0" maxValue="100" textColor="FF000000" value="0.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
