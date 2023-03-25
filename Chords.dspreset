@@ -8,7 +8,7 @@
         <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY" />
       </control>
       <control x="510" y="140" width="49" height="49" parameterName="Reverb" type="percent" minValue="0" maxValue="100" textColor="FF000000" value="0.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
-        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL" factor="0.01" />
+        <binding type="effect" level="instrument" position="1" parameter="FX_MIX" factor="0.01" />
       </control>
       <button x="323" y="145" width="45" height="41" style="image" value="0">
         <state name="Off" mainImage="UI/button_blue-off.png" hoverImage="UI/button_blue-off.png" clickImage="UI/button_blue-on.png">
@@ -124,7 +124,7 @@
   </groups>
   <effects>
     <effect type="lowpass" frequency="22000.0" />
-    <effect type="reverb" wetLevel="0.0" />
+    <effect type="convolution" wetLevel="0.0" irFile="IR/Space.wav" />
   </effects>
   <midi />
   <modulators />
