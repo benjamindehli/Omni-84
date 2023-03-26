@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DecentSampler>
-  <ui bgImage="UI/bg_temp10_bass.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
+  <ui bgImage="UI/background_bass.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
     <tab name="main">
       <control x="417" y="37" width="49" height="49" parameterName="Sustain" type="float" minValue="0.03" maxValue="0.5" textColor="FF000000" value="0.03" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
         <binding type="amp" level="instrument" position="0" parameter="ENV_RELEASE" />

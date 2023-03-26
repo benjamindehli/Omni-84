@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DecentSampler>
-  <ui bgImage="UI/bg_temp10_drums.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
+  <ui bgImage="UI/background_drums.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
     <tab name="main">
 
       <!-- velocity -->

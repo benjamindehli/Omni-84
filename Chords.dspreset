@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DecentSampler>
-  <ui bgImage="UI/bg_temp10_chords.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
+  <ui bgImage="UI/background_chords.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
     <tab>
       <!-- Effects -->
       <control x="417" y="140" width="49" height="49" parameterName="Lowpass" type="float" minValue="150" maxValue="15000" textColor="FF000000" value="15000.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">

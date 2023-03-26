@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DecentSampler>
-  <ui bgImage="UI/bg_temp10_sonicstrings.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
+  <ui bgImage="UI/background_sonicstrings.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
     <tab name="main">
 
       <!-- SonicStrings -->
