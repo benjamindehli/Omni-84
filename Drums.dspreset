@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DecentSampler>
-  <ui bgImage="UI/background_drums.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
+  <ui bgImage="Resources/background_drums.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
     <tab name="main">
 
       <!-- velocity -->
       <button x="417" y="40" width="45" height="41" style="image" value="0">
-        <state name="Monophonic" mainImage="UI/button_red-off.png" hoverImage="UI/button_red-off.png" clickImage="UI/button_red-on.png">
+        <state name="Monophonic" mainImage="Resources/button_red-off.png" hoverImage="Resources/button_red-off.png" clickImage="Resources/button_red-on.png">
           <binding type="amp" level="group" position="0" parameter="AMP_VEL_TRACK" translation="fixed_value" translationValue="0" />
-          <binding type="control" level="ui" position="1" parameter="PATH" translation="fixed_value" translationValue="UI/light_off.png" />
+          <binding type="control" level="ui" position="1" parameter="PATH" translation="fixed_value" translationValue="Resources/light_off.png" />
         </state>
-        <state name="Polyphonic" mainImage="UI/button_red-on.png" hoverImage="UI/button_red-on.png" clickImage="UI/button_red-off.png">
+        <state name="Polyphonic" mainImage="Resources/button_red-on.png" hoverImage="Resources/button_red-on.png" clickImage="Resources/button_red-off.png">
           <binding type="amp" level="group" position="0" parameter="AMP_VEL_TRACK" translation="fixed_value" translationValue="1" />
-          <binding type="control" level="ui" position="1" parameter="PATH" translation="fixed_value" translationValue="UI/light_on.png" />
+          <binding type="control" level="ui" position="1" parameter="PATH" translation="fixed_value" translationValue="Resources/light_on.png" />
         </state>
       </button>
-      <image x="352" y="50" width="15" height="15" path="UI/light_on.png" aspectRatioMode="preserve" />
+      <image x="352" y="50" width="15" height="15" path="Resources/light_on.png" aspectRatioMode="preserve" />
 
       <!-- Effects -->
-      <control x="417" y="140" width="49" height="49" parameterName="Lowpass" type="float" minValue="150" maxValue="15000" textColor="FF000000" value="15000.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
+      <control x="417" y="140" width="49" height="49" parameterName="Lowpass" type="float" minValue="150" maxValue="15000" textColor="FF000000" value="15000.0" style="custom_skin_vertical_drag" customSkinImage="Resources/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
         <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY" />
       </control>
-      <control x="510" y="140" width="49" height="49" parameterName="Reverb" type="percent" minValue="0" maxValue="100" textColor="FF000000" value="0.0" style="custom_skin_vertical_drag" customSkinImage="UI/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
+      <control x="510" y="140" width="49" height="49" parameterName="Reverb" type="percent" minValue="0" maxValue="100" textColor="FF000000" value="0.0" style="custom_skin_vertical_drag" customSkinImage="Resources/Knob.png" customSkinNumFrames="101" customSkinImageOrientation="vertical" mouseDragSensitivity="100">
         <binding type="effect" level="instrument" position="1" parameter="FX_MIX" factor="0.01" />
       </control>
       <button x="323" y="145" width="45" height="41" style="image" value="0">
-        <state name="Off" mainImage="UI/button_blue-off.png" hoverImage="UI/button_blue-off.png" clickImage="UI/button_blue-on.png">
+        <state name="Off" mainImage="Resources/button_blue-off.png" hoverImage="Resources/button_blue-off.png" clickImage="Resources/button_blue-on.png">
           <binding type="effect" level="instrument" effectIndex="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
           <binding type="effect" level="instrument" effectIndex="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
-          <binding type="control" level="ui" position="5" parameter="PATH" translation="fixed_value" translationValue="UI/light_off.png" />
+          <binding type="control" level="ui" position="5" parameter="PATH" translation="fixed_value" translationValue="Resources/light_off.png" />
         </state>
-        <state name="On" mainImage="UI/button_blue-on.png" hoverImage="UI/button_blue-on.png" clickImage="UI/button_blue-off.png">
+        <state name="On" mainImage="Resources/button_blue-on.png" hoverImage="Resources/button_blue-on.png" clickImage="Resources/button_blue-off.png">
           <binding type="effect" level="instrument" effectIndex="0" parameter="ENABLED" translation="fixed_value" translationValue="true" />
           <binding type="effect" level="instrument" effectIndex="1" parameter="ENABLED" translation="fixed_value" translationValue="true" />
-          <binding type="control" level="ui" position="5" parameter="PATH" translation="fixed_value" translationValue="UI/light_on.png" />
+          <binding type="control" level="ui" position="5" parameter="PATH" translation="fixed_value" translationValue="Resources/light_on.png" />
         </state>
       </button>
-      <image x="302" y="119" width="15" height="15" path="UI/light_off.png" aspectRatioMode="preserve" />
+      <image x="302" y="119" width="15" height="15" path="Resources/light_off.png" aspectRatioMode="preserve" />
 
     </tab>
     <keyboard>
