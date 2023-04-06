@@ -1,8 +1,8 @@
 # Omni-84 - Version: [1.0]
 
 Date: 2023-04-06  
-Name: Benjamin Dehli 
-Profile: [pianobook.co.uk/profile/benjamindehli](https://www.pianobook.co.uk/profile/benjamindehli/)
+Name: Benjamin Dehli  
+Profile: https://www.pianobook.co.uk/profile/benjamindehli
 
 
 ## Included formats
@@ -32,8 +32,6 @@ This sample library includes 5 presets, one for each part of the Omnichord. Drum
 
 ### Drums
 
-![Omni-84 Drums](/Screenshots/Drums.png)
-
 - Velocity
   - Toggle whether the velocity should affect the volume or not
 - Keys
@@ -45,15 +43,11 @@ This sample library includes 5 presets, one for each part of the Omnichord. Drum
 
 ### Bass
 
-![Omni-84 Bass](/Screenshots/Bass.png)
-
 - Release
   - How long the note sustains after the key is released
 
 
 ### Chords
-
-![Omni-84 Chords](/Screenshots/Chords.png)
 
 - Keys
   - C1–B1: Major chords
@@ -67,8 +61,6 @@ This sample library includes 5 presets, one for each part of the Omnichord. Drum
 
 ### Keyboard
 
-![Omni-84 Keyboard](/Screenshots/Keyboard.png)
-
 - Voices
   - Monophonic
     - Plays only one note at the time, like the original Omnichord
@@ -80,8 +72,6 @@ The keyboard samples loop after about 12 seconds to achieve a continuous sound. 
 
 ### SonicStrings
 
-![Omni-84 SonicStrings](/Screenshots/SonicStrings.png)
-
 - Voice 1 (vibrato voice)
   - Controls the volume of SonicStrings voice 1 samples
 - Voice 2 (standard voice)
@@ -91,8 +81,6 @@ The keyboard samples loop after about 12 seconds to achieve a continuous sound. 
 
 
 ## Effects
-
-![Omni-84 Effects](/Screenshots/Effects.png)
 
 - Filter
   - Controls the cutoff frequency for the lowpass filter
