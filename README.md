@@ -1,20 +1,25 @@
-# Omni-84 - Version: [1.0]
+# Omni-84 - Version: [1.1]
 
-Date: 2023-04-06  
-Name: Benjamin Dehli 
+Date: 2024-02-17  
+Name: Benjamin Dehli  
 Profile: [pianobook.co.uk/profile/benjamindehli](https://www.pianobook.co.uk/profile/benjamindehli/)
-
 
 ## Included formats
 
 - Decent Sampler
 
+## Release notes
+
+### Version 1.1
+
+- Added "Chords (Looped)" preset.
+
 ## The Story
 
 At the moment, the Omnichord is no longer produced and prices on the second-hand market have skyrocketed. This is my attempt to make the sound of the Omnichord more accessible.
 
-
 ## Description
+
 Every sound of the Omnichord has been sampled into individual audio files.
 I've also added the effects I tend to use when recording and playing the Omnichord as an impulse response called "space".
 
@@ -26,9 +31,10 @@ I've also added the effects I tend to use when recording and playing the Omnicho
 - File size for samples: 241.3 MB
 - Channels: 1 (mono), 2 (stereo) for impulse response
 
-
 ## Instrument presets
-This sample library includes 5 presets, one for each part of the Omnichord. Drums, Bass, Chords, Keyboard and SonicStrings.
+
+This sample library includes 5 (plus 1 looped) presets, one for each part of the Omnichord. Drums, Bass, Chords, Keyboard and SonicStrings.
+There's 2 presets for chords, a regular preset "Chords" (best in most cases) and the looped preset "Chords (Looped)". For the regular version, each sample are approximately 11 seconds long. For the looped version, to achieve the best possible loop point, some of the loops are short and some are longer. Some of the loops will however have some minor artifacts. For best audio quality, you should always use the regular version. And only if you have notes held for more than 11 seconds, use the the looped version.
 
 ### Drums
 
@@ -42,14 +48,12 @@ This sample library includes 5 presets, one for each part of the Omnichord. Drum
   - C#2–F#2: Hi-hat
   - G2–A2: Clave
 
-
 ### Bass
 
 ![Omni-84 Bass](/Screenshots/Bass.png)
 
 - Release
   - How long the note sustains after the key is released
-
 
 ### Chords
 
@@ -64,7 +68,6 @@ This sample library includes 5 presets, one for each part of the Omnichord. Drum
   - C6–B6: Diminished chords
   - C7–B7: Augmented chords
 
-
 ### Keyboard
 
 ![Omni-84 Keyboard](/Screenshots/Keyboard.png)
@@ -77,7 +80,6 @@ This sample library includes 5 presets, one for each part of the Omnichord. Drum
 
 The keyboard samples loop after about 12 seconds to achieve a continuous sound. Each loop point is carefully picked and phase aligned to avoid audible artifacts.
 
-
 ### SonicStrings
 
 ![Omni-84 SonicStrings](/Screenshots/SonicStrings.png)
@@ -89,7 +91,6 @@ The keyboard samples loop after about 12 seconds to achieve a continuous sound. 
 - Sustain
   - The tone produced on the original Omnichord has the same length whether you keep your finger on the strum plate or release it. The length of the note is set by the control labeled sustain. To achieve the same behaviour in this plugin, the sustain knob affects both the decay time and the release time of the volume envelope.
 
-
 ## Effects
 
 ![Omni-84 Effects](/Screenshots/Effects.png)
@@ -99,7 +100,6 @@ The keyboard samples loop after about 12 seconds to achieve a continuous sound. 
 - Space
   - Controls the reverb amount for the impulse response / convolution reverb
 
-
 ## Audio files
 
 - 22 drum samples
@@ -108,8 +108,8 @@ The keyboard samples loop after about 12 seconds to achieve a continuous sound. 
 - 32 keyboard samples
 - 120 SonicStrings samples
 
-
 ## Impulse response (Space)
+
 - Roland PA-120 preamp
 - Fulltone Tube Tape Echo
 - Roland PA-120 spring reverb
