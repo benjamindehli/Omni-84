@@ -1,6 +1,6 @@
-# Omni-84 - Version: [1.1]
+# Omni-84 - Version: [1.2]
 
-Date: 2024-02-17  
+Date: 2024-03-23  
 Name: Benjamin Dehli  
 Profile: [pianobook.co.uk/profile/benjamindehli](https://www.pianobook.co.uk/profile/benjamindehli/)
 
@@ -10,9 +10,17 @@ Profile: [pianobook.co.uk/profile/benjamindehli](https://www.pianobook.co.uk/pro
 
 ## Release notes
 
-### Version 1.1
+### Version 1.2 (2024-03-23)
 
-- Added "Chords (Looped)" preset.
+- Added "SonicStrings (AutoStrum)" preset
+
+### Version 1.1 (2024-02-16)
+
+- Added "Chords (Looped)" preset
+
+### Version 1.0 (2023-04-06)
+
+- First version released
 
 ## The Story
 
@@ -90,6 +98,28 @@ The keyboard samples loop after about 12 seconds to achieve a continuous sound. 
   - Controls the volume of SonicStrings voice 2 samples
 - Sustain
   - The tone produced on the original Omnichord has the same length whether you keep your finger on the strum plate or release it. The length of the note is set by the control labeled sustain. To achieve the same behaviour in this plugin, the sustain knob affects both the decay time and the release time of the volume envelope.
+
+### SonicStrings (AutoStrum)
+
+![Omni-84 SonicStrings (AutoStrum)](/Screenshots/SonicStringsAutoStrum.png)
+
+The notes are strummed in the same order as the original Omnichord, but you have the possibility to make it strum in regular ascending order as well.  
+The preset contains strum patterns for all the individual chords from the Suzuki Omnichord OM-84.
+It has the same notes values for the chords as the Omni-84 'Chords' preset, which means you can send MIDI to both at the same time and get strummed SonicStrings on top of the chord sample.
+
+- AutoStrum (speed)
+  - Fast strum speed will sound like a chord and slow strum speed will sound like plucked notes.
+- Strum pattern
+  - Select between ascending/descending notes and regular/omnichord order
+- Modulation Wheel
+  - Controls the AutoStrum (speed)
+- Key bindings
+  - C0: Ascending notes in Omnichord order
+  - D0: Descending notes in Omnichord order
+  - E0: Ascending notes in regular order
+  - F0: Descending notes in regular order
+- Other controls are the same as on the regular "SonicStrings" preset
+- Other key bindings are the same as on the "Chords" preset
 
 ## Effects
 
