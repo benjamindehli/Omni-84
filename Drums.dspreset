@@ -6,11 +6,11 @@
 
       <!-- velocity -->
       <button x="417" y="40" width="45" height="41" style="image" value="0">
-        <state name="Monophonic" mainImage="Resources/button_red-off.png" hoverImage="Resources/button_red-off.png" clickImage="Resources/button_red-on.png">
+        <state name="velocity_off" mainImage="Resources/button_red-off.png" hoverImage="Resources/button_red-off.png" clickImage="Resources/button_red-on.png">
           <binding type="amp" level="group" groupIndex="0" parameter="AMP_VEL_TRACK" translation="fixed_value" translationValue="0" />
           <binding type="control" level="ui" controlIndex="1" parameter="PATH" translation="fixed_value" translationValue="Resources/light_off.png" />
         </state>
-        <state name="Polyphonic" mainImage="Resources/button_red-on.png" hoverImage="Resources/button_red-on.png" clickImage="Resources/button_red-off.png">
+        <state name="velocity_on" mainImage="Resources/button_red-on.png" hoverImage="Resources/button_red-on.png" clickImage="Resources/button_red-off.png">
           <binding type="amp" level="group" groupIndex="0" parameter="AMP_VEL_TRACK" translation="fixed_value" translationValue="1" />
           <binding type="control" level="ui" controlIndex="1" parameter="PATH" translation="fixed_value" translationValue="Resources/light_on.png" />
         </state>
@@ -46,7 +46,7 @@
       <color loNote="55" hiNote="57" color="FFc026d3" />
     </keyboard>
   </ui>
-  <groups attack="0.000" decay="0" sustain="1.0" release="5" volume="1">
+  <groups ampEnvEnabled="false" volume="1">
     <group uid="drums">
       <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Drums/Kick_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Drums/Kick_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
