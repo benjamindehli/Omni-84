@@ -32,24 +32,24 @@
   </ui>
   <groups attack="0.000" decay="0" sustain="1" release="0.1" volume="1" ampVelTrack="0">
     <group tags="monophonic" silencingMode="normal" silencedByTags="monophonic">
-      <sample loNote="24" hiNote="24" rootNote="24" path="Samples/Bass/Bass_0C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="24" hiNote="24" rootNote="24" path="Samples/Bass/Bass_0C.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="25" hiNote="25" rootNote="25" path="Samples/Bass/Bass_0C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="26" hiNote="26" rootNote="26" path="Samples/Bass/Bass_0D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="26" hiNote="26" rootNote="26" path="Samples/Bass/Bass_0D.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="27" hiNote="27" rootNote="27" path="Samples/Bass/Bass_0D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="28" hiNote="28" rootNote="28" path="Samples/Bass/Bass_0E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="29" hiNote="29" rootNote="29" path="Samples/Bass/Bass_0F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="28" hiNote="28" rootNote="28" path="Samples/Bass/Bass_0E.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="29" hiNote="29" rootNote="29" path="Samples/Bass/Bass_0F.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="30" hiNote="30" rootNote="30" path="Samples/Bass/Bass_0F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="31" hiNote="31" rootNote="31" path="Samples/Bass/Bass_0G.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="31" hiNote="31" rootNote="31" path="Samples/Bass/Bass_0G.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="32" hiNote="32" rootNote="32" path="Samples/Bass/Bass_0G#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="33" hiNote="33" rootNote="33" path="Samples/Bass/Bass_0A.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="33" hiNote="33" rootNote="33" path="Samples/Bass/Bass_0A.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="34" hiNote="34" rootNote="34" path="Samples/Bass/Bass_0A#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="35" hiNote="35" rootNote="35" path="Samples/Bass/Bass_0B.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Bass/Bass_1C.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="35" hiNote="35" rootNote="35" path="Samples/Bass/Bass_0B.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Bass/Bass_1C.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Bass/Bass_1C#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="38" hiNote="38" rootNote="38" path="Samples/Bass/Bass_1D.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="38" hiNote="38" rootNote="38" path="Samples/Bass/Bass_1D.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="39" hiNote="39" rootNote="39" path="Samples/Bass/Bass_1D#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="40" hiNote="40" rootNote="40" path="Samples/Bass/Bass_1E.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
-      <sample loNote="41" hiNote="41" rootNote="41" path="Samples/Bass/Bass_1F.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="40" hiNote="40" rootNote="40" path="Samples/Bass/Bass_1E.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
+      <sample loNote="41" hiNote="41" rootNote="41" path="Samples/Bass/Bass_1F.wav"  length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="42" hiNote="42" rootNote="42" path="Samples/Bass/Bass_1F#.wav" length="805888" sampleRate="48000.0" pitchKeyTrack="0" loopEnabled="0" />
       <effects />
     </group>
