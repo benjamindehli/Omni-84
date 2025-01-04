@@ -1,14 +1,20 @@
-# Omni-84 - Version: [1.2]
+# Omni-84 - Version: [1.3]
 
-Date: 2024-03-23  
+Date: 2025-01-04  
+
 Name: Benjamin Dehli  
-Profile: [pianobook.co.uk/profile/benjamindehli](https://www.pianobook.co.uk/profile/benjamindehli/)
+
+Profile: [store.dehlimusikk.no][Gumroad profile]
 
 ## Included formats
 
 - Decent Sampler
 
 ## Release notes
+
+### Version 1.3 (2025-01-04)
+
+- Removed amplitude envelope for one shot samples
 
 ### Version 1.2 (2024-03-23)
 
@@ -146,3 +152,5 @@ It has the same notes values for the chords as the Omni-84 'Chords' preset, whic
 - Roland Dimension D SDD-320
 
 The impulse signal was sent through a channel on the Roland PA-120 mixer so that the built-in spring reverb as well as a tape echo in the effects loop could be used. The preamplifier in the mixer also adds some nice saturation. The mixer and effects are all mono, so I ran it through a Dimension D to make it stereo and add some extra modulation.
+
+[Gumroad profile]: https://store.dehlimusikk.no/
