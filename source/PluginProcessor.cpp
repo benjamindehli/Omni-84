@@ -27,18 +27,37 @@ void Omni84AudioProcessor::loadEmbeddedLibrary()
     library = parsed.library;
 
     sampleSource = std::make_unique<dm::EmbeddedFlacSource>();
-    for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
-    {
-        const juce::String filename (BinaryData::originalFilenames[i]);
-        if (! filename.endsWithIgnoreCase (".flac"))
-            continue;
 
+    // The manifest is the source of truth for asset ids. Resolve every id it
+    // references (sample sources + effect IRs) to its embedded FLAC by original
+    // file name — "flac:Bass_0C" and "ir:Space" both map to "<stem>.flac".
+    auto findResource = [] (const juce::String& filename, int& sizeOut) -> const char*
+    {
+        for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
+            if (filename == BinaryData::originalFilenames[i])
+                return BinaryData::getNamedResource (BinaryData::namedResourceList[i], sizeOut);
+        return nullptr;
+    };
+
+    juce::StringArray ids;
+    for (const auto& m : library.modes)
+    {
+        for (const auto& g : m.groups)
+            for (const auto& s : g.samples)
+                ids.addIfNotAlreadyThere (s.source);
+        for (const auto& e : m.effects)
+            if (e.ir.isNotEmpty())
+                ids.addIfNotAlreadyThere (e.ir);
+    }
+
+    for (const auto& id : ids)
+    {
+        const auto filename = id.fromLastOccurrenceOf (":", false, false) + ".flac";
         int size = 0;
-        if (const char* data = BinaryData::getNamedResource (BinaryData::namedResourceList[i], size))
-        {
-            const auto id = "flac:" + filename.upToLastOccurrenceOf (".", false, false);
+        if (const char* data = findResource (filename, size))
             sampleSource->addFlac (id, data, (size_t) size);
-        }
+        else
+            DBG ("Omni84: no embedded asset for id " << id << " (" << filename << ")");
     }
 
     loaded = ! library.modes.isEmpty() && sampleSource->size() > 0;
