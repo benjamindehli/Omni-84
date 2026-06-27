@@ -23,5 +23,14 @@ private:
     juce::Label versionLabel;
     juce::MidiKeyboardComponent keyboard;
 
+    // Temporary M3 dev controls for the Bass FX (effect[0]=lowpass, [1]=reverb).
+    // Replaced by the data-driven UI + APVTS bindings in M4.
+    juce::Label        fxLabel;
+    juce::ToggleButton lowpassEnable { "Lowpass on" };
+    juce::Slider       lowpassFreq;
+    juce::Slider       reverbMix;
+    juce::Slider       reverbGain;
+    juce::Label        lowpassFreqLabel, reverbMixLabel, reverbGainLabel;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Omni84AudioProcessorEditor)
 };
