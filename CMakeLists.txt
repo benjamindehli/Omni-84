@@ -2,6 +2,8 @@
 
 juce_add_plugin(Omni84
     COMPANY_NAME            "DehliMusikk"
+    BUNDLE_ID               com.dehlimusikk.omni84
+    VERSION                 0.1.0
     PLUGIN_MANUFACTURER_CODE Dhmk
     PLUGIN_CODE              Om84
     FORMATS                 VST3 AU Standalone
