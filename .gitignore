@@ -23,3 +23,14 @@ Testing/
 .cache/
 *.swp
 *~
+
+# Packaging output (build/ above already covers packaging/**/build/) + installers
+*.pkg
+*.dmg
+*-Setup.exe
+
+# Signing secrets — NEVER commit these
+*.p8
+*.p12
+*.cer
+*.mobileprovision
