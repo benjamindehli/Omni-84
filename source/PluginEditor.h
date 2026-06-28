@@ -2,11 +2,13 @@
 
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_audio_utils/juce_audio_utils.h>   // MidiKeyboardComponent
+#include <ui/ManifestUiComponent.h>               // data-driven renderer (engine)
 #include "PluginProcessor.h"
+#include <memory>
 
-/** M5 editor: product name, engine version, a mode selector across the library's
-    modes, temporary dev FX controls, and an on-screen keyboard. The real
-    data-driven UI (background image, frame knobs) arrives in M4.
+/** M4 editor: renders the active mode's data-driven UI (background, filmstrip
+    knobs, image buttons, lights) from the manifest, plus a mode selector, the
+    chord-ordering selector (AutoStrum), and an on-screen keyboard.
 */
 class Omni84AudioProcessorEditor : public juce::AudioProcessorEditor
 {
@@ -18,21 +20,16 @@ public:
     void resized() override;
 
 private:
+    void rebuildUi();                                       // build renderer for active mode
+    void applyControl (const dm::Control&, double value);   // binding → engine
+    void applyButton (const dm::Button&, int stateIndex);
+
     Omni84AudioProcessor& processorRef;
-    juce::Label titleLabel;
-    juce::Label versionLabel;
-    juce::Label modeLabel;
+
+    juce::Label    versionLabel, modeLabel;
     juce::ComboBox modeSelector;
     juce::MidiKeyboardComponent keyboard;
-
-    // Temporary M3 dev controls for the Bass FX (effect[0]=lowpass, [1]=reverb).
-    // Replaced by the data-driven UI + APVTS bindings in M4.
-    juce::Label        fxLabel;
-    juce::ToggleButton lowpassEnable { "Lowpass on" };
-    juce::Slider       lowpassFreq;
-    juce::Slider       reverbMix;
-    juce::Slider       reverbGain;
-    juce::Label        lowpassFreqLabel, reverbMixLabel, reverbGainLabel;
+    std::unique_ptr<dm::ManifestUiComponent> uiComponent;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Omni84AudioProcessorEditor)
 };

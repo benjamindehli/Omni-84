@@ -55,6 +55,22 @@ public:
     void setActiveMode (int index)              { engine.setActiveMode (index); }
     bool isLoaded() const noexcept              { return loaded; }
 
+    /** The active mode (for the renderer + binding interpreter), or nullptr. */
+    const dm::Mode* getActiveMode() const
+    {
+        if (! loaded) return nullptr;
+        const int i = engine.getActiveModeIndex();
+        if (i < 0 || i >= library.modes.size()) return nullptr;
+        return &library.modes.getReference (i);
+    }
+
+    /** The active mode's UI tree (for the data-driven renderer), or nullptr. */
+    const dm::Ui* getActiveModeUi() const
+    {
+        if (auto* m = getActiveMode()) return &m->ui;
+        return nullptr;
+    }
+
 private:
     /** Decode the embedded manifest + FLAC bundle into the engine's sample source
         and hand the library to the engine. No-op if no assets were embedded. */
