@@ -49,20 +49,34 @@ Omni84AudioProcessorEditor::Omni84AudioProcessorEditor (Omni84AudioProcessor& p)
     modeSelector.setTextWhenNoChoicesAvailable ("(no embedded assets)");
     modeSelector.onChange = [this]
     {
-        processorRef.setActiveMode (modeSelector.getSelectedId() - 1);
-        rebuildUi();
+        // Drive the Mode param; the processor performs the actual (deferred) switch
+        // and calls back onModeChanged → rebuildUi().
+        setParam (omni84::params::id::mode, (float) (modeSelector.getSelectedId() - 1));
     };
     addAndMakeVisible (modeSelector);
 
     keyboard.setAvailableRange (24, 119);
-    keyboard.setLowestVisibleKey (36);
+    keyboard.setLowestVisibleKey (lowestVisibleKey);
+    keyboard.setKeyPressBaseOctave (keyOctave);   // seed to match keyOctave so the first Z/X steps cleanly
     addAndMakeVisible (keyboard);
+
+    // The processor switches the mode (on the message thread) then asks us to rebuild.
+    processorRef.onModeChanged = [this]
+    {
+        modeSelector.setSelectedId (processorRef.getActiveModeIndex() + 1, juce::dontSendNotification);
+        rebuildUi();
+    };
 
     rebuildUi();
     setSize (812, 403); // dev top strip + the 812×375 face (keyboard overlays it)
+    startTimerHz (30);  // reflect host automation / preset recall into the widgets
 }
 
-Omni84AudioProcessorEditor::~Omni84AudioProcessorEditor() = default;
+Omni84AudioProcessorEditor::~Omni84AudioProcessorEditor()
+{
+    stopTimer();
+    processorRef.onModeChanged = nullptr;
+}
 
 void Omni84AudioProcessorEditor::rebuildUi()
 {
@@ -75,69 +89,94 @@ void Omni84AudioProcessorEditor::rebuildUi()
     uiComponent = std::make_unique<dm::ManifestUiComponent> (
         *ui, [] (const juce::String& id) { return loadImageById (id); });
 
-    uiComponent->onControlChanged = [this] (const dm::Control& c, double v) { applyControl (c, v); };
-    uiComponent->onButtonChanged  = [this] (const dm::Button& b, int s)      { applyButton (b, s); };
-    uiComponent->onMenuChanged    = [this] (const dm::Menu& m, int idx)
+    // Widgets drive the params (single source of truth). One knob may map to two
+    // params (e.g. Decay+Release); each gets the same normalised position.
+    uiComponent->onControlChanged = [this] (const dm::Control& c, double native)
     {
-        if (idx >= 0 && idx < m.options.size())
-            processorRef.getEngine().setSequencerIndexOffset (m.options.getReference (idx).seqIndex);
+        const double mn = c.min.value_or (0.0), mx = c.max.value_or (1.0);
+        const float norm = (float) (mx > mn ? juce::jlimit (0.0, 1.0, (native - mn) / (mx - mn)) : 0.0);
+        for (const auto& pid : omni84::params::controlParamIds (c))
+            setParam (pid.toRawUTF8(), norm);
+    };
+    uiComponent->onButtonChanged = [this] (const dm::Button& b, int stateIndex)
+    {
+        const auto pid = omni84::params::buttonParamId (b);
+        if (pid.isNotEmpty())
+            setParam (pid.toRawUTF8(), stateIndex >= 1 ? 1.0f : 0.0f);
+    };
+    uiComponent->onMenuChanged = [this] (const dm::Menu&, int idx)
+    {
+        setParam (omni84::params::id::chordOrder, (float) idx);
     };
     addAndMakeVisible (*uiComponent);
     uiComponent->toBack();   // background + widgets behind the keyboard / selector
 
-    // Sync the engine to the freshly-shown defaults (supported params + menu).
-    if (! ui->tabs.isEmpty())
-    {
-        const auto& tab = ui->tabs.getReference (0);
-        for (const auto& c : tab.controls)
-            applyControl (c, c.value.value_or (c.min.value_or (0.0)));
-        for (const auto& b : tab.buttons)
-            applyButton (b, b.value.value_or (0));   // sync engine to default button state
-        for (const auto& m : tab.menus)
-        {
-            const int idx = juce::jlimit (0, juce::jmax (0, m.options.size() - 1), m.value - 1);
-            if (idx < m.options.size())
-                processorRef.getEngine().setSequencerIndexOffset (m.options.getReference (idx).seqIndex);
-        }
-    }
-
+    refreshWidgets();        // show the current param values
     resized();
 }
 
-void Omni84AudioProcessorEditor::applyControl (const dm::Control& c, double value)
+void Omni84AudioProcessorEditor::setParam (const char* paramId, float nativeValue)
 {
-    auto& eng = processorRef.getEngine();
-    for (const auto& b : c.bindings)
-    {
-        const double f = b.factor.value_or (1.0);
-        const auto& p = b.parameter;
-        if      (p == "FX_FILTER_FREQUENCY") eng.setLowpassFrequency ((float) (value * f));
-        else if (p == "FX_MIX")              eng.setReverbMix ((float) (value * f));
-        else if (p == "FX_OUTPUT_LEVEL")     eng.setReverbWetGainDb ((float) (value * f));
-        else if (p == "SEQ_PLAYBACK_RATE")   eng.setSequencerRate (value * f);
-        // ENV_*/AMP_*/etc. become automatable parameters in M4c.
-    }
+    if (auto* p = processorRef.getApvts().getParameter (paramId))
+        p->setValueNotifyingHost (p->convertTo0to1 (nativeValue));
 }
 
-void Omni84AudioProcessorEditor::applyButton (const dm::Button& b, int stateIndex)
+void Omni84AudioProcessorEditor::refreshWidgets()
 {
-    if (stateIndex < 0 || stateIndex >= b.states.size())
+    if (uiComponent == nullptr)
         return;
 
-    const auto* mode = processorRef.getActiveMode();
-    for (const auto& bind : b.states.getReference (stateIndex).bindings)
+    auto& apvts = processorRef.getApvts();
+    auto raw = [&apvts] (const juce::String& id) -> float
     {
-        if (bind.parameter == "ENABLED" && bind.effectIndex && mode != nullptr)
+        if (auto* a = apvts.getRawParameterValue (id)) return a->load();
+        return 0.0f;
+    };
+
+    uiComponent->refresh (
+        [&] (const dm::Control& c) -> std::optional<double>
         {
-            const int ei = *bind.effectIndex;
-            const bool on = bind.translationValue.isBool()
-                              ? (bool) bind.translationValue
-                              : bind.translationValue.toString().equalsIgnoreCase ("true");
-            if (ei >= 0 && ei < mode->effects.size()
-                && mode->effects.getReference (ei).type == "lowpass")
-                processorRef.getEngine().setLowpassEnabled (on);
-        }
-    }
+            const auto ids = omni84::params::controlParamIds (c);
+            if (ids.isEmpty()) return std::nullopt;
+            const double mn = c.min.value_or (0.0), mx = c.max.value_or (1.0);
+            return mn + (double) raw (ids[0]) * (mx - mn);
+        },
+        [&] (const dm::Button& b) -> std::optional<int>
+        {
+            const auto pid = omni84::params::buttonParamId (b);
+            if (pid.isEmpty()) return std::nullopt;
+            return raw (pid) > 0.5f ? 1 : 0;
+        },
+        [&] (const dm::Menu&) -> std::optional<int>
+        {
+            return (int) raw (omni84::params::id::chordOrder);
+        });
+}
+
+void Omni84AudioProcessorEditor::timerCallback()
+{
+    refreshWidgets();
+}
+
+bool Omni84AudioProcessorEditor::keyPressed (const juce::KeyPress& key)
+{
+    const auto c = key.getTextCharacter();
+    if (c == 'z' || c == 'Z') { shiftKeyboardOctave (-1); return true; }
+    if (c == 'x' || c == 'X') { shiftKeyboardOctave (+1); return true; }
+    return false;
+}
+
+void Omni84AudioProcessorEditor::shiftKeyboardOctave (int deltaOctaves)
+{
+    // Track play octave + visible key ourselves and shift both by the same delta.
+    // (getLowestVisibleKey() returns a value clamped to what currently fits, and the
+    // computer-key octave starts at JUCE's default 6 — deriving one from the other
+    // desyncs the first press, so keep them as independent tracked state.)
+    keyOctave = juce::jlimit (1, 9, keyOctave + deltaOctaves);
+    keyboard.setKeyPressBaseOctave (keyOctave);
+
+    lowestVisibleKey = juce::jlimit (24, 96, lowestVisibleKey + deltaOctaves * 12);
+    keyboard.setLowestVisibleKey (lowestVisibleKey);
 }
 
 void Omni84AudioProcessorEditor::paint (juce::Graphics& g)

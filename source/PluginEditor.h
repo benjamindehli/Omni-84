@@ -10,7 +10,8 @@
     knobs, image buttons, lights) from the manifest, plus a mode selector, the
     chord-ordering selector (AutoStrum), and an on-screen keyboard.
 */
-class Omni84AudioProcessorEditor : public juce::AudioProcessorEditor
+class Omni84AudioProcessorEditor : public juce::AudioProcessorEditor,
+                                   private juce::Timer
 {
 public:
     explicit Omni84AudioProcessorEditor (Omni84AudioProcessor&);
@@ -18,17 +19,22 @@ public:
 
     void paint (juce::Graphics&) override;
     void resized() override;
+    bool keyPressed (const juce::KeyPress&) override;       // Z / X shift the keyboard octave
 
 private:
+    void shiftKeyboardOctave (int deltaOctaves);
     void rebuildUi();                                       // build renderer for active mode
-    void applyControl (const dm::Control&, double value);   // binding → engine
-    void applyButton (const dm::Button&, int stateIndex);
+    void refreshWidgets();                                  // push current param values into widgets
+    void setParam (const char* paramId, float nativeValue); // widget → param (notifying host)
+    void timerCallback() override;
 
     Omni84AudioProcessor& processorRef;
 
     juce::Label    versionLabel, modeLabel;
     juce::ComboBox modeSelector;
     juce::MidiKeyboardComponent keyboard;
+    int keyOctave { 6 };          // computer-key play octave (JUCE's default keyMappingOctave)
+    int lowestVisibleKey { 36 };  // leftmost visible key; tracked (getLowestVisibleKey clamps)
     std::unique_ptr<dm::ManifestUiComponent> uiComponent;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Omni84AudioProcessorEditor)

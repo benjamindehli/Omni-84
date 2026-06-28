@@ -4,6 +4,8 @@
 #include <SamplerEngine.h>                 // from dehli_musikk_sampler_engine
 #include <audio/EmbeddedFlacSource.h>
 #include <model/ManifestLoader.h>          // brings Manifest.h (dm::PresetLibrary)
+#include "Parameters.h"
+#include <functional>
 #include <memory>
 
 /** Omni-84 plugin processor.
@@ -13,7 +15,9 @@
     all of the library's modes. Data-driven UI + parameters arrive in M4 —
     see ../../PLAN.md.
 */
-class Omni84AudioProcessor : public juce::AudioProcessor
+class Omni84AudioProcessor : public juce::AudioProcessor,
+                             private juce::AudioProcessorValueTreeState::Listener,
+                             private juce::AsyncUpdater
 {
 public:
     Omni84AudioProcessor();
@@ -44,6 +48,14 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
     dm::SamplerEngine& getEngine() noexcept { return engine; }
+
+    /** The plugin's automatable parameters (named union across modes). */
+    juce::AudioProcessorValueTreeState& getApvts() noexcept { return *apvts; }
+
+    /** Invoked on the message thread after the active mode actually changes (from
+        the editor selector, host automation, or state restore) so the editor can
+        rebuild its face. Set by the editor; cleared in its destructor. */
+    std::function<void()> onModeChanged;
 
     /** On-screen keyboard state — lets the Standalone be played without external
         MIDI gear (the editor shows a MidiKeyboardComponent bound to it). */
@@ -76,6 +88,11 @@ private:
         and hand the library to the engine. No-op if no assets were embedded. */
     void loadEmbeddedLibrary();
 
+    // Mode is a parameter; switching builds a render unit (allocates), so the
+    // actual switch is deferred to the message thread via AsyncUpdater.
+    void parameterChanged (const juce::String& paramID, float newValue) override;
+    void handleAsyncUpdate() override;
+
     // Declared before the engine so they outlive it: the engine's per-mode render
     // units hold pointers into `library` and `sampleSource`.
     juce::MidiKeyboardState keyboardState;
@@ -84,6 +101,9 @@ private:
     bool loaded { false };
 
     dm::SamplerEngine engine;
+
+    // Built after the library loads (defaults are read from the manifest).
+    std::unique_ptr<juce::AudioProcessorValueTreeState> apvts;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Omni84AudioProcessor)
 };

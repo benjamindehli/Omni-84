@@ -10,9 +10,39 @@ Omni84AudioProcessor::Omni84AudioProcessor()
                           .withOutput ("Output", juce::AudioChannelSet::stereo(), true))
 {
     loadEmbeddedLibrary();
+
+    // Build the parameter tree from the loaded manifest (defaults come from it),
+    // then watch the Mode choice so host/state changes trigger a deferred switch.
+    apvts = std::make_unique<juce::AudioProcessorValueTreeState> (
+        *this, nullptr, "PARAMS", omni84::params::createLayout (library));
+    apvts->addParameterListener (omni84::params::id::mode, this);
 }
 
-Omni84AudioProcessor::~Omni84AudioProcessor() = default;
+Omni84AudioProcessor::~Omni84AudioProcessor()
+{
+    if (apvts != nullptr)
+        apvts->removeParameterListener (omni84::params::id::mode, this);
+}
+
+void Omni84AudioProcessor::parameterChanged (const juce::String& paramID, float)
+{
+    // Only the Mode param needs deferral; the rest are polled in processBlock.
+    if (paramID == omni84::params::id::mode)
+        triggerAsyncUpdate();
+}
+
+void Omni84AudioProcessor::handleAsyncUpdate()
+{
+    if (apvts == nullptr)
+        return;
+
+    const int requested = (int) apvts->getRawParameterValue (omni84::params::id::mode)->load();
+    if (requested != engine.getActiveModeIndex())
+        engine.setActiveMode (requested);   // builds + lock-free swaps (message thread)
+
+    if (onModeChanged)
+        onModeChanged();                     // let the editor rebuild its face
+}
 
 void Omni84AudioProcessor::loadEmbeddedLibrary()
 {
@@ -99,6 +129,13 @@ void Omni84AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
     // Merge on-screen keyboard events into the incoming MIDI (Standalone play).
     keyboardState.processNextMidiBuffer (midi, 0, buffer.getNumSamples(), true);
 
+    // Push the current parameter values into the engine for the active mode. Done
+    // every block (idempotent) so it survives a mode switch's override reset, and
+    // so host automation reaches the engine with the editor closed.
+    if (loaded && apvts != nullptr)
+        if (const auto* m = getActiveMode())
+            omni84::params::applyToEngine (engine, *m, *apvts);
+
     engine.processBlock (buffer, midi, getPlayHead());
 }
 
@@ -109,14 +146,22 @@ juce::AudioProcessorEditor* Omni84AudioProcessor::createEditor()
 
 void Omni84AudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
-    // M4: persist Mode + parameter slots via APVTS.
-    juce::ignoreUnused (destData);
+    if (apvts == nullptr)
+        return;
+    if (auto xml = apvts->copyState().createXml())
+        copyXmlToBinary (*xml, destData);
 }
 
 void Omni84AudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // M4: restore state.
-    juce::ignoreUnused (data, sizeInBytes);
+    if (apvts == nullptr)
+        return;
+    if (auto xml = getXmlFromBinary (data, sizeInBytes))
+        if (xml->hasTagName (apvts->state.getType()))
+        {
+            apvts->replaceState (juce::ValueTree::fromXml (*xml));
+            triggerAsyncUpdate();   // restore active mode to match the Mode param (message thread)
+        }
 }
 
 // This creates new instances of the plugin.
