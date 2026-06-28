@@ -4,9 +4,9 @@
 #include <juce_audio_utils/juce_audio_utils.h>   // MidiKeyboardComponent
 #include "PluginProcessor.h"
 
-/** M2 editor: product name, engine version, the loaded mode, and an on-screen
-    keyboard so you can play the embedded samples in the Standalone. The real
-    data-driven UI (background image, frame knobs, mode switcher) arrives in M4/M5.
+/** M5 editor: product name, engine version, a mode selector across the library's
+    modes, temporary dev FX controls, and an on-screen keyboard. The real
+    data-driven UI (background image, frame knobs) arrives in M4.
 */
 class Omni84AudioProcessorEditor : public juce::AudioProcessorEditor
 {
@@ -21,6 +21,8 @@ private:
     Omni84AudioProcessor& processorRef;
     juce::Label titleLabel;
     juce::Label versionLabel;
+    juce::Label modeLabel;
+    juce::ComboBox modeSelector;
     juce::MidiKeyboardComponent keyboard;
 
     // Temporary M3 dev controls for the Bass FX (effect[0]=lowpass, [1]=reverb).

@@ -9,18 +9,31 @@ Omni84AudioProcessorEditor::Omni84AudioProcessorEditor (Omni84AudioProcessor& p)
     titleLabel.setFont (juce::Font (juce::FontOptions (28.0f, juce::Font::bold)));
     addAndMakeVisible (titleLabel);
 
-    const auto mode = processorRef.getLoadedModeName();
-    versionLabel.setText (dm::SamplerEngine::getVersion()
-                              + (mode.isNotEmpty() ? "  —  mode: " + mode
-                                                   : juce::String ("  —  no embedded assets")),
-                          juce::dontSendNotification);
+    versionLabel.setText (dm::SamplerEngine::getVersion(), juce::dontSendNotification);
     versionLabel.setJustificationType (juce::Justification::centred);
     versionLabel.setFont (juce::Font (juce::FontOptions (13.0f)));
     addAndMakeVisible (versionLabel);
 
-    // Bass maps notes 24..42 — start the visible range there.
-    keyboard.setAvailableRange (24, 60);
-    keyboard.setLowestVisibleKey (24);
+    // --- Mode selector across all of the library's modes ---
+    modeLabel.setText ("Mode", juce::dontSendNotification);
+    modeLabel.setJustificationType (juce::Justification::centredRight);
+    addAndMakeVisible (modeLabel);
+
+    const auto modeNames = processorRef.getModeNames();
+    for (int i = 0; i < modeNames.size(); ++i)
+        modeSelector.addItem (modeNames[i], i + 1);   // item ids are 1-based
+    if (! modeNames.isEmpty())
+        modeSelector.setSelectedId (processorRef.getActiveModeIndex() + 1, juce::dontSendNotification);
+    modeSelector.setTextWhenNoChoicesAvailable ("(no embedded assets)");
+    modeSelector.onChange = [this]
+    {
+        processorRef.setActiveMode (modeSelector.getSelectedId() - 1);
+    };
+    addAndMakeVisible (modeSelector);
+
+    // Keyboard: show a broad range (modes map across different octaves).
+    keyboard.setAvailableRange (24, 96);
+    keyboard.setLowestVisibleKey (36);
     addAndMakeVisible (keyboard);
 
     // --- Temporary M3 dev FX controls (effect[0]=lowpass, effect[1]=reverb) ---
@@ -31,7 +44,7 @@ Omni84AudioProcessorEditor::Omni84AudioProcessorEditor (Omni84AudioProcessor& p)
 
     lowpassEnable.onClick = [this]
     {
-        processorRef.getEngine().setEffectEnabled (0, lowpassEnable.getToggleState());
+        processorRef.getEngine().setLowpassEnabled (lowpassEnable.getToggleState());
     };
     addAndMakeVisible (lowpassEnable);
 
@@ -42,7 +55,7 @@ Omni84AudioProcessorEditor::Omni84AudioProcessorEditor (Omni84AudioProcessor& p)
     lowpassFreq.setValue (15000.0, juce::dontSendNotification);
     lowpassFreq.onValueChange = [this]
     {
-        processorRef.getEngine().setEffectParam (0, "FX_FILTER_FREQUENCY", (float) lowpassFreq.getValue());
+        processorRef.getEngine().setLowpassFrequency ((float) lowpassFreq.getValue());
     };
     addAndMakeVisible (lowpassFreq);
     lowpassFreqLabel.setText ("Lowpass Hz", juce::dontSendNotification);
@@ -55,7 +68,7 @@ Omni84AudioProcessorEditor::Omni84AudioProcessorEditor (Omni84AudioProcessor& p)
     reverbMix.setValue (0.0, juce::dontSendNotification);
     reverbMix.onValueChange = [this]
     {
-        processorRef.getEngine().setEffectParam (1, "FX_MIX", (float) reverbMix.getValue());
+        processorRef.getEngine().setReverbMix ((float) reverbMix.getValue());
     };
     addAndMakeVisible (reverbMix);
     reverbMixLabel.setText ("Reverb mix", juce::dontSendNotification);
@@ -68,7 +81,7 @@ Omni84AudioProcessorEditor::Omni84AudioProcessorEditor (Omni84AudioProcessor& p)
     reverbGain.setValue (0.0, juce::dontSendNotification);
     reverbGain.onValueChange = [this]
     {
-        processorRef.getEngine().setEffectParam (1, "FX_OUTPUT_LEVEL", (float) reverbGain.getValue());
+        processorRef.getEngine().setReverbWetGainDb ((float) reverbGain.getValue());
     };
     addAndMakeVisible (reverbGain);
     reverbGainLabel.setText ("Reverb dB", juce::dontSendNotification);
@@ -91,6 +104,13 @@ void Omni84AudioProcessorEditor::resized()
     titleLabel.setBounds (area.removeFromTop (44));
     versionLabel.setBounds (area.removeFromTop (24));
     keyboard.setBounds (area.removeFromBottom (90));
+
+    area.removeFromTop (8);
+    {
+        auto modeRow = area.removeFromTop (28);
+        modeLabel.setBounds (modeRow.removeFromLeft (60));
+        modeSelector.setBounds (modeRow.removeFromLeft (260));
+    }
 
     area.removeFromTop (8);
     fxLabel.setBounds (area.removeFromTop (18));
