@@ -61,21 +61,17 @@ void Omni84AudioProcessor::loadEmbeddedLibrary()
     }
 
     loaded = ! library.modes.isEmpty() && sampleSource->size() > 0;
-   #endif
-}
 
-juce::String Omni84AudioProcessor::getLoadedModeName() const
-{
-    return loaded ? library.modes.getReference (0).name : juce::String();
+    // Hand the library to the engine (stores pointers; mode is built on prepare()).
+    if (loaded)
+        engine.setLibrary (library, *sampleSource);
+   #endif
 }
 
 void Omni84AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
+    // Builds the active mode's render unit for these audio settings.
     engine.prepare (sampleRate, samplesPerBlock, getTotalNumOutputChannels());
-
-    // Configure the engine for the current mode (M2: the single embedded mode).
-    if (loaded)
-        engine.setMode (library.modes.getReference (0), *sampleSource);
 }
 
 void Omni84AudioProcessor::releaseResources()
