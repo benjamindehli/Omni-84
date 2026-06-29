@@ -4,7 +4,9 @@
 #include <SamplerEngine.h>                 // from dehli_musikk_sampler_engine
 #include <audio/EmbeddedFlacSource.h>
 #include <model/ManifestLoader.h>          // brings Manifest.h (dm::PresetLibrary)
-#include "Parameters.h"
+#include <params/ManifestParameters.h>   // shared param machinery (engine)
+#include <ui/ManifestEditor.h>            // reusable editor + ManifestEditorHost (engine)
+#include <atomic>
 #include <functional>
 #include <memory>
 
@@ -16,6 +18,7 @@
     see ../../PLAN.md.
 */
 class Omni84AudioProcessor : public juce::AudioProcessor,
+                             public  dm::ManifestEditorHost,
                              private juce::AudioProcessorValueTreeState::Listener,
                              private juce::AsyncUpdater
 {
@@ -48,39 +51,24 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
     dm::SamplerEngine& getEngine() noexcept { return engine; }
+    bool isLoaded() const noexcept          { return loaded; }
 
-    /** The plugin's automatable parameters (named union across modes). */
-    juce::AudioProcessorValueTreeState& getApvts() noexcept { return *apvts; }
-
-    /** Invoked on the message thread after the active mode actually changes (from
-        the editor selector, host automation, or state restore) so the editor can
-        rebuild its face. Set by the editor; cleared in its destructor. */
-    std::function<void()> onModeChanged;
-
-    /** On-screen keyboard state — lets the Standalone be played without external
-        MIDI gear (the editor shows a MidiKeyboardComponent bound to it). */
-    juce::MidiKeyboardState& getKeyboardState() noexcept { return keyboardState; }
-
-    // Mode switcher (for the editor's selector).
-    juce::StringArray getModeNames() const     { return engine.getModeNames(); }
-    int  getActiveModeIndex() const             { return engine.getActiveModeIndex(); }
-    void setActiveMode (int index)              { engine.setActiveMode (index); }
-    bool isLoaded() const noexcept              { return loaded; }
+    // --- dm::ManifestEditorHost (drives the reusable editor) -------------------
+    juce::AudioProcessorValueTreeState& getApvts() override            { return *apvts; }
+    juce::MidiKeyboardState& getKeyboardState() override               { return keyboardState; }
+    juce::StringArray getModeNames() const override                    { return engine.getModeNames(); }
+    int  getActiveModeIndex() const override                           { return engine.getActiveModeIndex(); }
+    void setPitchWheel (int value14) override { uiPitchWheel.store (value14); }  // 0..16383, centre 8192
+    void setModWheel   (int value7)  override { uiModWheel.store (value7);  }    // CC1, 0..127
+    juce::Image loadImage (const juce::String& id) override;                     // BinaryData (see .cpp)
 
     /** The active mode (for the renderer + binding interpreter), or nullptr. */
-    const dm::Mode* getActiveMode() const
+    const dm::Mode* getActiveMode() const override
     {
         if (! loaded) return nullptr;
         const int i = engine.getActiveModeIndex();
         if (i < 0 || i >= library.modes.size()) return nullptr;
         return &library.modes.getReference (i);
-    }
-
-    /** The active mode's UI tree (for the data-driven renderer), or nullptr. */
-    const dm::Ui* getActiveModeUi() const
-    {
-        if (auto* m = getActiveMode()) return &m->ui;
-        return nullptr;
     }
 
 private:
@@ -104,6 +92,10 @@ private:
 
     // Built after the library loads (defaults are read from the manifest).
     std::unique_ptr<juce::AudioProcessorValueTreeState> apvts;
+
+    // Pending on-screen wheel values (-1 = nothing to send this block).
+    std::atomic<int> uiPitchWheel { -1 };
+    std::atomic<int> uiModWheel   { -1 };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Omni84AudioProcessor)
 };

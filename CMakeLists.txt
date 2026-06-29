@@ -20,8 +20,6 @@ juce_add_plugin(Omni84
 
 target_sources(Omni84 PRIVATE
     source/PluginProcessor.cpp
-    source/PluginEditor.cpp
-    source/Parameters.cpp
 )
 
 target_compile_definitions(Omni84 PUBLIC

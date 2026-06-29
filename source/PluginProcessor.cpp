@@ -14,20 +14,20 @@ Omni84AudioProcessor::Omni84AudioProcessor()
     // Build the parameter tree from the loaded manifest (defaults come from it),
     // then watch the Mode choice so host/state changes trigger a deferred switch.
     apvts = std::make_unique<juce::AudioProcessorValueTreeState> (
-        *this, nullptr, "PARAMS", omni84::params::createLayout (library));
-    apvts->addParameterListener (omni84::params::id::mode, this);
+        *this, nullptr, "PARAMS", dm::params::createLayout (library));
+    apvts->addParameterListener (dm::params::id::mode, this);
 }
 
 Omni84AudioProcessor::~Omni84AudioProcessor()
 {
     if (apvts != nullptr)
-        apvts->removeParameterListener (omni84::params::id::mode, this);
+        apvts->removeParameterListener (dm::params::id::mode, this);
 }
 
 void Omni84AudioProcessor::parameterChanged (const juce::String& paramID, float)
 {
     // Only the Mode param needs deferral; the rest are polled in processBlock.
-    if (paramID == omni84::params::id::mode)
+    if (paramID == dm::params::id::mode)
         triggerAsyncUpdate();
 }
 
@@ -36,7 +36,7 @@ void Omni84AudioProcessor::handleAsyncUpdate()
     if (apvts == nullptr)
         return;
 
-    const int requested = (int) apvts->getRawParameterValue (omni84::params::id::mode)->load();
+    const int requested = (int) apvts->getRawParameterValue (dm::params::id::mode)->load();
     if (requested != engine.getActiveModeIndex())
         engine.setActiveMode (requested);   // builds + lock-free swaps (message thread)
 
@@ -129,14 +129,50 @@ void Omni84AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
     // Merge on-screen keyboard events into the incoming MIDI (Standalone play).
     keyboardState.processNextMidiBuffer (midi, 0, buffer.getNumSamples(), true);
 
+    // Inject the on-screen pitch/mod wheels as MIDI (same path as a hardware controller).
+    if (const int pw = uiPitchWheel.exchange (-1); pw >= 0)
+        midi.addEvent (juce::MidiMessage::pitchWheel (1, pw), 0);
+    if (const int mw = uiModWheel.exchange (-1); mw >= 0)
+        midi.addEvent (juce::MidiMessage::controllerEvent (1, 1, mw), 0);
+
     // Push the current parameter values into the engine for the active mode. Done
     // every block (idempotent) so it survives a mode switch's override reset, and
     // so host automation reaches the engine with the editor closed.
     if (loaded && apvts != nullptr)
+    {
+        if (auto* br = apvts->getRawParameterValue (dm::params::id::pitchBendRange))
+            engine.setPitchBendRange (br->load());
         if (const auto* m = getActiveMode())
-            omni84::params::applyToEngine (engine, *m, *apvts);
+        {
+            dm::params::applyCcToParams (midi, *m, *apvts);     // mod wheel / CC → params
+            dm::params::applyNoteSwitches (midi, *m, *apvts);   // key-switches → chord order
+            dm::params::applyToEngine (engine, *m, *apvts);
+        }
+    }
 
     engine.processBlock (buffer, midi, getPlayHead());
+}
+
+juce::Image Omni84AudioProcessor::loadImage (const juce::String& id)
+{
+   #if OMNI84_HAS_ASSETS
+    // Resolve a manifest image id ("img:Knob" → the "Knob.png" embedded resource).
+    const auto stem = id.fromLastOccurrenceOf (":", false, false);
+    for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
+    {
+        const juce::String fn (BinaryData::originalFilenames[i]);
+        const bool isImage = fn.endsWithIgnoreCase (".png") || fn.endsWithIgnoreCase (".jpg")
+                          || fn.endsWithIgnoreCase (".jpeg");
+        if (isImage && fn.upToLastOccurrenceOf (".", false, false) == stem)
+        {
+            int size = 0;
+            if (const char* data = BinaryData::getNamedResource (BinaryData::namedResourceList[i], size))
+                return juce::ImageFileFormat::loadFrom (data, (size_t) size);
+        }
+    }
+   #endif
+    juce::ignoreUnused (id);
+    return {};
 }
 
 juce::AudioProcessorEditor* Omni84AudioProcessor::createEditor()
