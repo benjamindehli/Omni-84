@@ -40,10 +40,11 @@ target_link_libraries(Omni84 PRIVATE
 # Embedded via juce_add_binary_data; the processor reads them from BinaryData at load.
 file(GLOB OMNI84_ASSETS CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/assets/manifest.json"
-    "${CMAKE_CURRENT_SOURCE_DIR}/assets/*.flac"
-    "${CMAKE_CURRENT_SOURCE_DIR}/assets/*.png"
-    "${CMAKE_CURRENT_SOURCE_DIR}/assets/*.jpg"
-    "${CMAKE_CURRENT_SOURCE_DIR}/assets/*.jpeg")
+    "${CMAKE_CURRENT_SOURCE_DIR}/assets/samples/*.flac"
+    "${CMAKE_CURRENT_SOURCE_DIR}/assets/ir/*.flac"
+    "${CMAKE_CURRENT_SOURCE_DIR}/assets/images/*.png"
+    "${CMAKE_CURRENT_SOURCE_DIR}/assets/images/*.jpg"
+    "${CMAKE_CURRENT_SOURCE_DIR}/assets/images/*.jpeg")
 
 if(OMNI84_ASSETS)
     juce_add_binary_data(Omni84Assets SOURCES ${OMNI84_ASSETS})
