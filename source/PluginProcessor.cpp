@@ -151,6 +151,11 @@ void Omni84AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
     }
 
     engine.processBlock (buffer, midi, getPlayHead());
+
+    // Output peak for the editor's level meter (max-since-read; meter resets it).
+    const float blockPeak = buffer.getMagnitude (0, buffer.getNumSamples());
+    if (blockPeak > outputPeak.load (std::memory_order_relaxed))
+        outputPeak.store (blockPeak, std::memory_order_relaxed);
 }
 
 juce::Image Omni84AudioProcessor::loadImage (const juce::String& id)

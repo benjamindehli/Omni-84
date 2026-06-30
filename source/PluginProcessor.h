@@ -70,6 +70,7 @@ public:
         if (i < 0 || i >= library.modes.size()) return nullptr;
         return &library.modes.getReference (i);
     }
+    float readOutputPeak() override { return outputPeak.exchange (0.0f, std::memory_order_relaxed); }
 
 private:
     /** Decode the embedded manifest + FLAC bundle into the engine's sample source
@@ -96,6 +97,7 @@ private:
     // Pending on-screen wheel values (-1 = nothing to send this block).
     std::atomic<int> uiPitchWheel { -1 };
     std::atomic<int> uiModWheel   { -1 };
+    std::atomic<float> outputPeak { 0.0f };   // max |sample| since the editor last read it
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Omni84AudioProcessor)
 };
