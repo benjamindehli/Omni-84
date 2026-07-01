@@ -47,8 +47,49 @@ void Omni84AudioProcessor::handleAsyncUpdate()
 void Omni84AudioProcessor::loadEmbeddedLibrary()
 {
    #if OMNI84_HAS_ASSETS
-    auto json = juce::String::fromUTF8 (BinaryData::manifest_json, BinaryData::manifest_jsonSize);
-    auto parsed = dm::loadManifestFromJson (json);
+    // Every embedded asset is looked up by its original (leaf) file name.
+    auto findResource = [] (const juce::String& filename, int& sizeOut) -> const char*
+    {
+        for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
+            if (filename == BinaryData::originalFilenames[i])
+                return BinaryData::getNamedResource (BinaryData::namedResourceList[i], sizeOut);
+        return nullptr;
+    };
+    auto loadJson = [&findResource] (const juce::String& filename) -> juce::var
+    {
+        int size = 0;
+        if (const char* data = findResource (filename, size))
+        {
+            juce::var v;
+            if (juce::JSON::parse (juce::String::fromUTF8 (data, size), v).wasOk())
+                return v;
+        }
+        return {};
+    };
+
+    // The manifest is embedded SPLIT — manifest/index.json + modes/<name>.json
+    // (+ optional partials/<name>.json) — and merged into one library here. There is
+    // no single manifest.json in the binary; the split files are the source of truth.
+    auto index = loadJson ("index.json");
+    if (index.isVoid())
+    {
+        DBG ("Omni84: no embedded manifest/index.json");
+        return;
+    }
+
+    juce::StringArray resolveErrors;
+    auto merged = dm::resolveSplitManifest (
+        index,
+        [&loadJson] (const juce::String& n) { return loadJson (n + ".json"); },   // modes/<n>.json
+        [&loadJson] (const juce::String& n) { return loadJson (n + ".json"); },   // partials/<n>.json
+        resolveErrors);
+    if (! resolveErrors.isEmpty())
+    {
+        DBG ("Omni84: split manifest resolve failed: " << resolveErrors.joinIntoString ("; "));
+        return;
+    }
+
+    auto parsed = dm::loadManifest (merged);
     if (! parsed.ok)
     {
         DBG ("Omni84: manifest load failed: " << parsed.errors.joinIntoString ("; "));
@@ -61,14 +102,6 @@ void Omni84AudioProcessor::loadEmbeddedLibrary()
     // The manifest is the source of truth for asset ids. Resolve every id it
     // references (sample sources + effect IRs) to its embedded FLAC by original
     // file name — "flac:Bass_0C" and "ir:Space" both map to "<stem>.flac".
-    auto findResource = [] (const juce::String& filename, int& sizeOut) -> const char*
-    {
-        for (int i = 0; i < BinaryData::namedResourceListSize; ++i)
-            if (filename == BinaryData::originalFilenames[i])
-                return BinaryData::getNamedResource (BinaryData::namedResourceList[i], sizeOut);
-        return nullptr;
-    };
-
     juce::StringArray ids;
     for (const auto& m : library.modes)
     {
@@ -85,7 +118,7 @@ void Omni84AudioProcessor::loadEmbeddedLibrary()
         const auto filename = id.fromLastOccurrenceOf (":", false, false) + ".flac";
         int size = 0;
         if (const char* data = findResource (filename, size))
-            sampleSource->addFlac (id, data, (size_t) size);
+            sampleSource->registerFlac (id, data, (size_t) size);   // decoded lazily per active mode
         else
             DBG ("Omni84: no embedded asset for id " << id << " (" << filename << ")");
     }

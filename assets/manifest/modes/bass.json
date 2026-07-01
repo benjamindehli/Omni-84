@@ -1,0 +1,419 @@
+{
+  "name": "Bass",
+  "amp": {
+    "attack": 0.0,
+    "decay": 0.0,
+    "sustain": 1.0,
+    "release": 0.1,
+    "volume": 1.0,
+    "velTrack": 0.0,
+    "enabled": true
+  },
+  "tags": [
+    {
+      "name": "monophonic",
+      "polyphony": 1
+    }
+  ],
+  "groups": [
+    {
+      "tags": [
+        "monophonic"
+      ],
+      "silencing": {
+        "mode": "normal",
+        "byTags": [
+          "monophonic"
+        ]
+      },
+      "samples": [
+        {
+          "source": "flac:Bass_0C",
+          "loNote": 24,
+          "hiNote": 24,
+          "rootNote": 24,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0C#",
+          "loNote": 25,
+          "hiNote": 25,
+          "rootNote": 25,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0D",
+          "loNote": 26,
+          "hiNote": 26,
+          "rootNote": 26,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0D#",
+          "loNote": 27,
+          "hiNote": 27,
+          "rootNote": 27,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0E",
+          "loNote": 28,
+          "hiNote": 28,
+          "rootNote": 28,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0F",
+          "loNote": 29,
+          "hiNote": 29,
+          "rootNote": 29,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0F#",
+          "loNote": 30,
+          "hiNote": 30,
+          "rootNote": 30,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0G",
+          "loNote": 31,
+          "hiNote": 31,
+          "rootNote": 31,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0G#",
+          "loNote": 32,
+          "hiNote": 32,
+          "rootNote": 32,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0A",
+          "loNote": 33,
+          "hiNote": 33,
+          "rootNote": 33,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0A#",
+          "loNote": 34,
+          "hiNote": 34,
+          "rootNote": 34,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_0B",
+          "loNote": 35,
+          "hiNote": 35,
+          "rootNote": 35,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_1C",
+          "loNote": 36,
+          "hiNote": 36,
+          "rootNote": 36,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_1C#",
+          "loNote": 37,
+          "hiNote": 37,
+          "rootNote": 37,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_1D",
+          "loNote": 38,
+          "hiNote": 38,
+          "rootNote": 38,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_1D#",
+          "loNote": 39,
+          "hiNote": 39,
+          "rootNote": 39,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_1E",
+          "loNote": 40,
+          "hiNote": 40,
+          "rootNote": 40,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_1F",
+          "loNote": 41,
+          "hiNote": 41,
+          "rootNote": 41,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        },
+        {
+          "source": "flac:Bass_1F#",
+          "loNote": 42,
+          "hiNote": 42,
+          "rootNote": 42,
+          "lengthFrames": 26840,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "type": "lowpass",
+      "enabled": false,
+      "frequency": 15000.0
+    },
+    {
+      "type": "convolution",
+      "enabled": true,
+      "wet": 0.0,
+      "outputLevel": 12.0,
+      "ir": "ir:Space"
+    }
+  ],
+  "ui": {
+    "background": "img:background_bass",
+    "width": 812,
+    "height": 375,
+    "layoutMode": "relative",
+    "bgMode": "top_left",
+    "tabs": [
+      {
+        "name": "main",
+        "controls": [
+          {
+            "rect": {
+              "x": 417,
+              "y": 87,
+              "width": 49,
+              "height": 49
+            },
+            "label": "Sustain",
+            "valueType": "float",
+            "min": 0.03,
+            "max": 0.5,
+            "value": 0.03,
+            "textColor": "FF000000",
+            "style": "custom_skin_vertical_drag",
+            "skin": {
+              "image": "img:Knob",
+              "numFrames": 101,
+              "orientation": "vertical"
+            },
+            "mouseDragSensitivity": 100.0,
+            "bindings": [
+              {
+                "type": "amp",
+                "level": "instrument",
+                "parameter": "ENV_RELEASE"
+              }
+            ]
+          },
+          {
+            "rect": {
+              "x": 417,
+              "y": 190,
+              "width": 49,
+              "height": 49
+            },
+            "label": "Lowpass",
+            "valueType": "float",
+            "min": 150.0,
+            "max": 15000.0,
+            "value": 15000.0,
+            "textColor": "FF000000",
+            "style": "custom_skin_vertical_drag",
+            "skin": {
+              "image": "img:Knob",
+              "numFrames": 101,
+              "orientation": "vertical"
+            },
+            "mouseDragSensitivity": 100.0,
+            "bindings": [
+              {
+                "type": "effect",
+                "level": "instrument",
+                "parameter": "FX_FILTER_FREQUENCY",
+                "effectIndex": 0
+              }
+            ]
+          },
+          {
+            "rect": {
+              "x": 510,
+              "y": 190,
+              "width": 49,
+              "height": 49
+            },
+            "label": "Reverb",
+            "valueType": "percent",
+            "min": 0.0,
+            "max": 100.0,
+            "value": 0.0,
+            "textColor": "FF000000",
+            "style": "custom_skin_vertical_drag",
+            "skin": {
+              "image": "img:Knob",
+              "numFrames": 101,
+              "orientation": "vertical"
+            },
+            "mouseDragSensitivity": 100.0,
+            "bindings": [
+              {
+                "type": "effect",
+                "level": "instrument",
+                "parameter": "FX_MIX",
+                "factor": 0.01,
+                "effectIndex": 1
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "rect": {
+              "x": 323,
+              "y": 195,
+              "width": 45,
+              "height": 41
+            },
+            "style": "image",
+            "value": 0,
+            "states": [
+              {
+                "name": "Off",
+                "mainImage": "img:button_blue-off",
+                "hoverImage": "img:button_blue-off",
+                "clickImage": "img:button_blue-on",
+                "bindings": [
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 0,
+                    "translationValue": false
+                  },
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 1,
+                    "translationValue": false
+                  },
+                  {
+                    "type": "control",
+                    "level": "ui",
+                    "parameter": "PATH",
+                    "translation": "fixed_value",
+                    "controlIndex": 4,
+                    "translationValue": "img:light_off"
+                  }
+                ]
+              },
+              {
+                "name": "On",
+                "mainImage": "img:button_blue-on",
+                "hoverImage": "img:button_blue-on",
+                "clickImage": "img:button_blue-off",
+                "bindings": [
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 0,
+                    "translationValue": true
+                  },
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 1,
+                    "translationValue": true
+                  },
+                  {
+                    "type": "control",
+                    "level": "ui",
+                    "parameter": "PATH",
+                    "translation": "fixed_value",
+                    "controlIndex": 4,
+                    "translationValue": "img:light_on"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "images": [
+          {
+            "rect": {
+              "x": 302,
+              "y": 169,
+              "width": 15,
+              "height": 15
+            },
+            "image": "img:light_off",
+            "aspectRatioMode": "preserve",
+            "controlIndex": 4
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "colors": [
+        {
+          "loNote": 24,
+          "hiNote": 42,
+          "color": "FF222222"
+        }
+      ]
+    }
+  }
+}

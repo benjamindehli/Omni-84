@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "format": "dmse-manifest",
+  "library": "Omni-84",
+  "modes": [
+    "bass",
+    "chords-looped",
+    "chords",
+    "drums",
+    "keyboard",
+    "sonicstrings-autostrum",
+    "sonicstrings"
+  ]
+}
