@@ -126,7 +126,7 @@
 
       <!-- Strum mode -->
       <menu x="124" y="120" width="162" height="22" value="1">
-        <option name="Ascending (Omnichord)">
+        <option name="Ascending">
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="0" parameter="SEQ_INDEX" translation="fixed_value" translationValue="0"></binding>
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="1" parameter="SEQ_INDEX" translation="fixed_value" translationValue="1"></binding>
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="2" parameter="SEQ_INDEX" translation="fixed_value" translationValue="2"></binding>
@@ -212,7 +212,7 @@
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="82" parameter="SEQ_INDEX" translation="fixed_value" translationValue="82"></binding>
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="83" parameter="SEQ_INDEX" translation="fixed_value" translationValue="83"></binding>
         </option>
-        <option name="Descending (Omnichord)">
+        <option name="Descending">
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="0" parameter="SEQ_INDEX" translation="fixed_value" translationValue="84"></binding>
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="1" parameter="SEQ_INDEX" translation="fixed_value" translationValue="85"></binding>
           <binding level="midi" type="note_binding" bindingIndex="0" noteIndex="2" parameter="SEQ_INDEX" translation="fixed_value" translationValue="86"></binding>
