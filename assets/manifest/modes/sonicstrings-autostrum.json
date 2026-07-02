@@ -40153,7 +40153,7 @@
             "value": 1,
             "options": [
               {
-                "name": "Ascending (Omnichord)",
+                "name": "Ascending",
                 "seqIndex": 0,
                 "bindings": [
                   {
@@ -40915,7 +40915,7 @@
                 ]
               },
               {
-                "name": "Descending (Omnichord)",
+                "name": "Descending",
                 "seqIndex": 84,
                 "bindings": [
                   {
