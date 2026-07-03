@@ -2,6 +2,7 @@
   "schema": 1,
   "format": "dmse-manifest",
   "library": "Omni-84",
+  "gainDb": -13.0,
   "modes": [
     "bass",
     "chords-looped",
