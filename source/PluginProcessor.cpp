@@ -175,6 +175,8 @@ void Omni84AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
     {
         if (auto* br = apvts->getRawParameterValue (dm::params::id::pitchBendRange))
             engine.setPitchBendRange (br->load());
+        if (auto* mo = apvts->getRawParameterValue (dm::params::id::masterOutput))
+            engine.setMasterOutputGain (juce::Decibels::decibelsToGain (mo->load(), -60.0f));
         if (const auto* m = getActiveMode())
         {
             dm::params::applyCcToParams (midi, *m, *apvts);     // mod wheel / CC → params
