@@ -71,6 +71,7 @@ public:
         return &library.modes.getReference (i);
     }
     float readOutputPeak() override { return outputPeak.exchange (0.0f, std::memory_order_relaxed); }
+    juce::String getPluginVersion() const override { return JucePlugin_VersionString; }
 
 private:
     /** Decode the embedded manifest + FLAC bundle into the engine's sample source
