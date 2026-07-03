@@ -1,4 +1,5 @@
 # omni-84-plugin — the distributable product (VST3 / AU / Standalone).
+# Thin wrapper around dehli_musikk_sampler_engine (dm::ManifestPluginProcessor).
 
 juce_add_plugin(Omni84
     COMPANY_NAME            "DehliMusikk"
@@ -19,7 +20,7 @@ juce_add_plugin(Omni84
 )
 
 target_sources(Omni84 PRIVATE
-    source/PluginProcessor.cpp
+    source/Plugin.cpp
 )
 
 target_compile_definitions(Omni84 PUBLIC
