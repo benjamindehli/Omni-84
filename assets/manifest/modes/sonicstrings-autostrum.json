@@ -11,6 +11,7 @@
   },
   "groups": [
     {
+      "uid": "grp_0",
       "samples": [
         {
           "source": "flac:SonicStrings1_1F#",
@@ -555,6 +556,7 @@
       ]
     },
     {
+      "uid": "grp_1",
       "samples": [
         {
           "source": "flac:SonicStrings2_1F#",
@@ -1101,11 +1103,13 @@
   ],
   "effects": [
     {
+      "id": "fx_lowpass",
       "type": "lowpass",
       "enabled": true,
       "frequency": 20000.0
     },
     {
+      "id": "fx_convolution",
       "type": "convolution",
       "enabled": true,
       "wet": 0.0,
@@ -39173,6 +39177,8 @@
     {
       "cc": 1,
       "parameter": "SEQ_PLAYBACK_RATE",
+      "targetId": "ctl_5",
+      "controlIndex": 7,
       "normMin": 0.0,
       "normMax": 1.0
     }
@@ -39206,6 +39212,7 @@
         "name": "main",
         "controls": [
           {
+            "id": "ctl_0",
             "rect": {
               "x": 323,
               "y": 87,
@@ -39225,16 +39232,19 @@
               "orientation": "vertical"
             },
             "mouseDragSensitivity": 100.0,
+            "controlIndex": 0,
             "bindings": [
               {
                 "type": "amp",
                 "level": "group",
+                "targetId": "grp_0",
                 "parameter": "AMP_VOLUME",
                 "groupIndex": 0
               }
             ]
           },
           {
+            "id": "ctl_1",
             "rect": {
               "x": 417,
               "y": 87,
@@ -39254,16 +39264,19 @@
               "orientation": "vertical"
             },
             "mouseDragSensitivity": 100.0,
+            "controlIndex": 1,
             "bindings": [
               {
                 "type": "amp",
                 "level": "group",
+                "targetId": "grp_1",
                 "parameter": "AMP_VOLUME",
                 "groupIndex": 1
               }
             ]
           },
           {
+            "id": "ctl_2",
             "rect": {
               "x": 511,
               "y": 87,
@@ -39283,6 +39296,7 @@
               "orientation": "vertical"
             },
             "mouseDragSensitivity": 100.0,
+            "controlIndex": 2,
             "bindings": [
               {
                 "type": "amp",
@@ -39297,6 +39311,7 @@
             ]
           },
           {
+            "id": "ctl_3",
             "rect": {
               "x": 417,
               "y": 190,
@@ -39316,16 +39331,19 @@
               "orientation": "vertical"
             },
             "mouseDragSensitivity": 100.0,
+            "controlIndex": 3,
             "bindings": [
               {
                 "type": "effect",
                 "level": "instrument",
+                "targetId": "fx_lowpass",
                 "parameter": "FX_FILTER_FREQUENCY",
                 "effectIndex": 0
               }
             ]
           },
           {
+            "id": "ctl_4",
             "rect": {
               "x": 510,
               "y": 190,
@@ -39345,10 +39363,12 @@
               "orientation": "vertical"
             },
             "mouseDragSensitivity": 100.0,
+            "controlIndex": 4,
             "bindings": [
               {
                 "type": "effect",
                 "level": "instrument",
+                "targetId": "fx_convolution",
                 "parameter": "FX_MIX",
                 "factor": 0.01,
                 "effectIndex": 1
@@ -39356,6 +39376,7 @@
             ]
           },
           {
+            "id": "ctl_5",
             "rect": {
               "x": 229,
               "y": 87,
@@ -39375,6 +39396,7 @@
               "orientation": "vertical"
             },
             "mouseDragSensitivity": 100.0,
+            "controlIndex": 7,
             "bindings": [
               {
                 "type": "note_binding",
@@ -40053,6 +40075,7 @@
         ],
         "buttons": [
           {
+            "id": "btn_0",
             "rect": {
               "x": 323,
               "y": 195,
@@ -40061,6 +40084,7 @@
             },
             "style": "image",
             "value": 0,
+            "controlIndex": 5,
             "states": [
               {
                 "name": "Off",
@@ -40071,6 +40095,7 @@
                   {
                     "type": "effect",
                     "level": "instrument",
+                    "targetId": "fx_lowpass",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
                     "effectIndex": 0,
@@ -40079,6 +40104,7 @@
                   {
                     "type": "effect",
                     "level": "instrument",
+                    "targetId": "fx_convolution",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
                     "effectIndex": 1,
@@ -40087,6 +40113,7 @@
                   {
                     "type": "control",
                     "level": "ui",
+                    "targetId": "img_0",
                     "parameter": "PATH",
                     "translation": "fixed_value",
                     "controlIndex": 6,
@@ -40103,6 +40130,7 @@
                   {
                     "type": "effect",
                     "level": "instrument",
+                    "targetId": "fx_lowpass",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
                     "effectIndex": 0,
@@ -40111,6 +40139,7 @@
                   {
                     "type": "effect",
                     "level": "instrument",
+                    "targetId": "fx_convolution",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
                     "effectIndex": 1,
@@ -40119,6 +40148,7 @@
                   {
                     "type": "control",
                     "level": "ui",
+                    "targetId": "img_0",
                     "parameter": "PATH",
                     "translation": "fixed_value",
                     "controlIndex": 6,
@@ -40131,6 +40161,7 @@
         ],
         "images": [
           {
+            "id": "img_0",
             "rect": {
               "x": 302,
               "y": 169,
@@ -40144,6 +40175,7 @@
         ],
         "menus": [
           {
+            "id": "menu_0",
             "rect": {
               "x": 124,
               "y": 170,
@@ -40151,6 +40183,7 @@
               "height": 22
             },
             "value": 1,
+            "controlIndex": 8,
             "options": [
               {
                 "name": "Ascending",
