@@ -38,3 +38,7 @@ Testing/
 *.p12
 *.cer
 *.mobileprovision
+
+# Linux release tarballs
+*.tar.gz
+packaging/linux/build/
