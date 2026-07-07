@@ -1014,6 +1014,43 @@
           "hiNote": 119,
           "color": "FFCA8A04"
         }
+      ],
+      "labels": [
+        {
+          "loNote": 36,
+          "hiNote": 47,
+          "text": "Major"
+        },
+        {
+          "loNote": 48,
+          "hiNote": 59,
+          "text": "Minor"
+        },
+        {
+          "loNote": 60,
+          "hiNote": 71,
+          "text": "7"
+        },
+        {
+          "loNote": 72,
+          "hiNote": 83,
+          "text": "Minor7"
+        },
+        {
+          "loNote": 84,
+          "hiNote": 95,
+          "text": "Major7"
+        },
+        {
+          "loNote": 96,
+          "hiNote": 107,
+          "text": "Diminished"
+        },
+        {
+          "loNote": 108,
+          "hiNote": 119,
+          "text": "Augmented"
+        }
       ]
     }
   }
