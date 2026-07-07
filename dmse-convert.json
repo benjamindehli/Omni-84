@@ -1,0 +1,40 @@
+{
+    "gain": -13,
+    "normalizeIr": true,
+    "reverbGain": 12,
+    "omnichordStrum": true,
+    "strumKeyLabels": ["↑", "↓"],
+    "keyboardLabels": {
+        "Chords": [
+            { "loNote": 36, "hiNote": 47, "text": "Major" },
+            { "loNote": 48, "hiNote": 59, "text": "Minor" },
+            { "loNote": 60, "hiNote": 71, "text": "7" },
+            { "loNote": 72, "hiNote": 83, "text": "Minor7" },
+            { "loNote": 84, "hiNote": 95, "text": "Major7" },
+            { "loNote": 96, "hiNote": 107, "text": "Diminished" },
+            { "loNote": 108, "hiNote": 119, "text": "Augmented" }
+        ],
+        "Chords (Looped)": [
+            { "loNote": 36, "hiNote": 47, "text": "Major" },
+            { "loNote": 48, "hiNote": 59, "text": "Minor" },
+            { "loNote": 60, "hiNote": 71, "text": "7" },
+            { "loNote": 72, "hiNote": 83, "text": "Minor7" },
+            { "loNote": 84, "hiNote": 95, "text": "Major7" },
+            { "loNote": 96, "hiNote": 107, "text": "Diminished" },
+            { "loNote": 108, "hiNote": 119, "text": "Augmented" }
+        ]
+    },
+    "keyboardColors": {
+        "SonicStrings (AutoStrum)": [
+            { "loNote": 24, "hiNote": 24, "color": "FF0891B2" },
+            { "loNote": 26, "hiNote": 26, "color": "FF0891B2" },
+            { "loNote": 36, "hiNote": 47, "color": "FFDC2626" },
+            { "loNote": 48, "hiNote": 59, "color": "FF2563EB" },
+            { "loNote": 60, "hiNote": 71, "color": "FF65A30D" },
+            { "loNote": 72, "hiNote": 83, "color": "FFC026D3" },
+            { "loNote": 84, "hiNote": 95, "color": "FFEA580C" },
+            { "loNote": 96, "hiNote": 107, "color": "FF059669" },
+            { "loNote": 108, "hiNote": 119, "color": "FFCA8A04" }
+        ]
+    }
+}
