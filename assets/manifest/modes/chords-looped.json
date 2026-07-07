@@ -1,0 +1,1646 @@
+{
+  "name": "Chords (Looped)",
+  "amp": {
+    "attack": 0.0,
+    "decay": 0.0,
+    "sustain": 1.0,
+    "release": 0.1,
+    "volume": 1.0,
+    "velTrack": 0.0,
+    "enabled": true
+  },
+  "tags": [
+    {
+      "name": "monophonic",
+      "polyphony": 1
+    }
+  ],
+  "groups": [
+    {
+      "uid": "grp_0",
+      "tags": [
+        "monophonic"
+      ],
+      "loopCrossfadeMode": "linear",
+      "silencing": {
+        "mode": "normal"
+      },
+      "samples": [
+        {
+          "source": "flac:Chords_1C",
+          "loNote": 36,
+          "hiNote": 36,
+          "rootNote": 36,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 128521,
+            "end": 343375,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1C#",
+          "loNote": 37,
+          "hiNote": 37,
+          "rootNote": 37,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 172892,
+            "end": 394011,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1D",
+          "loNote": 38,
+          "hiNote": 38,
+          "rootNote": 38,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 124236,
+            "end": 424238,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1D#",
+          "loNote": 39,
+          "hiNote": 39,
+          "rootNote": 39,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 343374,
+            "end": 448857,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1E",
+          "loNote": 40,
+          "hiNote": 40,
+          "rootNote": 40,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 239834,
+            "end": 367754,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1F",
+          "loNote": 41,
+          "hiNote": 41,
+          "rootNote": 41,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 191163,
+            "end": 333440,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1F#",
+          "loNote": 42,
+          "hiNote": 42,
+          "rootNote": 42,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 164040,
+            "end": 397380,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1G",
+          "loNote": 43,
+          "hiNote": 43,
+          "rootNote": 43,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 270643,
+            "end": 371958,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1G#",
+          "loNote": 44,
+          "hiNote": 44,
+          "rootNote": 44,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 229505,
+            "end": 413794,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1A",
+          "loNote": 45,
+          "hiNote": 45,
+          "rootNote": 45,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 254792,
+            "end": 416879,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1A#",
+          "loNote": 46,
+          "hiNote": 46,
+          "rootNote": 46,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 174350,
+            "end": 397240,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_1B",
+          "loNote": 47,
+          "hiNote": 47,
+          "rootNote": 47,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 170056,
+            "end": 437101,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2C",
+          "loNote": 48,
+          "hiNote": 48,
+          "rootNote": 48,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 303306,
+            "end": 412916,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2C#",
+          "loNote": 49,
+          "hiNote": 49,
+          "rootNote": 49,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 152650,
+            "end": 303307,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2D",
+          "loNote": 50,
+          "hiNote": 50,
+          "rootNote": 50,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 9169,
+            "end": 427990,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2D#",
+          "loNote": 51,
+          "hiNote": 51,
+          "rootNote": 51,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 259276,
+            "end": 386309,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2E",
+          "loNote": 52,
+          "hiNote": 52,
+          "rootNote": 52,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 199939,
+            "end": 288002,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2F",
+          "loNote": 53,
+          "hiNote": 53,
+          "rootNote": 53,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 91496,
+            "end": 220546,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2F#",
+          "loNote": 54,
+          "hiNote": 54,
+          "rootNote": 54,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 28305,
+            "end": 270905,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2G",
+          "loNote": 55,
+          "hiNote": 55,
+          "rootNote": 55,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 5650,
+            "end": 423504,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2G#",
+          "loNote": 56,
+          "hiNote": 56,
+          "rootNote": 56,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 284327,
+            "end": 374366,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2A",
+          "loNote": 57,
+          "hiNote": 57,
+          "rootNote": 57,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 2991,
+            "end": 332724,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2A#",
+          "loNote": 58,
+          "hiNote": 58,
+          "rootNote": 58,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 54281,
+            "end": 421811,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_2B",
+          "loNote": 59,
+          "hiNote": 59,
+          "rootNote": 59,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 169723,
+            "end": 435129,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3C",
+          "loNote": 60,
+          "hiNote": 60,
+          "rootNote": 60,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 163473,
+            "end": 417454,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3C#",
+          "loNote": 61,
+          "hiNote": 61,
+          "rootNote": 61,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 13384,
+            "end": 430095,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3D",
+          "loNote": 62,
+          "hiNote": 62,
+          "rootNote": 62,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 121433,
+            "end": 310863,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3D#",
+          "loNote": 63,
+          "hiNote": 63,
+          "rootNote": 63,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 290514,
+            "end": 433849,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3E",
+          "loNote": 64,
+          "hiNote": 64,
+          "rootNote": 64,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 115947,
+            "end": 410861,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3F",
+          "loNote": 65,
+          "hiNote": 65,
+          "rootNote": 65,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 86630,
+            "end": 417683,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3F#",
+          "loNote": 66,
+          "hiNote": 66,
+          "rootNote": 66,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 297428,
+            "end": 424402,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3G",
+          "loNote": 67,
+          "hiNote": 67,
+          "rootNote": 67,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 212993,
+            "end": 445804,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3G#",
+          "loNote": 68,
+          "hiNote": 68,
+          "rootNote": 68,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 196488,
+            "end": 405591,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3A",
+          "loNote": 69,
+          "hiNote": 69,
+          "rootNote": 69,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 36552,
+            "end": 417583,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3A#",
+          "loNote": 70,
+          "hiNote": 70,
+          "rootNote": 70,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 210215,
+            "end": 431314,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_3B",
+          "loNote": 71,
+          "hiNote": 71,
+          "rootNote": 71,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 155157,
+            "end": 249429,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4C",
+          "loNote": 72,
+          "hiNote": 72,
+          "rootNote": 72,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 74367,
+            "end": 382557,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4C#",
+          "loNote": 73,
+          "hiNote": 73,
+          "rootNote": 73,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 62317,
+            "end": 436085,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4D",
+          "loNote": 74,
+          "hiNote": 74,
+          "rootNote": 74,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 173954,
+            "end": 393083,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4D#",
+          "loNote": 75,
+          "hiNote": 75,
+          "rootNote": 75,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 41275,
+            "end": 405871,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4E",
+          "loNote": 76,
+          "hiNote": 76,
+          "rootNote": 76,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 225956,
+            "end": 411601,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4F",
+          "loNote": 77,
+          "hiNote": 77,
+          "rootNote": 77,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 162007,
+            "end": 292376,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4F#",
+          "loNote": 78,
+          "hiNote": 78,
+          "rootNote": 78,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 11615,
+            "end": 188829,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4G",
+          "loNote": 79,
+          "hiNote": 79,
+          "rootNote": 79,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 244029,
+            "end": 430373,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4G#",
+          "loNote": 80,
+          "hiNote": 80,
+          "rootNote": 80,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 14949,
+            "end": 244030,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4A",
+          "loNote": 81,
+          "hiNote": 81,
+          "rootNote": 81,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 86761,
+            "end": 435966,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4A#",
+          "loNote": 82,
+          "hiNote": 82,
+          "rootNote": 82,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 72750,
+            "end": 393272,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_4B",
+          "loNote": 83,
+          "hiNote": 83,
+          "rootNote": 83,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 166178,
+            "end": 407822,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5C",
+          "loNote": 84,
+          "hiNote": 84,
+          "rootNote": 84,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 156074,
+            "end": 254263,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5C#",
+          "loNote": 85,
+          "hiNote": 85,
+          "rootNote": 85,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 133082,
+            "end": 399282,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5D",
+          "loNote": 86,
+          "hiNote": 86,
+          "rootNote": 86,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 118148,
+            "end": 330044,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5D#",
+          "loNote": 87,
+          "hiNote": 87,
+          "rootNote": 87,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 151177,
+            "end": 408181,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5E",
+          "loNote": 88,
+          "hiNote": 88,
+          "rootNote": 88,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 48959,
+            "end": 404200,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5F",
+          "loNote": 89,
+          "hiNote": 89,
+          "rootNote": 89,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 1915,
+            "end": 410497,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5F#",
+          "loNote": 90,
+          "hiNote": 90,
+          "rootNote": 90,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 42948,
+            "end": 390065,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5G",
+          "loNote": 91,
+          "hiNote": 91,
+          "rootNote": 91,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 205281,
+            "end": 327041,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5G#",
+          "loNote": 92,
+          "hiNote": 92,
+          "rootNote": 92,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 308365,
+            "end": 382202,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5A",
+          "loNote": 93,
+          "hiNote": 93,
+          "rootNote": 93,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 47946,
+            "end": 406212,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5A#",
+          "loNote": 94,
+          "hiNote": 94,
+          "rootNote": 94,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 285800,
+            "end": 435357,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_5B",
+          "loNote": 95,
+          "hiNote": 95,
+          "rootNote": 95,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 177827,
+            "end": 340705,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6C",
+          "loNote": 96,
+          "hiNote": 96,
+          "rootNote": 96,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 4115,
+            "end": 435228,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6C#",
+          "loNote": 97,
+          "hiNote": 97,
+          "rootNote": 97,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 9070,
+            "end": 416557,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6D",
+          "loNote": 98,
+          "hiNote": 98,
+          "rootNote": 98,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 131640,
+            "end": 264816,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6D#",
+          "loNote": 99,
+          "hiNote": 99,
+          "rootNote": 99,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 49704,
+            "end": 425533,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6E",
+          "loNote": 100,
+          "hiNote": 100,
+          "rootNote": 100,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 100156,
+            "end": 197433,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6F",
+          "loNote": 101,
+          "hiNote": 101,
+          "rootNote": 101,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 292142,
+            "end": 410928,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6F#",
+          "loNote": 102,
+          "hiNote": 102,
+          "rootNote": 102,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 44755,
+            "end": 317159,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6G",
+          "loNote": 103,
+          "hiNote": 103,
+          "rootNote": 103,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 284047,
+            "end": 425327,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6G#",
+          "loNote": 104,
+          "hiNote": 104,
+          "rootNote": 104,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 7969,
+            "end": 434698,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6A",
+          "loNote": 105,
+          "hiNote": 105,
+          "rootNote": 105,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 39716,
+            "end": 291697,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6A#",
+          "loNote": 106,
+          "hiNote": 106,
+          "rootNote": 106,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 9406,
+            "end": 433288,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_6B",
+          "loNote": 107,
+          "hiNote": 107,
+          "rootNote": 107,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 154718,
+            "end": 414837,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7C",
+          "loNote": 108,
+          "hiNote": 108,
+          "rootNote": 108,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 9413,
+            "end": 271571,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7C#",
+          "loNote": 109,
+          "hiNote": 109,
+          "rootNote": 109,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 16482,
+            "end": 299097,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7D",
+          "loNote": 110,
+          "hiNote": 110,
+          "rootNote": 110,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 163116,
+            "end": 415017,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7D#",
+          "loNote": 111,
+          "hiNote": 111,
+          "rootNote": 111,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 149070,
+            "end": 380946,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7E",
+          "loNote": 112,
+          "hiNote": 112,
+          "rootNote": 112,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 91522,
+            "end": 353636,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7F",
+          "loNote": 113,
+          "hiNote": 113,
+          "rootNote": 113,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 197596,
+            "end": 424931,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7F#",
+          "loNote": 114,
+          "hiNote": 114,
+          "rootNote": 114,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 30670,
+            "end": 400329,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7G",
+          "loNote": 115,
+          "hiNote": 115,
+          "rootNote": 115,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 162324,
+            "end": 260551,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7G#",
+          "loNote": 116,
+          "hiNote": 116,
+          "rootNote": 116,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 43102,
+            "end": 400496,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7A",
+          "loNote": 117,
+          "hiNote": 117,
+          "rootNote": 117,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 186868,
+            "end": 319986,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7A#",
+          "loNote": 118,
+          "hiNote": 118,
+          "rootNote": 118,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 85962,
+            "end": 394310,
+            "crossfade": 480
+          }
+        },
+        {
+          "source": "flac:Chords_7B",
+          "loNote": 119,
+          "hiNote": 119,
+          "rootNote": 119,
+          "lengthFrames": 528000,
+          "sampleRate": 48000.0,
+          "pitchKeyTrack": false,
+          "start": 0,
+          "loop": {
+            "enabled": true,
+            "start": 62743,
+            "end": 197604,
+            "crossfade": 480
+          }
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "fx_lowpass",
+      "type": "lowpass",
+      "enabled": true,
+      "frequency": 22000.0
+    },
+    {
+      "id": "fx_convolution",
+      "type": "convolution",
+      "enabled": true,
+      "wet": 0.0,
+      "outputLevel": 12.0,
+      "ir": "ir:Space"
+    }
+  ],
+  "ui": {
+    "background": "img:background_chords",
+    "width": 812,
+    "height": 375,
+    "layoutMode": "relative",
+    "bgMode": "top_left",
+    "tabs": [
+      {
+        "controls": [
+          {
+            "id": "ctl_0",
+            "rect": {
+              "x": 417,
+              "y": 190,
+              "width": 49,
+              "height": 49
+            },
+            "label": "Lowpass",
+            "valueType": "float",
+            "min": 150.0,
+            "max": 15000.0,
+            "value": 15000.0,
+            "textColor": "FF000000",
+            "style": "custom_skin_vertical_drag",
+            "skin": {
+              "image": "img:Knob",
+              "numFrames": 101,
+              "orientation": "vertical"
+            },
+            "mouseDragSensitivity": 100.0,
+            "controlIndex": 0,
+            "bindings": [
+              {
+                "type": "effect",
+                "level": "instrument",
+                "targetId": "fx_lowpass",
+                "parameter": "FX_FILTER_FREQUENCY",
+                "effectIndex": 0
+              }
+            ]
+          },
+          {
+            "id": "ctl_1",
+            "rect": {
+              "x": 510,
+              "y": 190,
+              "width": 49,
+              "height": 49
+            },
+            "label": "Reverb",
+            "valueType": "percent",
+            "min": 0.0,
+            "max": 100.0,
+            "value": 0.0,
+            "textColor": "FF000000",
+            "style": "custom_skin_vertical_drag",
+            "skin": {
+              "image": "img:Knob",
+              "numFrames": 101,
+              "orientation": "vertical"
+            },
+            "mouseDragSensitivity": 100.0,
+            "controlIndex": 1,
+            "bindings": [
+              {
+                "type": "effect",
+                "level": "instrument",
+                "targetId": "fx_convolution",
+                "parameter": "FX_MIX",
+                "factor": 0.01,
+                "effectIndex": 1
+              }
+            ]
+          }
+        ],
+        "buttons": [
+          {
+            "id": "btn_0",
+            "rect": {
+              "x": 323,
+              "y": 195,
+              "width": 45,
+              "height": 41
+            },
+            "style": "image",
+            "value": 0,
+            "controlIndex": 2,
+            "states": [
+              {
+                "name": "Off",
+                "mainImage": "img:button_blue-off",
+                "hoverImage": "img:button_blue-off",
+                "clickImage": "img:button_blue-on",
+                "bindings": [
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "targetId": "fx_lowpass",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 0,
+                    "translationValue": false
+                  },
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "targetId": "fx_convolution",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 1,
+                    "translationValue": false
+                  },
+                  {
+                    "type": "control",
+                    "level": "ui",
+                    "targetId": "img_0",
+                    "parameter": "PATH",
+                    "translation": "fixed_value",
+                    "controlIndex": 3,
+                    "translationValue": "img:light_off"
+                  }
+                ]
+              },
+              {
+                "name": "On",
+                "mainImage": "img:button_blue-on",
+                "hoverImage": "img:button_blue-on",
+                "clickImage": "img:button_blue-off",
+                "bindings": [
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "targetId": "fx_lowpass",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 0,
+                    "translationValue": true
+                  },
+                  {
+                    "type": "effect",
+                    "level": "instrument",
+                    "targetId": "fx_convolution",
+                    "parameter": "ENABLED",
+                    "translation": "fixed_value",
+                    "effectIndex": 1,
+                    "translationValue": true
+                  },
+                  {
+                    "type": "control",
+                    "level": "ui",
+                    "targetId": "img_0",
+                    "parameter": "PATH",
+                    "translation": "fixed_value",
+                    "controlIndex": 3,
+                    "translationValue": "img:light_on"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "images": [
+          {
+            "id": "img_0",
+            "rect": {
+              "x": 302,
+              "y": 169,
+              "width": 15,
+              "height": 15
+            },
+            "image": "img:light_off",
+            "aspectRatioMode": "preserve",
+            "controlIndex": 3
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "colors": [
+        {
+          "loNote": 36,
+          "hiNote": 47,
+          "color": "FFDC2626"
+        },
+        {
+          "loNote": 48,
+          "hiNote": 59,
+          "color": "FF2563Eb"
+        },
+        {
+          "loNote": 60,
+          "hiNote": 71,
+          "color": "FF65A30D"
+        },
+        {
+          "loNote": 72,
+          "hiNote": 83,
+          "color": "FFC026D3"
+        },
+        {
+          "loNote": 84,
+          "hiNote": 95,
+          "color": "FFEA580C"
+        },
+        {
+          "loNote": 96,
+          "hiNote": 107,
+          "color": "FF059669"
+        },
+        {
+          "loNote": 108,
+          "hiNote": 119,
+          "color": "FFCA8A04"
+        }
+      ],
+      "labels": [
+        {
+          "loNote": 36,
+          "hiNote": 47,
+          "text": "Major"
+        },
+        {
+          "loNote": 48,
+          "hiNote": 59,
+          "text": "Minor"
+        },
+        {
+          "loNote": 60,
+          "hiNote": 71,
+          "text": "7"
+        },
+        {
+          "loNote": 72,
+          "hiNote": 83,
+          "text": "Minor7"
+        },
+        {
+          "loNote": 84,
+          "hiNote": 95,
+          "text": "Major7"
+        },
+        {
+          "loNote": 96,
+          "hiNote": 107,
+          "text": "Diminished"
+        },
+        {
+          "loNote": 108,
+          "hiNote": 119,
+          "text": "Augmented"
+        }
+      ]
+    }
+  }
+}
