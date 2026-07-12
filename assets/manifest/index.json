@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "format": "dmse-manifest",
-  "library": "Omni-84",
+  "library": "DecentSampler",
   "gainDb": -13.0,
   "modes": [
     "bass",

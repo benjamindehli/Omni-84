@@ -34,7 +34,6 @@
           "hiNote": 24,
           "rootNote": 24,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -43,7 +42,6 @@
           "hiNote": 25,
           "rootNote": 25,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -52,7 +50,6 @@
           "hiNote": 26,
           "rootNote": 26,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -61,7 +58,6 @@
           "hiNote": 27,
           "rootNote": 27,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -70,7 +66,6 @@
           "hiNote": 28,
           "rootNote": 28,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -79,7 +74,6 @@
           "hiNote": 29,
           "rootNote": 29,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -88,7 +82,6 @@
           "hiNote": 30,
           "rootNote": 30,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -97,7 +90,6 @@
           "hiNote": 31,
           "rootNote": 31,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -106,7 +98,6 @@
           "hiNote": 32,
           "rootNote": 32,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -115,7 +106,6 @@
           "hiNote": 33,
           "rootNote": 33,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -124,7 +114,6 @@
           "hiNote": 34,
           "rootNote": 34,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -133,7 +122,6 @@
           "hiNote": 35,
           "rootNote": 35,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -142,7 +130,6 @@
           "hiNote": 36,
           "rootNote": 36,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -151,7 +138,6 @@
           "hiNote": 37,
           "rootNote": 37,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -160,7 +146,6 @@
           "hiNote": 38,
           "rootNote": 38,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -169,7 +154,6 @@
           "hiNote": 39,
           "rootNote": 39,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -178,7 +162,6 @@
           "hiNote": 40,
           "rootNote": 40,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -187,7 +170,6 @@
           "hiNote": 41,
           "rootNote": 41,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         },
         {
@@ -196,7 +178,6 @@
           "hiNote": 42,
           "rootNote": 42,
           "lengthFrames": 26840,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false
         }
       ]
@@ -207,7 +188,7 @@
       "id": "fx_lowpass",
       "type": "lowpass",
       "enabled": false,
-      "frequency": 15000.0
+      "frequency": 22000.0
     },
     {
       "id": "fx_convolution",
@@ -268,9 +249,9 @@
             },
             "label": "Lowpass",
             "valueType": "float",
-            "min": 150.0,
-            "max": 15000.0,
-            "value": 15000.0,
+            "min": 0.0,
+            "max": 1.0,
+            "value": 1.0,
             "textColor": "FF000000",
             "style": "custom_skin_vertical_drag",
             "skin": {
@@ -285,7 +266,9 @@
                 "type": "effect",
                 "level": "instrument",
                 "targetId": "fx_lowpass",
+                "translationTable": "0,33;0.3,150;0.4,450;0.5,1100;0.7,4100;0.9,11000;1.0001,22000;",
                 "parameter": "FX_FILTER_FREQUENCY",
+                "translation": "table",
                 "effectIndex": 0
               }
             ]

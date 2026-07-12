@@ -32,7 +32,6 @@
           "hiNote": 36,
           "rootNote": 36,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -48,7 +47,6 @@
           "hiNote": 37,
           "rootNote": 37,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -64,7 +62,6 @@
           "hiNote": 38,
           "rootNote": 38,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -80,7 +77,6 @@
           "hiNote": 39,
           "rootNote": 39,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -96,7 +92,6 @@
           "hiNote": 40,
           "rootNote": 40,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -112,7 +107,6 @@
           "hiNote": 41,
           "rootNote": 41,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -128,7 +122,6 @@
           "hiNote": 42,
           "rootNote": 42,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -144,7 +137,6 @@
           "hiNote": 43,
           "rootNote": 43,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -160,7 +152,6 @@
           "hiNote": 44,
           "rootNote": 44,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -176,7 +167,6 @@
           "hiNote": 45,
           "rootNote": 45,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -192,7 +182,6 @@
           "hiNote": 46,
           "rootNote": 46,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -208,7 +197,6 @@
           "hiNote": 47,
           "rootNote": 47,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -224,7 +212,6 @@
           "hiNote": 48,
           "rootNote": 48,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -240,7 +227,6 @@
           "hiNote": 49,
           "rootNote": 49,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -256,7 +242,6 @@
           "hiNote": 50,
           "rootNote": 50,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -272,7 +257,6 @@
           "hiNote": 51,
           "rootNote": 51,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -288,7 +272,6 @@
           "hiNote": 52,
           "rootNote": 52,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -304,7 +287,6 @@
           "hiNote": 53,
           "rootNote": 53,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -320,7 +302,6 @@
           "hiNote": 54,
           "rootNote": 54,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -336,7 +317,6 @@
           "hiNote": 55,
           "rootNote": 55,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -352,7 +332,6 @@
           "hiNote": 56,
           "rootNote": 56,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -368,7 +347,6 @@
           "hiNote": 57,
           "rootNote": 57,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -384,7 +362,6 @@
           "hiNote": 58,
           "rootNote": 58,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -400,7 +377,6 @@
           "hiNote": 59,
           "rootNote": 59,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -416,7 +392,6 @@
           "hiNote": 60,
           "rootNote": 60,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -432,7 +407,6 @@
           "hiNote": 61,
           "rootNote": 61,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -448,7 +422,6 @@
           "hiNote": 62,
           "rootNote": 62,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -464,7 +437,6 @@
           "hiNote": 63,
           "rootNote": 63,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -480,7 +452,6 @@
           "hiNote": 64,
           "rootNote": 64,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -496,7 +467,6 @@
           "hiNote": 65,
           "rootNote": 65,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -512,7 +482,6 @@
           "hiNote": 66,
           "rootNote": 66,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -528,7 +497,6 @@
           "hiNote": 67,
           "rootNote": 67,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -544,7 +512,6 @@
           "hiNote": 68,
           "rootNote": 68,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -560,7 +527,6 @@
           "hiNote": 69,
           "rootNote": 69,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -576,7 +542,6 @@
           "hiNote": 70,
           "rootNote": 70,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -592,7 +557,6 @@
           "hiNote": 71,
           "rootNote": 71,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -608,7 +572,6 @@
           "hiNote": 72,
           "rootNote": 72,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -624,7 +587,6 @@
           "hiNote": 73,
           "rootNote": 73,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -640,7 +602,6 @@
           "hiNote": 74,
           "rootNote": 74,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -656,7 +617,6 @@
           "hiNote": 75,
           "rootNote": 75,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -672,7 +632,6 @@
           "hiNote": 76,
           "rootNote": 76,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -688,7 +647,6 @@
           "hiNote": 77,
           "rootNote": 77,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -704,7 +662,6 @@
           "hiNote": 78,
           "rootNote": 78,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -720,7 +677,6 @@
           "hiNote": 79,
           "rootNote": 79,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -736,7 +692,6 @@
           "hiNote": 80,
           "rootNote": 80,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -752,7 +707,6 @@
           "hiNote": 81,
           "rootNote": 81,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -768,7 +722,6 @@
           "hiNote": 82,
           "rootNote": 82,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -784,7 +737,6 @@
           "hiNote": 83,
           "rootNote": 83,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -800,7 +752,6 @@
           "hiNote": 84,
           "rootNote": 84,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -816,7 +767,6 @@
           "hiNote": 85,
           "rootNote": 85,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -832,7 +782,6 @@
           "hiNote": 86,
           "rootNote": 86,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -848,7 +797,6 @@
           "hiNote": 87,
           "rootNote": 87,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -864,7 +812,6 @@
           "hiNote": 88,
           "rootNote": 88,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -880,7 +827,6 @@
           "hiNote": 89,
           "rootNote": 89,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -896,7 +842,6 @@
           "hiNote": 90,
           "rootNote": 90,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -912,7 +857,6 @@
           "hiNote": 91,
           "rootNote": 91,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -928,7 +872,6 @@
           "hiNote": 92,
           "rootNote": 92,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -944,7 +887,6 @@
           "hiNote": 93,
           "rootNote": 93,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -960,7 +902,6 @@
           "hiNote": 94,
           "rootNote": 94,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -976,7 +917,6 @@
           "hiNote": 95,
           "rootNote": 95,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -992,7 +932,6 @@
           "hiNote": 96,
           "rootNote": 96,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1008,7 +947,6 @@
           "hiNote": 97,
           "rootNote": 97,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1024,7 +962,6 @@
           "hiNote": 98,
           "rootNote": 98,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1040,7 +977,6 @@
           "hiNote": 99,
           "rootNote": 99,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1056,7 +992,6 @@
           "hiNote": 100,
           "rootNote": 100,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1072,7 +1007,6 @@
           "hiNote": 101,
           "rootNote": 101,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1088,7 +1022,6 @@
           "hiNote": 102,
           "rootNote": 102,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1104,7 +1037,6 @@
           "hiNote": 103,
           "rootNote": 103,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1120,7 +1052,6 @@
           "hiNote": 104,
           "rootNote": 104,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1136,7 +1067,6 @@
           "hiNote": 105,
           "rootNote": 105,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1152,7 +1082,6 @@
           "hiNote": 106,
           "rootNote": 106,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1168,7 +1097,6 @@
           "hiNote": 107,
           "rootNote": 107,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1184,7 +1112,6 @@
           "hiNote": 108,
           "rootNote": 108,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1200,7 +1127,6 @@
           "hiNote": 109,
           "rootNote": 109,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1216,7 +1142,6 @@
           "hiNote": 110,
           "rootNote": 110,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1232,7 +1157,6 @@
           "hiNote": 111,
           "rootNote": 111,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1248,7 +1172,6 @@
           "hiNote": 112,
           "rootNote": 112,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1264,7 +1187,6 @@
           "hiNote": 113,
           "rootNote": 113,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1280,7 +1202,6 @@
           "hiNote": 114,
           "rootNote": 114,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1296,7 +1217,6 @@
           "hiNote": 115,
           "rootNote": 115,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1312,7 +1232,6 @@
           "hiNote": 116,
           "rootNote": 116,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1328,7 +1247,6 @@
           "hiNote": 117,
           "rootNote": 117,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1344,7 +1262,6 @@
           "hiNote": 118,
           "rootNote": 118,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1360,7 +1277,6 @@
           "hiNote": 119,
           "rootNote": 119,
           "lengthFrames": 528000,
-          "sampleRate": 48000.0,
           "pitchKeyTrack": false,
           "start": 0,
           "loop": {
@@ -1408,9 +1324,9 @@
             },
             "label": "Lowpass",
             "valueType": "float",
-            "min": 150.0,
-            "max": 15000.0,
-            "value": 15000.0,
+            "min": 0.0,
+            "max": 1.0,
+            "value": 1.0,
             "textColor": "FF000000",
             "style": "custom_skin_vertical_drag",
             "skin": {
@@ -1425,7 +1341,9 @@
                 "type": "effect",
                 "level": "instrument",
                 "targetId": "fx_lowpass",
+                "translationTable": "0,33;0.3,150;0.4,450;0.5,1100;0.7,4100;0.9,11000;1.0001,22000;",
                 "parameter": "FX_FILTER_FREQUENCY",
+                "translation": "table",
                 "effectIndex": 0
               }
             ]
