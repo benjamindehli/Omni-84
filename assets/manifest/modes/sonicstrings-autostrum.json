@@ -20431,6 +20431,12 @@
     "height": 375,
     "layoutMode": "relative",
     "bgMode": "top_left",
+    "strumSpeedReadout": {
+      "x": 124,
+      "y": 170,
+      "width": 162,
+      "height": 22
+    },
     "tabs": [
       {
         "name": "main",
