@@ -8,5 +8,5 @@
 dmse_add_plugin(Omni84
     PRODUCT_NAME "Omni-84"
     PLUGIN_CODE  Om84
-    VERSION      0.1.0
+    VERSION      2.0.0
 )
