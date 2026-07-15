@@ -1,34 +1,6 @@
-# Omni-84 - Version: [1.3]
+# Omni-84
 
-Date: 2025-01-04  
-
-Name: Benjamin Dehli  
-
-Profile: [store.dehlimusikk.no][Gumroad profile]
-
-## Included formats
-
-- Decent Sampler
-
-## Release notes
-
-### Version 1.3 (2025-01-04)
-
-- Removed amplitude envelope for one shot samples
-
-### Version 1.2 (2024-03-23)
-
-- Added "SonicStrings (AutoStrum)" preset
-
-### Version 1.1 (2024-02-16)
-
-- Added "Chords (Looped)" preset
-
-### Version 1.0 (2023-04-06)
-
-- First version released
-
-## The Story
+## Introduction
 
 At the moment, the Omnichord is no longer produced and prices on the second-hand market have skyrocketed. This is my attempt to make the sound of the Omnichord more accessible.
 
@@ -36,6 +8,54 @@ At the moment, the Omnichord is no longer produced and prices on the second-hand
 
 Every sound of the Omnichord has been sampled into individual audio files.
 I've also added the effects I tend to use when recording and playing the Omnichord as an impulse response called "space".
+
+## Release notes
+
+### Version 2.0.0 (upcoming)
+
+- Added a plugin version. See the section "The plugin version".
+- Improved AutoStrum in the plugin version: the chord keys select the chord, the C0 and D0 keys perform the strum, and chord changes morph notes that are still ringing.
+- Simplified the AutoStrum strum patterns to Ascending and Descending.
+- The filter knob now uses a translation table for a smoother frequency response.
+- Removed the unreliable length and sampleRate attributes from the sample definitions.
+  Sample lengths are now read from the audio files.
+
+### Version 1.3.0 (2025-01-04)
+
+- Removed amplitude envelope for one shot samples
+
+### Version 1.2.0 (2024-03-23)
+
+- Added "SonicStrings (AutoStrum)" preset
+
+### Version 1.1.0 (2024-02-16)
+
+- Added "Chords (Looped)" preset
+
+### Version 1.0.0 (2023-04-06)
+
+- First version released
+
+## Included formats
+
+- VST3 (macOS, Windows and Linux)
+- AU (macOS)
+- Standalone application (macOS, Windows and Linux)
+- Decent Sampler
+
+## The plugin version
+
+The plugin is a self-contained instrument for macOS, Windows and Linux, available as VST3, AU and Standalone.
+Samples, graphics and impulse responses are all embedded in the plugin itself, losslessly compressed, so there are no external files to install or locate.
+Only the samples for the selected preset are loaded into memory, and a fresh instance lets you choose which preset to load before anything is decoded.
+
+The plugin has all the controls and features from the Decent Sampler version, including MIDI learn, the master volume fader with output meter, value readouts for the knobs and full DAW automation.
+On top of that, the plugin version adds:
+
+- Drift wheels next to the pitch and modulation wheels, adding a subtle random pitch and volume drift to each voice.
+- A velocity curve setting in the settings menu, and tempo sync for the AutoStrum speed.
+- An improved AutoStrum mode that works like the real instrument. See the section "SonicStrings (AutoStrum)".
+- Labels above the on-screen keyboard for the chord and strum keys.
 
 ## Technical specification
 
@@ -57,10 +77,10 @@ There's 2 presets for chords, a regular preset "Chords" (best in most cases) and
 - Velocity
   - Toggle whether the velocity should affect the volume or not
 - Keys
-  - C1–F#1: Kick drum
-  - G1–C2: Snare drum
-  - C#2–F#2: Hi-hat
-  - G2–A2: Clave
+  - C1-F#1: Kick drum
+  - G1-C2: Snare drum
+  - C#2-F#2: Hi-hat
+  - G2-A2: Clave
 
 ### Bass
 
@@ -74,13 +94,13 @@ There's 2 presets for chords, a regular preset "Chords" (best in most cases) and
 ![Omni-84 Chords](/Screenshots/Chords.png)
 
 - Keys
-  - C1–B1: Major chords
-  - C2–B2: Minor chords
-  - C3–B3: 7th chords
-  - C4–B4: Minor 7th chords
-  - C5–B5: Major 7th chords
-  - C6–B6: Diminished chords
-  - C7–B7: Augmented chords
+  - C1-B1: Major chords
+  - C2-B2: Minor chords
+  - C3-B3: 7th chords
+  - C4-B4: Minor 7th chords
+  - C5-B5: Major 7th chords
+  - C6-B6: Diminished chords
+  - C7-B7: Augmented chords
 
 ### Keyboard
 
@@ -109,23 +129,28 @@ The keyboard samples loop after about 12 seconds to achieve a continuous sound. 
 
 ![Omni-84 SonicStrings (AutoStrum)](/Screenshots/SonicStringsAutoStrum.png)
 
-The notes are strummed in the same order as the original Omnichord, but you have the possibility to make it strum in regular ascending order as well.  
+The notes are strummed in the same order as the original Omnichord.
 The preset contains strum patterns for all the individual chords from the Suzuki Omnichord OM-84.
 It has the same notes values for the chords as the Omni-84 'Chords' preset, which means you can send MIDI to both at the same time and get strummed SonicStrings on top of the chord sample.
 
 - AutoStrum (speed)
   - Fast strum speed will sound like a chord and slow strum speed will sound like plucked notes.
-- Strum pattern
-  - Select between ascending/descending notes and regular/omnichord order
 - Modulation Wheel
   - Controls the AutoStrum (speed)
 - Key bindings
-  - C0: Ascending notes in Omnichord order
-  - D0: Descending notes in Omnichord order
-  - E0: Ascending notes in regular order
-  - F0: Descending notes in regular order
+  - C0: Strum with ascending notes
+  - D0: Strum with descending notes
 - Other controls are the same as on the regular "SonicStrings" preset
 - Other key bindings are the same as on the "Chords" preset
+
+In the Decent Sampler version, the chord keys start the strum, and the C0 and D0 keys select the strum direction.
+
+In the plugin version, AutoStrum works like the real instrument:
+the chord keys only select the chord, and the C0 and D0 keys perform the strum.
+Changing the chord while notes are still ringing morphs the sounding notes over to the new chord instead of restarting the strum.
+The strum speed can be synced to the DAW tempo or to a manual BPM from the settings menu.
+When synced, the strum speed knob scrolls through musical note values from 1/4 to 1/32, including triplet and dotted values, and the current value is shown where the strum pattern menu is in the Decent Sampler version.
+Labels above the on-screen keyboard show which keys select chords and which keys strum.
 
 ## Effects
 
@@ -152,5 +177,12 @@ It has the same notes values for the chords as the Omni-84 'Chords' preset, whic
 - Roland Dimension D SDD-320
 
 The impulse signal was sent through a channel on the Roland PA-120 mixer so that the built-in spring reverb as well as a tape echo in the effects loop could be used. The preamplifier in the mixer also adds some nice saturation. The mixer and effects are all mono, so I ran it through a Dimension D to make it stereo and add some extra modulation.
+
+## About this repository
+
+This repository contains the source for both the Decent Sampler library (the DecentSampler folder) and the plugin version.
+The plugin is a thin wrapper around the shared Dehli Musikk sampler engine, and a converter translates the Decent Sampler library into the engine's native preset format at build time.
+The audio files are not part of this repository, since the samples are a paid product.
+The full version is available from [store.dehlimusikk.no][Gumroad profile].
 
 [Gumroad profile]: https://store.dehlimusikk.no/
