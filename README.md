@@ -11,7 +11,7 @@ I've also added the effects I tend to use when recording and playing the Omnicho
 
 ## Release notes
 
-### Version 2.0.0 (upcoming)
+### Version 2.0.0 (2026-07-18)
 
 - Added a plugin version. See the section "The plugin version".
 - Improved AutoStrum in the plugin version: the chord keys select the chord, the C0 and D0 keys perform the strum, and chord changes morph notes that are still ringing.
@@ -38,14 +38,18 @@ I've also added the effects I tend to use when recording and playing the Omnicho
 
 ## Included formats
 
-- VST3 (macOS, Windows and Linux)
+- VST3 (macOS)
 - AU (macOS)
-- Standalone application (macOS, Windows and Linux)
-- Decent Sampler
+- Standalone application (macOS)
+- Decent Sampler (macOS, Windows and Linux)
+
+The plugin version is currently released for macOS only.
+Windows and Linux versions are planned.
+Until then, the Decent Sampler version covers those platforms.
 
 ## The plugin version
 
-The plugin is a self-contained instrument for macOS, Windows and Linux, available as VST3, AU and Standalone.
+The plugin is a self-contained instrument, available as VST3, AU and Standalone.
 Samples, graphics and impulse responses are all embedded in the plugin itself, losslessly compressed, so there are no external files to install or locate.
 Only the samples for the selected preset are loaded into memory, and a fresh instance lets you choose which preset to load before anything is decoded.
 
