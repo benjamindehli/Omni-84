@@ -11,7 +11,7 @@ I've also added the effects I tend to use when recording and playing the Omnicho
 
 ## Release notes
 
-### Version 2.0.0 (2026-07-18)
+### Version 2.0.0 (2026-07-19)
 
 - Added a plugin version. See the section "The plugin version".
 - Improved AutoStrum in the plugin version: the chord keys select the chord, the C0 and D0 keys perform the strum, and chord changes morph notes that are still ringing.
