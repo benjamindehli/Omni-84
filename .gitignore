@@ -47,3 +47,5 @@ packaging/linux/build/
 # DecentSampler audio files
 /DecentSampler/Samples
 /DecentSampler/IR
+# Store packages staged temporarily (contain the paid samples)
+/DecentSampler/*.zip
