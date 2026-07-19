@@ -151,14 +151,19 @@ It has the same notes values for the chords as the Omni-84 'Chords' preset, whic
 - Other controls are the same as on the regular "SonicStrings" preset
 - Other key bindings are the same as on the "Chords" preset
 
-In the Decent Sampler version, the chord keys start the strum, and the C0 and D0 keys select the strum direction.
+In the Decent Sampler version:
 
-In the plugin version, AutoStrum works like the real instrument:
-the chord keys only select the chord, and the C0 and D0 keys perform the strum.
-Changing the chord while notes are still ringing morphs the sounding notes over to the new chord instead of restarting the strum.
-The strum speed can be synced to the DAW tempo or to a manual BPM from the settings menu.
-When synced, the strum speed knob scrolls through musical note values from 1/4 to 1/32, including triplet and dotted values, and the current value is shown where the strum pattern menu is in the Decent Sampler version.
-Labels above the on-screen keyboard show which keys select chords and which keys strum.
+- The chord keys start the strum
+- The C0 and D0 keys select the strum direction.
+
+In the plugin version:
+
+- AutoStrum works more like the real instrument
+- The chord keys only select the chord, and the C0 and D0 keys perform the strum.
+- Changing the chord while notes are still ringing morphs the sounding notes over to the new chord instead of restarting the strum.
+- The strum speed can be synced to the DAW tempo or to a manual BPM from the settings menu.
+  - When synced, the strum speed knob scrolls through musical note values from 1/4 to 1/32, including triplet and dotted values, and the current value is shown where the strum pattern menu is in the Decent Sampler version.
+- Labels above the on-screen keyboard show which keys select chords and which keys strum.
 
 ## Effects
 
