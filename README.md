@@ -75,7 +75,7 @@ This version of Omni-84 is an instrument preset / sample library for Decent Samp
 
 ## Instrument presets
 
-This sample library includes 5 (plus 1 looped) presets, one for each part of the Omnichord. Drums, Bass, Chords, Keyboard and SonicStrings.
+This instrument includes 5 (plus 1 looped) presets, one for each part of the Omnichord. Drums, Bass, Chords, Keyboard and SonicStrings.
 There's 2 presets for chords, a regular preset "Chords" (best in most cases) and the looped preset "Chords (Looped)". For the regular version, each sample are approximately 11 seconds long. For the looped version, to achieve the best possible loop point, some of the loops are short and some are longer. Some of the loops will however have some minor artifacts. For best audio quality, you should always use the regular version. And only if you have notes held for more than 11 seconds, use the the looped version.
 
 ### Drums
