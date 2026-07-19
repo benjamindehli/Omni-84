@@ -61,6 +61,10 @@ On top of that, the plugin version adds:
 - An improved AutoStrum mode that works like the real instrument. See the section "SonicStrings (AutoStrum)".
 - Labels above the on-screen keyboard for the chord and strum keys.
 
+## The Decent Sampler version
+
+This version of Omni-84 is an instrument preset / sample library for Decent Sampler. If you're new to Decent Sampler, I recommend checking out [this guide][Decent Sampler guide] first.
+
 ## Technical specification
 
 - Sample rate: 48 kHz
@@ -190,3 +194,4 @@ The audio files are not part of this repository, since the samples are a paid pr
 The full version is available from [store.dehlimusikk.no][Gumroad profile].
 
 [Gumroad profile]: https://store.dehlimusikk.no/
+[Decent Sampler guide]: https://www.decentsamples.com/how-to-use-decent-sampler/
