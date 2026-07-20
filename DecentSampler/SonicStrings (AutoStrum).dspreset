@@ -302,9 +302,8 @@
 
     </tab>
     <keyboard>
-      <color loNote="0"   hiNote="23"  color="FFFFFFFF" />
-      <color loNote="24"  hiNote="26"  color="FF7C7C86" />
-      <color loNote="30"  hiNote="35"  color="FFFFFFFF" />
+      <color loNote="33"  hiNote="33"  color="FF7C7C86" />
+      <color loNote="35"  hiNote="35"  color="FF7C7C86" />
       <color loNote="36"  hiNote="47"  color="FFDC2626" />
       <color loNote="48"  hiNote="59"  color="FF2563Eb" />
       <color loNote="60"  hiNote="71"  color="FF65A30D" />
@@ -312,7 +311,6 @@
       <color loNote="84"  hiNote="95"  color="FFEA580C" />
       <color loNote="96"  hiNote="107" color="FF059669" />
       <color loNote="108" hiNote="119" color="FFCA8A04" />
-      <color loNote="120" hiNote="127" color="FFFFFFFF" />
     </keyboard>
   </ui>
   <groups attack="0.000" decay="25" sustain="0" release="1" volume="1" ampVelTrack="0">
@@ -3223,10 +3221,10 @@
     </note>
 
     <!-- Strum mode -->
-    <note note="24" enabled="true">
+    <note note="33" enabled="true">
       <binding level="ui" type="control" controlIndex="8" parameter="VALUE" translation="fixed_value" translationValue="1" />
     </note>
-    <note note="26" enabled="true">
+    <note note="35" enabled="true">
       <binding level="ui" type="control" controlIndex="8" parameter="VALUE" translation="fixed_value" translationValue="2" />
     </note>
 

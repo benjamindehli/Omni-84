@@ -20407,11 +20407,11 @@
   ],
   "strumKeys": [
     {
-      "note": 24,
+      "note": 33,
       "seqOffset": 0
     },
     {
-      "note": 26,
+      "note": 35,
       "seqOffset": 84
     }
   ],
@@ -21410,13 +21410,13 @@
     "keyboard": {
       "colors": [
         {
-          "loNote": 24,
-          "hiNote": 24,
+          "loNote": 33,
+          "hiNote": 33,
           "color": "FF0891B2"
         },
         {
-          "loNote": 26,
-          "hiNote": 26,
+          "loNote": 35,
+          "hiNote": 35,
           "color": "FF0891B2"
         },
         {
@@ -21457,13 +21457,13 @@
       ],
       "labels": [
         {
-          "loNote": 24,
-          "hiNote": 24,
+          "loNote": 33,
+          "hiNote": 33,
           "text": "↑"
         },
         {
-          "loNote": 26,
-          "hiNote": 26,
+          "loNote": 35,
+          "hiNote": 35,
           "text": "↓"
         },
         {
