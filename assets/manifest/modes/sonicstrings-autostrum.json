@@ -20420,7 +20420,6 @@
       "cc": 1,
       "parameter": "SEQ_PLAYBACK_RATE",
       "targetId": "ctl_5",
-      "controlIndex": 7,
       "normMin": 0.0,
       "normMax": 1.0
     }
@@ -20468,8 +20467,7 @@
                 "type": "amp",
                 "level": "group",
                 "targetId": "grp_0",
-                "parameter": "AMP_VOLUME",
-                "groupIndex": 0
+                "parameter": "AMP_VOLUME"
               }
             ]
           },
@@ -20500,8 +20498,7 @@
                 "type": "amp",
                 "level": "group",
                 "targetId": "grp_1",
-                "parameter": "AMP_VOLUME",
-                "groupIndex": 1
+                "parameter": "AMP_VOLUME"
               }
             ]
           },
@@ -20569,8 +20566,7 @@
                 "targetId": "fx_lowpass",
                 "translationTable": "0,33;0.3,150;0.4,450;0.5,1100;0.7,4100;0.9,11000;1.0001,22000;",
                 "parameter": "FX_FILTER_FREQUENCY",
-                "translation": "table",
-                "effectIndex": 0
+                "translation": "table"
               }
             ]
           },
@@ -20602,8 +20598,7 @@
                 "level": "instrument",
                 "targetId": "fx_convolution",
                 "parameter": "FX_MIX",
-                "factor": 0.01,
-                "effectIndex": 1
+                "factor": 0.01
               }
             ]
           },
@@ -21330,7 +21325,6 @@
                     "targetId": "fx_lowpass",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
-                    "effectIndex": 0,
                     "translationValue": false
                   },
                   {
@@ -21339,7 +21333,6 @@
                     "targetId": "fx_convolution",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
-                    "effectIndex": 1,
                     "translationValue": false
                   },
                   {
@@ -21348,7 +21341,6 @@
                     "targetId": "img_0",
                     "parameter": "PATH",
                     "translation": "fixed_value",
-                    "controlIndex": 6,
                     "translationValue": "img:light_off"
                   }
                 ]
@@ -21365,7 +21357,6 @@
                     "targetId": "fx_lowpass",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
-                    "effectIndex": 0,
                     "translationValue": true
                   },
                   {
@@ -21374,7 +21365,6 @@
                     "targetId": "fx_convolution",
                     "parameter": "ENABLED",
                     "translation": "fixed_value",
-                    "effectIndex": 1,
                     "translationValue": true
                   },
                   {
@@ -21383,7 +21373,6 @@
                     "targetId": "img_0",
                     "parameter": "PATH",
                     "translation": "fixed_value",
-                    "controlIndex": 6,
                     "translationValue": "img:light_on"
                   }
                 ]
