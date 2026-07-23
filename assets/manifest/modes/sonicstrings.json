@@ -999,6 +999,8 @@
   ],
   "ui": {
     "background": "img:background_sonicstrings",
+    "overlay": "img:overlay_default",
+    "overlayScope": "instrument",
     "width": 812,
     "height": 375,
     "layoutMode": "relative",

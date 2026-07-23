@@ -4,6 +4,13 @@
     "reverbGain": 12,
     "omnichordStrum": true,
     "strumKeyLabels": ["↑", "↓"],
+    "overlay": {
+        "default": "Resources/overlay_default.png",
+        "Chords": "Resources/overlay_chord-labels.png",
+        "Chords (Looped)": "Resources/overlay_chord-labels.png",
+        "SonicStrings (AutoStrum)": "Resources/overlay_chord-labels.png"
+    },
+    "overlayScope": "instrument",
     "keyboardLabels": {
         "Chords": [
             { "loNote": 36, "hiNote": 47, "text": "Major" },
