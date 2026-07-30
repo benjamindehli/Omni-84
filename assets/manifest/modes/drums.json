@@ -210,7 +210,7 @@
   ],
   "ui": {
     "background": "img:background_drums",
-    "overlay": "img:overlay_default",
+    "overlay": "img:overlay_labels",
     "overlayScope": "instrument",
     "width": 812,
     "height": 375,
@@ -477,6 +477,28 @@
           "loNote": 55,
           "hiNote": 57,
           "color": "FFc026d3"
+        }
+      ],
+      "labels": [
+        {
+          "loNote": 36,
+          "hiNote": 42,
+          "text": "Kick"
+        },
+        {
+          "loNote": 43,
+          "hiNote": 48,
+          "text": "Snare"
+        },
+        {
+          "loNote": 49,
+          "hiNote": 54,
+          "text": "HiHat"
+        },
+        {
+          "loNote": 55,
+          "hiNote": 57,
+          "text": "Clave"
         }
       ]
     }

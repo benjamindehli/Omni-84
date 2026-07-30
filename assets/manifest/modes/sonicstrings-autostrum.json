@@ -20426,7 +20426,7 @@
   ],
   "ui": {
     "background": "img:background_sonicstrings_autostrum",
-    "overlay": "img:overlay_chord-labels",
+    "overlay": "img:overlay_labels",
     "overlayScope": "instrument",
     "width": 812,
     "height": 375,

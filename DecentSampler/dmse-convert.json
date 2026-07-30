@@ -6,9 +6,10 @@
     "strumKeyLabels": ["↑", "↓"],
     "overlay": {
         "default": "Resources/overlay_default.png",
-        "Chords": "Resources/overlay_chord-labels.png",
-        "Chords (Looped)": "Resources/overlay_chord-labels.png",
-        "SonicStrings (AutoStrum)": "Resources/overlay_chord-labels.png"
+        "Chords": "Resources/overlay_labels.png",
+        "Chords (Looped)": "Resources/overlay_labels.png",
+        "Drums": "Resources/overlay_labels.png",
+        "SonicStrings (AutoStrum)": "Resources/overlay_labels.png"
     },
     "overlayScope": "instrument",
     "keyboardLabels": {
@@ -29,6 +30,12 @@
             { "loNote": 84, "hiNote": 95, "text": "Major7" },
             { "loNote": 96, "hiNote": 107, "text": "Diminished" },
             { "loNote": 108, "hiNote": 119, "text": "Augmented" }
+        ],
+        "Drums": [
+            { "loNote": 36, "hiNote": 42, "text": "Kick" },
+            { "loNote": 43, "hiNote": 48, "text": "Snare" },
+            { "loNote": 49, "hiNote": 54, "text": "HiHat" },
+            { "loNote": 55, "hiNote": 57, "text": "Clave" }
         ]
     },
     "keyboardColors": {

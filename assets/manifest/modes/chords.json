@@ -718,7 +718,7 @@
   ],
   "ui": {
     "background": "img:background_chords",
-    "overlay": "img:overlay_chord-labels",
+    "overlay": "img:overlay_labels",
     "overlayScope": "instrument",
     "width": 812,
     "height": 375,
