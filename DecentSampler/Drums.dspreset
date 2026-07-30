@@ -46,7 +46,7 @@
       <color loNote="55" hiNote="57" color="FFc026d3" />
     </keyboard>
   </ui>
-  <groups ampEnvEnabled="false" volume="1">
+  <groups ampEnvEnabled="false" volume="1.75">
     <group uid="drums">
       <sample loNote="36" hiNote="36" rootNote="36" path="Samples/Drums/Kick_1C.wav" pitchKeyTrack="0" loopEnabled="0" />
       <sample loNote="37" hiNote="37" rootNote="37" path="Samples/Drums/Kick_1C#.wav" pitchKeyTrack="0" loopEnabled="0" />
