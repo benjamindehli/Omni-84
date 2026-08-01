@@ -11,6 +11,25 @@ I've also added the effects I tend to use when recording and playing the Omnicho
 
 ## Release notes
 
+### Version 2.1.0 (2026-08-01)
+
+Plugin version:
+
+- Added a translucent overlay graphic on top of the interface.
+- Keys that are hovered or held on the keyboard are now shaded in a neutral way instead of turning yellow:
+  - White keys turn darker.
+  - Black keys turn brighter.
+- The computer keyboard keeps playing notes even while you adjust a control with the mouse.
+- With tempo sync turned on, the AutoStrum Strum Speed knob now snaps to exact note values such as 1/4, 1/8 and 1/16 as you turn it.
+- Drums mode now shows labels above the keyboard for each drum group (Kick, Snare, HiHat and Clave), matching the chord labels in the Chords modes.
+
+DecentSampler version:
+
+- Increased the default volume of the drums.
+- Moved the AutoStrum strum keys from C0 and D0 to A0 and B0.
+
+The DecentSampler changes are also included in the plugin version.
+
 ### Version 2.0.0 (2026-07-19)
 
 - Added a plugin version. See the section "The plugin version".
