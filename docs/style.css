@@ -394,6 +394,17 @@ figcaption {
     text-align: center;
 }
 
+.figure-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    margin: 1.5rem 0;
+}
+
+.figure-row figure {
+    margin: 0;
+}
+
 /* Control close-ups are small; don't blow them up to full column width. */
 figure.shot-narrow img {
     width: auto;
