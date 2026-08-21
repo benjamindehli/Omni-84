@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benjamindehli.github.io/Omni-84/sitemap.xml

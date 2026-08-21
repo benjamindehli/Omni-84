@@ -1,0 +1,531 @@
+/* Dehli Musikk plugin pages — shared stylesheet.
+ *
+ * Generated into every plugin repo's docs/ folder by site/generate_site.py.
+ * Edit it HERE, not in a docs/ folder: the copies are overwritten on the next
+ * ./dmse site run. */
+
+:root {
+    color-scheme: light dark;
+
+    --bg: #f6f4f1;
+    --surface: #ffffff;
+    --surface-2: #efece7;
+    --text: #1d1b19;
+    --muted: #6b655e;
+    --line: #ddd7cf;
+    --accent: #a35a2a;
+    --accent-hover: #8c4a1f;
+    --accent-ink: #ffffff;
+    --shadow: 0 1px 2px rgb(29 27 25 / 6%), 0 8px 24px rgb(29 27 25 / 8%);
+    --radius: 10px;
+    --content: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #17161a;
+        --surface: #201f24;
+        --surface-2: #28272d;
+        --text: #ece9e4;
+        --muted: #a29c94;
+        --line: #35333a;
+        --accent: #e59a5f;
+        --accent-hover: #f0ad78;
+        --accent-ink: #17161a;
+        --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 35%);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+code {
+    background: var(--surface-2);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    font-size: 0.9em;
+}
+
+/* ── top bar ──────────────────────────────────────────────────────────────── */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem clamp(1rem, 4vw, 2rem);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+
+.topbar img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+}
+
+.topbar .name {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.topbar .spacer {
+    flex: 1;
+}
+
+.topbar a {
+    text-decoration: none;
+}
+
+/* ── buttons ──────────────────────────────────────────────────────────────── */
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.btn:hover {
+    color: var(--text);
+    border-color: var(--muted);
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--accent-ink);
+}
+
+.btn-sm {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+}
+
+/* ── hero ─────────────────────────────────────────────────────────────────── */
+
+.hero {
+    padding: clamp(2.5rem, 7vw, 4.5rem) clamp(1rem, 4vw, 2rem) 1rem;
+    text-align: center;
+}
+
+.hero-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.hero h1 {
+    margin: 1rem 0 0.35rem;
+    font-size: clamp(2.1rem, 6vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.hero .tagline {
+    max-width: var(--content);
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    color: var(--muted);
+}
+
+.hero .intro-more {
+    max-width: var(--content);
+    margin: 1.25rem auto 0;
+    text-align: left;
+    color: var(--muted);
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+}
+
+.badge {
+    padding: 0.2rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.hero-shot {
+    max-width: 62rem;
+    margin: clamp(2rem, 5vw, 3.5rem) auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+.hero-shot img {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+
+/* ── layout ───────────────────────────────────────────────────────────────── */
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 68rem;
+    margin: clamp(2rem, 6vw, 4rem) auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+@media (min-width: 60rem) {
+    .layout {
+        grid-template-columns: 14rem minmax(0, 1fr);
+    }
+}
+
+.toc {
+    display: none;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 60rem) {
+    .toc {
+        display: block;
+        position: sticky;
+        top: 4.5rem;
+        align-self: start;
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
+    }
+}
+
+.toc-title {
+    margin: 0 0 0.6rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc li {
+    margin: 0.15rem 0;
+}
+
+.toc ul ul {
+    margin-left: 0.8rem;
+    font-size: 0.85rem;
+}
+
+.toc a {
+    display: block;
+    padding: 0.15rem 0;
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    padding-left: 0.7rem;
+}
+
+.toc a:hover {
+    color: var(--text);
+    border-left-color: var(--line);
+}
+
+.toc a.current {
+    color: var(--text);
+    border-left-color: var(--accent);
+}
+
+main {
+    min-width: 0;
+}
+
+/* ── content ──────────────────────────────────────────────────────────────── */
+
+main h2 {
+    margin: 3rem 0 0.75rem;
+    padding-top: 0.5rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+    border-top: 1px solid var(--line);
+}
+
+main section:first-child h2 {
+    margin-top: 0;
+    border-top: 0;
+}
+
+main h3 {
+    margin: 2rem 0 0.5rem;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+main h4 {
+    margin: 1.5rem 0 0.4rem;
+    font-size: 1.05rem;
+}
+
+main p {
+    margin: 0 0 1rem;
+}
+
+main ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+}
+
+main li {
+    margin: 0.2rem 0;
+}
+
+main li > ul {
+    margin: 0.2rem 0 0.4rem;
+}
+
+.anchor {
+    float: left;
+    width: 1.1rem;
+    margin-left: -1.1rem;
+    opacity: 0;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+h2:hover .anchor,
+h3:hover .anchor {
+    opacity: 1;
+}
+
+figure {
+    margin: 1.5rem 0;
+}
+
+figure a {
+    display: block;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Control close-ups are small; don't blow them up to full column width. */
+figure.shot-narrow img {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    margin: 0 0 1.25rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.92rem;
+}
+
+th,
+td {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background: var(--surface-2);
+}
+
+.gear {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 1.25rem 0;
+    padding: 0;
+}
+
+.gear li {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.gear img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.gear .label {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
+}
+
+/* ── release notes ────────────────────────────────────────────────────────── */
+
+.release {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    margin: 0.6rem 0;
+    padding: 0 1rem;
+}
+
+.release > summary {
+    cursor: pointer;
+    padding: 0.7rem 0;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+.release > summary::-webkit-details-marker {
+    display: none;
+}
+
+.release > summary::before {
+    content: "›";
+    display: inline-block;
+    color: var(--muted);
+    transition: transform 0.15s;
+}
+
+.release[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.release .date {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-left: auto;
+}
+
+.release .body {
+    padding-bottom: 0.5rem;
+    border-top: 1px solid var(--line);
+    padding-top: 0.75rem;
+}
+
+.release .body > :last-child {
+    margin-bottom: 0;
+}
+
+/* ── footer ───────────────────────────────────────────────────────────────── */
+
+footer {
+    margin-top: 5rem;
+    padding: 2.5rem clamp(1rem, 4vw, 2rem) 3rem;
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    margin-bottom: 0.75rem;
+}
