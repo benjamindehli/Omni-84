@@ -535,6 +535,22 @@ tbody tr:hover {
     margin-top: 0.6rem;
     font-size: 0.9rem;
     color: var(--muted);
+    text-align: left;
+}
+
+.video-item {
+    margin: 0 0 1.5rem;
+}
+
+.video-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 45rem) {
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
 }
 
 /* ── more instruments ─────────────────────────────────────────────────────── */

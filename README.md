@@ -1,5 +1,7 @@
 # Omni-84
 
+**[Product page and documentation](https://benjamindehli.github.io/Omni-84/)**
+
 ## Introduction
 
 At the moment, the Omnichord is no longer produced and prices on the second-hand market have skyrocketed. This is my attempt to make the sound of the Omnichord more accessible.
