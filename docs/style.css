@@ -451,6 +451,136 @@ tbody tr:hover {
     line-height: 1.35;
 }
 
+/* ── video ────────────────────────────────────────────────────────────────── */
+
+.video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: #000;
+}
+
+.video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-play {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.video-play img {
+    width: 100%;
+    height: 100%;
+    /* The 4:3 YouTube thumbnail is cropped back to 16:9, losing its letterbox. */
+    object-fit: cover;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.video-play:hover img {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+.video-play .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4.5rem;
+    height: 3.2rem;
+    transform: translate(-50%, -50%);
+    border-radius: 0.8rem;
+    background: rgb(0 0 0 / 62%);
+    transition: background 0.2s;
+}
+
+.video-play:hover .play {
+    background: var(--accent);
+}
+
+.video-play .play::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    border-style: solid;
+    border-width: 0.6rem 0 0.6rem 1rem;
+    border-color: transparent transparent transparent #fff;
+}
+
+.video-caption {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* ── more instruments ─────────────────────────────────────────────────────── */
+
+.more {
+    max-width: 68rem;
+    margin: clamp(3rem, 8vw, 5rem) auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+.more h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.more-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.more-grid a {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.more-grid a:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.more-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.more-grid .label {
+    display: block;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
 /* ── release notes ────────────────────────────────────────────────────────── */
 
 .release {
