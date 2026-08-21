@@ -148,6 +148,34 @@ code {
     font-size: 0.85rem;
 }
 
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: none;
+    color: var(--muted);
+}
+
+.btn-ghost:hover {
+    color: var(--text);
+    background: var(--surface);
+}
+
+.btn-ghost svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    flex: none;
+}
+
+.github-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
 /* ── hero ─────────────────────────────────────────────────────────────────── */
 
 .hero {
