@@ -201,6 +201,18 @@ code {
     white-space: nowrap;
 }
 
+.badge-price {
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.price-note {
+    margin: 0.85rem 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
 .cta {
     display: flex;
     flex-wrap: wrap;
