@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://benjamindehli.github.io/Omni-84/</loc>
     <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>https://benjamindehli.github.io/Omni-84/video/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/dAxy1PFxv3U/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Free Omnichord sample plugin (Omni-84)</video:title>
+      <video:description>A demonstration of the Omni-84 library for Decent Sampler.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/dAxy1PFxv3U</video:player_loc>
+      <video:publication_date>2023-04-06T12:00:00+02:00</video:publication_date>
+    </video:video>
   </url>
 </urlset>
