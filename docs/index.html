@@ -33,22 +33,37 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://benjamindehli.github.io/Omni-84/#website",
+      "name": "Omni-84",
+      "url": "https://benjamindehli.github.io/Omni-84/",
+      "description": "Product page and documentation for Omni-84, a sample instrument by Dehli Musikk.",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://musicbrainz.org/artist/56639e59-2bb5-40bd-9d5a-97d964298b6f"
+      },
+      "publisher": {
+        "@id": "https://www.dehlimusikk.no/"
+      },
+      "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "about": {
+        "@id": "https://www.dehlimusikk.no/products/omni-84/#product"
+      },
+      "sameAs": "https://github.com/benjamindehli/Omni-84"
+    },
+    {
       "@type": "SoftwareApplication",
-      "@id": "https://store.dehlimusikk.no/l/omni-84",
+      "@id": "https://www.dehlimusikk.no/products/omni-84/#product",
       "name": "Omni-84",
       "description": "Omni-84: At the moment, the Omnichord is no longer produced and prices on the second-hand market have skyrocketed. This is my attempt to make the sound of…",
       "url": "https://benjamindehli.github.io/Omni-84/",
       "applicationCategory": "MultimediaApplication",
       "applicationSubCategory": "Sample library / virtual instrument",
       "author": {
-        "@type": "Organization",
-        "name": "Dehli Musikk",
-        "url": "https://www.dehlimusikk.no/"
+        "@id": "https://musicbrainz.org/artist/56639e59-2bb5-40bd-9d5a-97d964298b6f"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Dehli Musikk",
-        "url": "https://www.dehlimusikk.no/"
+        "@id": "https://www.dehlimusikk.no/"
       },
       "operatingSystem": "macOS, Windows, Linux",
       "softwareVersion": "2.1.0",
@@ -56,21 +71,16 @@
       "image": "https://benjamindehli.github.io/Omni-84/img/screenshots-chords.webp",
       "screenshot": [
         "https://benjamindehli.github.io/Omni-84/img/screenshots-chords.webp",
-        "https://benjamindehli.github.io/Omni-84/img/screenshots-chords.webp",
-        "https://benjamindehli.github.io/Omni-84/img/screenshots-drums.webp",
         "https://benjamindehli.github.io/Omni-84/img/screenshots-drums.webp",
         "https://benjamindehli.github.io/Omni-84/img/screenshots-bass.webp",
-        "https://benjamindehli.github.io/Omni-84/img/screenshots-bass.webp",
-        "https://benjamindehli.github.io/Omni-84/img/screenshots-keyboard.webp",
         "https://benjamindehli.github.io/Omni-84/img/screenshots-keyboard.webp",
         "https://benjamindehli.github.io/Omni-84/img/screenshots-sonicstrings.webp",
-        "https://benjamindehli.github.io/Omni-84/img/screenshots-sonicstrings.webp",
         "https://benjamindehli.github.io/Omni-84/img/screenshots-sonicstringsautostrum.webp",
-        "https://benjamindehli.github.io/Omni-84/img/screenshots-sonicstringsautostrum.webp",
-        "https://benjamindehli.github.io/Omni-84/img/screenshots-effects.webp",
         "https://benjamindehli.github.io/Omni-84/img/screenshots-effects.webp"
       ],
       "sameAs": [
+        "https://www.dehlimusikk.no/products/omni-84/",
+        "https://www.dehlimusikk.no/en/products/omni-84/",
         "https://store.dehlimusikk.no/l/omni-84",
         "https://dehlimusikk.gumroad.com/l/omni-84",
         "https://www.cylex.no/bedrift-produkt/omni-84_223137.html",
@@ -93,6 +103,18 @@
           "description": "Free — pay what you want"
         }
       }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://musicbrainz.org/artist/56639e59-2bb5-40bd-9d5a-97d964298b6f",
+      "name": "Benjamin Dehli",
+      "url": "https://www.dehlimusikk.no/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.dehlimusikk.no/",
+      "name": "Dehli Musikk",
+      "url": "https://www.dehlimusikk.no/"
     }
   ]
 }
