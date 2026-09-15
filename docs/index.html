@@ -3,31 +3,898 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Omni-84 — VST3, AU &amp; Standalone sample instrument | Dehli Musikk</title>
+<title>Omni-84: VST3, AU &amp; Standalone sample instrument | Dehli Musikk</title>
 <meta name="description" content="Omni-84: the Suzuki Omnichord OM-84 sampled in full, from drums and bass to chords, keyboard and AutoStrum SonicStrings. Free for VST3 and AU.">
-<meta name="keywords" content="Omni-84, sample library, sample instrument, virtual instrument, VST3, AU, Standalone, Decent Sampler, Dehli Musikk">
 <meta name="author" content="Dehli Musikk">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#a35a2a" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#17161a" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://benjamindehli.github.io/Omni-84/">
+<link rel="alternate" type="text/markdown" href="llms.txt" title="Omni-84 as markdown">
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="Dehli Musikk">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="Omni-84 — VST3, AU &amp; Standalone sample instrument | Dehli Musikk">
+<meta property="og:title" content="Omni-84: VST3, AU &amp; Standalone sample instrument | Dehli Musikk">
 <meta property="og:description" content="Omni-84: the Suzuki Omnichord OM-84 sampled in full, from drums and bass to chords, keyboard and AutoStrum SonicStrings. Free for VST3 and AU.">
 <meta property="og:url" content="https://benjamindehli.github.io/Omni-84/">
 <meta property="og:image" content="https://benjamindehli.github.io/Omni-84/img/screenshots-chords.webp">
-<meta property="og:image:alt" content="Omni-84 plugin interface">
+<meta property="og:image:alt" content="Omni-84 Chords">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="686">
+<meta property="product:price:amount" content="0">
+<meta property="product:price:currency" content="USD">
+<meta property="og:availability" content="instock">
 <link rel="preconnect" href="https://i.ytimg.com">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Omni-84 — VST3, AU &amp; Standalone sample instrument | Dehli Musikk">
+<meta name="twitter:title" content="Omni-84: VST3, AU &amp; Standalone sample instrument | Dehli Musikk">
 <meta name="twitter:description" content="Omni-84: the Suzuki Omnichord OM-84 sampled in full, from drums and bass to chords, keyboard and AutoStrum SonicStrings. Free for VST3 and AU.">
+<meta name="twitter:image" content="https://benjamindehli.github.io/Omni-84/img/screenshots-chords.webp">
+<meta name="twitter:image:alt" content="Omni-84 Chords">
 <link rel="icon" href="img/icon.png">
 <link rel="preload" as="image" href="img/screenshots-chords.webp" fetchpriority="high">
-<link rel="stylesheet" href="style.css">
+<style>
+/* Dehli Musikk plugin pages, shared stylesheet.
+ *
+ * This is the only copy. site/generate_site.py inlines it into every page it
+ * writes, so there is no stylesheet to request before the page can paint, and
+ * no second copy in a docs/ folder that could drift out of step with this one.
+ * Edit it here and re-run ./dmse site. */
+
+:root {
+    color-scheme: light dark;
+
+    --bg: #f6f4f1;
+    --surface: #ffffff;
+    --surface-2: #efece7;
+    --text: #1d1b19;
+    --muted: #6b655e;
+    --line: #ddd7cf;
+    --accent: #a35a2a;
+    --accent-hover: #8c4a1f;
+    --accent-ink: #ffffff;
+    --shadow: 0 1px 2px rgb(29 27 25 / 6%), 0 8px 24px rgb(29 27 25 / 8%);
+    --radius: 10px;
+    --content: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #17161a;
+        --surface: #201f24;
+        --surface-2: #28272d;
+        --text: #ece9e4;
+        --muted: #a29c94;
+        --line: #35333a;
+        --accent: #e59a5f;
+        --accent-hover: #f0ad78;
+        --accent-ink: #17161a;
+        --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 35%);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+code {
+    background: var(--surface-2);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    font-size: 0.9em;
+}
+
+/* ── top bar ──────────────────────────────────────────────────────────────── */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem clamp(1rem, 4vw, 2rem);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+
+.topbar img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+}
+
+.topbar .name {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.topbar .spacer {
+    flex: 1;
+}
+
+.topbar a {
+    text-decoration: none;
+}
+
+/* ── buttons ──────────────────────────────────────────────────────────────── */
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.btn:hover {
+    color: var(--text);
+    border-color: var(--muted);
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--accent-ink);
+}
+
+.btn-sm {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+}
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: none;
+    color: var(--muted);
+}
+
+.btn-ghost:hover {
+    color: var(--text);
+    background: var(--surface);
+}
+
+.btn-ghost svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    flex: none;
+}
+
+.github-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+/* ── hero ─────────────────────────────────────────────────────────────────── */
+
+.hero {
+    padding: clamp(2.5rem, 7vw, 4.5rem) clamp(1rem, 4vw, 2rem) 1rem;
+    text-align: center;
+}
+
+.hero-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.hero h1 {
+    margin: 1rem 0 0.35rem;
+    font-size: clamp(2.1rem, 6vw, 3.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.hero .tagline {
+    max-width: var(--content);
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    color: var(--muted);
+}
+
+.hero .intro-more {
+    max-width: var(--content);
+    margin: 1.25rem auto 0;
+    text-align: left;
+    color: var(--muted);
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+}
+
+.badge {
+    padding: 0.2rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.badge-price {
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.price-note {
+    margin: 0.85rem 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.hero-shot {
+    max-width: 62rem;
+    margin: clamp(2rem, 5vw, 3.5rem) auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+.hero-shot img {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+
+/* ── layout ───────────────────────────────────────────────────────────────── */
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 68rem;
+    margin: clamp(2rem, 6vw, 4rem) auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+@media (min-width: 60rem) {
+    .layout {
+        grid-template-columns: 14rem minmax(0, 1fr);
+    }
+}
+
+.toc {
+    display: none;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 60rem) {
+    .toc {
+        display: block;
+        position: sticky;
+        top: 4.5rem;
+        align-self: start;
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
+    }
+}
+
+.toc-title {
+    margin: 0 0 0.6rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc li {
+    margin: 0.15rem 0;
+}
+
+.toc ul ul {
+    margin-left: 0.8rem;
+    font-size: 0.85rem;
+}
+
+.toc a {
+    display: block;
+    padding: 0.15rem 0;
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    padding-left: 0.7rem;
+}
+
+.toc a:hover {
+    color: var(--text);
+    border-left-color: var(--line);
+}
+
+.toc a.current {
+    color: var(--text);
+    border-left-color: var(--accent);
+}
+
+main {
+    min-width: 0;
+}
+
+/* ── content ──────────────────────────────────────────────────────────────── */
+
+main h2 {
+    margin: 3rem 0 0.75rem;
+    padding-top: 0.5rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+    border-top: 1px solid var(--line);
+}
+
+main section:first-child h2 {
+    margin-top: 0;
+    border-top: 0;
+}
+
+main h3 {
+    margin: 2rem 0 0.5rem;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+main h4 {
+    margin: 1.5rem 0 0.4rem;
+    font-size: 1.05rem;
+}
+
+main p {
+    margin: 0 0 1rem;
+}
+
+main ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+}
+
+main li {
+    margin: 0.2rem 0;
+}
+
+main li > ul {
+    margin: 0.2rem 0 0.4rem;
+}
+
+.anchor {
+    float: left;
+    width: 1.1rem;
+    margin-left: -1.1rem;
+    opacity: 0;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+h2:hover .anchor,
+h3:hover .anchor {
+    opacity: 1;
+}
+
+figure {
+    margin: 1.5rem 0;
+}
+
+figure a {
+    display: block;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+.figure-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    margin: 1.5rem 0;
+}
+
+.figure-row figure {
+    margin: 0;
+}
+
+/* Control close-ups are small; don't blow them up to full column width. */
+figure.shot-narrow img {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    margin: 0 0 1.25rem;
+}
+
+/* ── at a glance ──────────────────────────────────────────────────────────── */
+
+.specs {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0 1.25rem;
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    padding: 0.35rem 1rem;
+}
+
+.specs dt {
+    grid-column: 1;
+    padding: 0.5rem 0;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    align-self: center;
+}
+
+.specs dd {
+    grid-column: 2;
+    margin: 0;
+    padding: 0.5rem 0;
+    font-weight: 500;
+}
+
+.specs dt + dd {
+    border-top: 1px solid var(--line);
+}
+
+.specs dt:first-of-type,
+.specs dt:first-of-type + dd {
+    border-top: 0;
+}
+
+.specs dt:not(:first-of-type) {
+    border-top: 1px solid var(--line);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.92rem;
+}
+
+th,
+td {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background: var(--surface-2);
+}
+
+.gear {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 1.25rem 0;
+    padding: 0;
+}
+
+.gear li {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.gear img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.gear .label {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
+}
+
+/* ── video ────────────────────────────────────────────────────────────────── */
+
+.video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: #000;
+}
+
+.video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-play {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.video-play img {
+    width: 100%;
+    height: 100%;
+    /* The 4:3 YouTube thumbnail is cropped back to 16:9, losing its letterbox. */
+    object-fit: cover;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.video-play:hover img {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+.video-play .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4.5rem;
+    height: 3.2rem;
+    transform: translate(-50%, -50%);
+    border-radius: 0.8rem;
+    background: rgb(0 0 0 / 62%);
+    transition: background 0.2s;
+}
+
+.video-play:hover .play {
+    background: var(--accent);
+}
+
+.video-play .play::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    border-style: solid;
+    border-width: 0.6rem 0 0.6rem 1rem;
+    border-color: transparent transparent transparent #fff;
+}
+
+.video-caption {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: left;
+}
+
+.video-item {
+    margin: 0 0 1.5rem;
+}
+
+.video-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 45rem) {
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+}
+
+/* ── watch page ───────────────────────────────────────────────────────────── */
+
+.watch {
+    max-width: 52rem;
+    margin: clamp(1.5rem, 5vw, 3rem) auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+.watch h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.watch .lead {
+    margin: 1.25rem 0 0;
+    font-size: 1.05rem;
+}
+
+.watch .badges {
+    justify-content: flex-start;
+}
+
+.watch .cta {
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+/* ── more instruments ─────────────────────────────────────────────────────── */
+
+.more {
+    max-width: 68rem;
+    margin: clamp(3rem, 8vw, 5rem) auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+.more h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.more-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.more-grid a {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.more-grid a:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.more-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.more-grid .label {
+    display: block;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+/* ── release notes and FAQ ────────────────────────────────────────────────── */
+
+.release,
+.faq-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    margin: 0.6rem 0;
+    padding: 0 1rem;
+}
+
+.release > summary,
+.faq-item > summary {
+    cursor: pointer;
+    padding: 0.7rem 0;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+.release > summary::-webkit-details-marker,
+.faq-item > summary::-webkit-details-marker {
+    display: none;
+}
+
+.release > summary::before,
+.faq-item > summary::before {
+    content: "›";
+    display: inline-block;
+    color: var(--muted);
+    transition: transform 0.15s;
+}
+
+.release[open] > summary::before,
+.faq-item[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.release .date {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-left: auto;
+}
+
+.release .body,
+.faq-item .body {
+    padding-bottom: 0.5rem;
+    border-top: 1px solid var(--line);
+    padding-top: 0.75rem;
+}
+
+.release .body > :last-child,
+.faq-item .body > :last-child {
+    margin-bottom: 0;
+}
+
+/* ── footer ───────────────────────────────────────────────────────────────── */
+
+footer {
+    margin-top: 5rem;
+    padding: 2.5rem clamp(1rem, 4vw, 2rem) 3rem;
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    margin-bottom: 0.75rem;
+}
+
+.video-caption .duration {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── watch page chapters ──────────────────────────────────────────────────── */
+
+.chapters {
+    margin: 1.5rem 0;
+}
+
+.chapters h2 {
+    margin: 0 0 0.5rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    border: 0;
+    padding: 0;
+}
+
+.chapters ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+}
+
+.chapters li + li {
+    border-top: 1px solid var(--line);
+}
+
+.chapters a {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.chapters a:hover {
+    background: var(--surface-2);
+}
+
+.chapters .at {
+    flex: none;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,13 +934,16 @@
       "breadcrumb": {
         "@id": "https://benjamindehli.github.io/Omni-84/#breadcrumb"
       },
+      "hasPart": {
+        "@id": "https://benjamindehli.github.io/Omni-84/#faq"
+      },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://benjamindehli.github.io/Omni-84/img/screenshots-chords.webp",
         "width": 1200,
         "height": 686
       },
-      "dateModified": "2026-08-01"
+      "dateModified": "2026-09-15"
     },
     {
       "@type": "BreadcrumbList",
@@ -82,8 +952,8 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Dehli Musikk",
-          "item": "https://www.dehlimusikk.no/"
+          "name": "Benjamin Dehli",
+          "item": "https://benjamindehli.github.io/"
         },
         {
           "@type": "ListItem",
@@ -109,6 +979,9 @@
       },
       "operatingSystem": "macOS, Windows, Linux",
       "softwareVersion": "2.1.0",
+      "softwareRequirements": "Requires a host that loads VST3 or AU for the plugin version, or the free Decent Sampler application for the sample library version. The standalone application needs neither.",
+      "storageRequirements": "241.3 MB",
+      "releaseNotes": "https://benjamindehli.github.io/Omni-84/#release-notes",
       "datePublished": "2026-08-01",
       "image": "https://benjamindehli.github.io/Omni-84/img/screenshots-chords.webp",
       "screenshot": [
@@ -142,7 +1015,7 @@
           "@type": "PriceSpecification",
           "minPrice": "0",
           "priceCurrency": "USD",
-          "description": "Free — pay what you want"
+          "description": "Free, or pay what you want"
         }
       }
     },
@@ -156,9 +1029,96 @@
       "@type": "Organization",
       "@id": "https://www.dehlimusikk.no/",
       "name": "Dehli Musikk",
-      "url": "https://www.dehlimusikk.no/",
-      "sameAs": [
-        "https://www.kvraudio.com/developer/dehli-musikk"
+      "url": "https://www.dehlimusikk.no/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://benjamindehli.github.io/Omni-84/#faq",
+      "name": "Frequently asked questions about Omni-84",
+      "isPartOf": {
+        "@id": "https://benjamindehli.github.io/Omni-84/"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Omni-84?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Omni-84: the Suzuki Omnichord OM-84 sampled in full, from drums and bass to chords, keyboard and AutoStrum SonicStrings. Free for VST3 and AU."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which formats does Omni-84 come in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Omni-84 is available as VST3, AU and Standalone for macOS, and as a Decent Sampler library for macOS, Windows and Linux."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Omni-84 run on Windows or Linux?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The plugin version is released for macOS only. On Windows and Linux, the Decent Sampler version of Omni-84 covers the same instrument."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Omni-84 work in Logic Pro and Ableton Live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Omni-84 is available as both VST3 and AU, so it loads in any macOS host that reads those formats, including Logic Pro, Ableton Live, Cubase, Reaper and Studio One."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need Decent Sampler to use Omni-84?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not for the plugin version. It is a self-contained instrument with its samples embedded, so there are no external files to install or locate. The Decent Sampler version is a sample library, and that one needs the free Decent Sampler application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What sample rate and bit depth is Omni-84 recorded at?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The samples are 48 kHz, 24 bit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many samples does Omni-84 contain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "277 sample files, 241.3 MB of audio. Impulse responses for the effects are not counted in that figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Omni-84 cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Omni-84 is free, and the store lets you pay what you want for it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I download Omni-84?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From the Dehli Musikk store at https://store.dehlimusikk.no/l/omni-84."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the source code for Omni-84 available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The repository is public at https://github.com/benjamindehli/Omni-84 and licensed under GPL-3.0. The audio files are not in the repository and come with the download."
+          }
+        }
       ]
     }
   ]
@@ -183,20 +1143,21 @@
     <a class="btn btn-primary" href="https://store.dehlimusikk.no/l/omni-84" target="_blank" rel="noopener">Download Omni-84</a>
     <a class="btn" href="https://github.com/benjamindehli/Omni-84" target="_blank" rel="noopener">View on GitHub</a>
   </div>
-  <p class="price-note">Free — pay what you want.</p>
+  <p class="price-note">Free, or pay what you want.</p>
   <div class="github-cta"><a class="btn btn-sm btn-ghost" href="https://github.com/login?return_to=%2Fbenjamindehli%2FOmni-84" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>Star the repo</a><a class="btn btn-sm btn-ghost" href="https://github.com/login?return_to=%2Fbenjamindehli" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>Follow @benjamindehli</a></div>
   <div class="intro-more"><p>Every sound of the Omnichord has been sampled into individual audio files. I've also added the effects I tend to use when recording and playing the Omnichord as an impulse response called "space".</p></div>
 </div>
 
-<div class="hero-shot"><img src="img/screenshots-chords.webp" alt="Omni-84 plugin interface, showing its controls and on-screen keyboard" fetchpriority="high" decoding="async" width="1200" height="686"></div>
+<div class="hero-shot"><img src="img/screenshots-chords.webp" alt="Omni-84 Chords" fetchpriority="high" decoding="async" width="1200" height="686"></div>
 
 <div class="layout">
   <nav class="toc" aria-labelledby="toc-title">
     <p class="toc-title" id="toc-title">On this page</p>
-    <ul><li><a href="#demo-video">Video</a></li><li><a href="#included-formats">Included formats</a></li><li><a href="#the-plugin-version">The plugin version</a></li><li><a href="#the-decent-sampler-version">The Decent Sampler version</a></li><li><a href="#technical-specification">Technical specification</a></li><li><a href="#instrument-presets">Instrument presets</a><ul><li><a href="#drums">Drums</a></li><li><a href="#bass">Bass</a></li><li><a href="#chords">Chords</a></li><li><a href="#keyboard">Keyboard</a></li><li><a href="#sonicstrings">SonicStrings</a></li><li><a href="#sonicstrings-autostrum">SonicStrings (AutoStrum)</a></li></ul></li><li><a href="#effects">Effects</a></li><li><a href="#audio-files">Audio files</a></li><li><a href="#impulse-response-space">Impulse response (Space)</a></li><li><a href="#release-notes">Release notes</a></li><li><a href="#about-this-repository">About this repository</a></li></ul>
+    <ul><li><a href="#at-a-glance">At a glance</a></li><li><a href="#demo-video">Video</a></li><li><a href="#included-formats">Included formats</a></li><li><a href="#the-plugin-version">The plugin version</a></li><li><a href="#the-decent-sampler-version">The Decent Sampler version</a></li><li><a href="#technical-specification">Technical specification</a></li><li><a href="#instrument-presets">Instrument presets</a><ul><li><a href="#drums">Drums</a></li><li><a href="#bass">Bass</a></li><li><a href="#chords">Chords</a></li><li><a href="#keyboard">Keyboard</a></li><li><a href="#sonicstrings">SonicStrings</a></li><li><a href="#sonicstrings-autostrum">SonicStrings (AutoStrum)</a></li></ul></li><li><a href="#effects">Effects</a></li><li><a href="#audio-files">Audio files</a></li><li><a href="#impulse-response-space">Impulse response (Space)</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#release-notes">Release notes</a></li><li><a href="#about-this-repository">About this repository</a></li></ul>
   </nav>
   <main>
-<section id="demo-video"><h2><a class="anchor" href="#demo-video" aria-hidden="true">#</a>Video</h2><p>A demonstration of the Omni-84 library for Decent Sampler.</p><figure class="video-item"><div class="video" data-youtube="dAxy1PFxv3U"><button class="video-play" type="button" aria-label="Play video: Free Omnichord sample plugin (Omni-84)"><img src="https://i.ytimg.com/vi/dAxy1PFxv3U/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button></div><figcaption class="video-caption"><strong>Free Omnichord sample plugin (Omni-84)</strong> <a href="video/">Video page</a> · <a href="https://www.youtube.com/watch?v=dAxy1PFxv3U" target="_blank" rel="noopener">Watch on YouTube</a></figcaption></figure></section>
+<section id="at-a-glance"><h2><a class="anchor" href="#at-a-glance" aria-hidden="true">#</a>At a glance</h2><dl class="specs"><dt>Plugin</dt><dd>VST3, AU and Standalone for macOS</dd><dt>Decent Sampler</dt><dd>macOS, Windows and Linux</dd><dt>Version</dt><dd>2.1.0 (2026-08-01)</dd><dt>Price</dt><dd>Free, or pay what you want</dd><dt>Sample rate</dt><dd>48 kHz</dd><dt>Bit depth</dt><dd>24 bit</dd><dt>Samples</dt><dd>277 files</dd><dt>Sample content</dt><dd>241.3 MB</dd></dl></section>
+<section id="demo-video"><h2><a class="anchor" href="#demo-video" aria-hidden="true">#</a>Video</h2><p>A demonstration of the Omni-84 library for Decent Sampler.</p><figure class="video-item"><div class="video" data-youtube="dAxy1PFxv3U"><button class="video-play" type="button" aria-label="Play video: Free Omnichord sample plugin (Omni-84)"><img src="https://i.ytimg.com/vi/dAxy1PFxv3U/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button></div><figcaption class="video-caption"><strong>Free Omnichord sample plugin (Omni-84)</strong> <span class="duration">2:03</span> <a href="video/">Video page</a> · <a href="https://www.youtube.com/watch?v=dAxy1PFxv3U" target="_blank" rel="noopener">Watch on YouTube</a></figcaption></figure></section>
 <section id="included-formats"><h2><a class="anchor" href="#included-formats" aria-hidden="true">#</a>Included formats</h2><ul>
 <li>VST3 (macOS)</li>
 <li>AU (macOS)</li>
@@ -334,6 +1295,7 @@
 <li>Roland Dimension D SDD-320</li>
 </ul>
 <p>The impulse signal was sent through a channel on the Roland PA-120 mixer so that the built-in spring reverb as well as a tape echo in the effects loop could be used. The preamplifier in the mixer also adds some nice saturation. The mixer and effects are all mono, so I ran it through a Dimension D to make it stereo and add some extra modulation.</p></section>
+<section id="faq"><h2><a class="anchor" href="#faq" aria-hidden="true">#</a>Frequently asked questions</h2><div class="faq"><details class="faq-item"><summary>What is Omni-84?</summary><div class="body"><p>Omni-84: the Suzuki Omnichord OM-84 sampled in full, from drums and bass to chords, keyboard and AutoStrum SonicStrings. Free for VST3 and AU.</p></div></details><details class="faq-item"><summary>Which formats does Omni-84 come in?</summary><div class="body"><p>Omni-84 is available as VST3, AU and Standalone for macOS, and as a Decent Sampler library for macOS, Windows and Linux.</p></div></details><details class="faq-item"><summary>Does Omni-84 run on Windows or Linux?</summary><div class="body"><p>The plugin version is released for macOS only. On Windows and Linux, the Decent Sampler version of Omni-84 covers the same instrument.</p></div></details><details class="faq-item"><summary>Does Omni-84 work in Logic Pro and Ableton Live?</summary><div class="body"><p>Yes. Omni-84 is available as both VST3 and AU, so it loads in any macOS host that reads those formats, including Logic Pro, Ableton Live, Cubase, Reaper and Studio One.</p></div></details><details class="faq-item"><summary>Do I need Decent Sampler to use Omni-84?</summary><div class="body"><p>Not for the plugin version. It is a self-contained instrument with its samples embedded, so there are no external files to install or locate. The Decent Sampler version is a sample library, and that one needs the free Decent Sampler application.</p></div></details><details class="faq-item"><summary>What sample rate and bit depth is Omni-84 recorded at?</summary><div class="body"><p>The samples are 48 kHz, 24 bit.</p></div></details><details class="faq-item"><summary>How many samples does Omni-84 contain?</summary><div class="body"><p>277 sample files, 241.3 MB of audio. Impulse responses for the effects are not counted in that figure.</p></div></details><details class="faq-item"><summary>How much does Omni-84 cost?</summary><div class="body"><p>Omni-84 is free, and the store lets you pay what you want for it.</p></div></details><details class="faq-item"><summary>Where can I download Omni-84?</summary><div class="body"><p>From the Dehli Musikk store at https://store.dehlimusikk.no/l/omni-84.</p></div></details><details class="faq-item"><summary>Is the source code for Omni-84 available?</summary><div class="body"><p>Yes. The repository is public at https://github.com/benjamindehli/Omni-84 and licensed under GPL-3.0. The audio files are not in the repository and come with the download.</p></div></details></div></section>
 <section id="release-notes"><h2><a class="anchor" href="#release-notes" aria-hidden="true">#</a>Release notes</h2><details class="release" open><summary>Version 2.1.0<span class="date">2026-08-01</span></summary><div class="body"><p>Plugin version:</p>
 <ul>
 <li>Added a translucent overlay graphic on top of the interface.</li>
@@ -375,12 +1337,13 @@
   </main>
 </div>
 
-<aside class="more" aria-labelledby="more-title"><h2 id="more-title">More instruments from Dehli Musikk</h2><ul class="more-grid"><li><a href="https://benjamindehli.github.io/4-track-glockenspiel/"><img src="img/more-4-track-glockenspiel-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">4-track Glockenspiel</span></a></li><li><a href="https://benjamindehli.github.io/4-track-music-box/"><img src="img/more-4-track-music-box-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">4-track Music Box</span></a></li><li><a href="https://benjamindehli.github.io/4-track-toy-piano/"><img src="img/more-4-track-toy-piano-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">4-track Toy Piano</span></a></li><li><a href="https://benjamindehli.github.io/EDB-Orgel/"><img src="img/more-edb-orgel-plugin.webp" alt="" loading="lazy" width="400" height="269"><span class="label">EDB-Orgel</span></a></li><li><a href="https://benjamindehli.github.io/ElektriskSalmesykkel/"><img src="img/more-elektrisk-salmesykkel-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">Elektrisk Salmesykkel</span></a></li><li><a href="https://benjamindehli.github.io/lo-fi-tape-piano/"><img src="img/more-lo-fi-tape-piano-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">Lo-fi Tape Piano</span></a></li><li><a href="https://benjamindehli.github.io/MaskinTrommer/"><img src="img/more-maskintrommer-plugin.webp" alt="" loading="lazy" width="400" height="258"><span class="label">Maskintrommer</span></a></li><li><a href="https://benjamindehli.github.io/MidnightWurli/"><img src="img/more-midnight-wurli-plugin.webp" alt="" loading="lazy" width="400" height="224"><span class="label">Midnight Wurli</span></a></li><li><a href="https://benjamindehli.github.io/Strykebrett/"><img src="img/more-strykebrett-plugin.webp" alt="" loading="lazy" width="400" height="216"><span class="label">Strykebrett</span></a></li><li><a href="https://benjamindehli.github.io/StyloPoly/"><img src="img/more-stylopoly-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">StyloPoly</span></a></li><li><a href="https://benjamindehli.github.io/SubC/"><img src="img/more-subc-plugin.webp" alt="" loading="lazy" width="400" height="197"><span class="label">SubC</span></a></li><li><a href="https://benjamindehli.github.io/VoltageControlledCassetteOrgan/"><img src="img/more-voltage-controlled-cassette-organ-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">Voltage Controlled Cassette Organ</span></a></li></ul></aside>
+<aside class="more" aria-labelledby="more-title"><h2 id="more-title">More instruments from Dehli Musikk</h2><ul class="more-grid"><li><a href="https://benjamindehli.github.io/4-track-glockenspiel/"><img src="img/more-4-track-glockenspiel-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">4-track Glockenspiel</span></a></li><li><a href="https://benjamindehli.github.io/4-track-music-box/"><img src="img/more-4-track-music-box-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">4-track Music Box</span></a></li><li><a href="https://benjamindehli.github.io/4-track-toy-piano/"><img src="img/more-4-track-toy-piano-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">4-track Toy Piano</span></a></li><li><a href="https://benjamindehli.github.io/EDB-Orgel/"><img src="img/more-edb-orgel-plugin.webp" alt="" loading="lazy" width="400" height="269"><span class="label">EDB-Orgel</span></a></li><li><a href="https://benjamindehli.github.io/ElektriskSalmesykkel/"><img src="img/more-elektrisk-salmesykkel-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">Elektrisk Salmesykkel</span></a></li><li><a href="https://benjamindehli.github.io/lo-fi-tape-piano/"><img src="img/more-lo-fi-tape-piano-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">Lo-fi Tape Piano</span></a></li><li><a href="https://benjamindehli.github.io/MaskinTrommer/"><img src="img/more-maskintrommer-plugin.webp" alt="" loading="lazy" width="400" height="258"><span class="label">MaskinTrommer</span></a></li><li><a href="https://benjamindehli.github.io/MidnightWurli/"><img src="img/more-midnight-wurli-plugin.webp" alt="" loading="lazy" width="400" height="224"><span class="label">Midnight Wurli</span></a></li><li><a href="https://benjamindehli.github.io/Strykebrett/"><img src="img/more-strykebrett-plugin.webp" alt="" loading="lazy" width="400" height="216"><span class="label">Strykebrett</span></a></li><li><a href="https://benjamindehli.github.io/StyloPoly/"><img src="img/more-stylopoly-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">StyloPoly</span></a></li><li><a href="https://benjamindehli.github.io/SubC/"><img src="img/more-subc-plugin.webp" alt="" loading="lazy" width="400" height="197"><span class="label">SubC</span></a></li><li><a href="https://benjamindehli.github.io/VoltageControlledCassetteOrgan/"><img src="img/more-voltage-controlled-cassette-organ-plugin.webp" alt="" loading="lazy" width="400" height="221"><span class="label">Voltage Controlled Cassette Organ</span></a></li></ul></aside>
 
 <footer>
   <img src="img/icon.png" alt="">
   <nav>
     <a href="https://www.dehlimusikk.no/en/products/omni-84/" target="_blank" rel="noopener">Omni-84 at Dehli Musikk</a>
+    <a href="https://www.dehlimusikk.no/products/omni-84/" hreflang="no" lang="no" target="_blank" rel="noopener">På norsk</a>
     <a href="https://store.dehlimusikk.no/l/omni-84" target="_blank" rel="noopener">Store</a>
     <a href="https://www.dehlimusikk.no/" target="_blank" rel="noopener">Dehli Musikk</a>
     <a href="https://www.decentsamples.com/product/decent-sampler-plugin/" target="_blank" rel="noopener">Decent Sampler</a>
