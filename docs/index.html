@@ -89,6 +89,60 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* ── keyboard access ──────────────────────────────────────────────────────── */
+
+/* The table of contents alone is 19 links, so reaching the page's own text
+   without a mouse meant 27 tab stops. This is the first thing in the tab order
+   and stays off screen until it is focused. */
+.skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 20;
+    padding: 0.6rem 1rem;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 0 0 var(--radius) 0;
+    text-decoration: none;
+}
+
+.skip:focus {
+    left: 0;
+}
+
+/* Nothing here removes the browser's focus ring. This only makes it a
+   deliberate one, since a default ring against a filled pill button is easy
+   to lose. */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* An accent ring on an accent-filled button would be the same colour twice. */
+.btn-primary:focus-visible {
+    outline-color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
+
 a {
     color: var(--accent);
     text-decoration-thickness: 1px;
@@ -943,7 +997,7 @@ footer img {
         "width": 1200,
         "height": 686
       },
-      "dateModified": "2026-09-15"
+      "dateModified": "2026-09-17"
     },
     {
       "@type": "BreadcrumbList",
@@ -1127,6 +1181,8 @@ footer img {
 </head>
 <body>
 
+<a class="skip" href="#content">Skip to the content</a>
+
 <header class="topbar">
   <img src="img/icon.png" alt="">
   <a class="name" href="#">Omni-84</a>
@@ -1155,17 +1211,17 @@ footer img {
     <p class="toc-title" id="toc-title">On this page</p>
     <ul><li><a href="#at-a-glance">At a glance</a></li><li><a href="#demo-video">Video</a></li><li><a href="#included-formats">Included formats</a></li><li><a href="#the-plugin-version">The plugin version</a></li><li><a href="#the-decent-sampler-version">The Decent Sampler version</a></li><li><a href="#technical-specification">Technical specification</a></li><li><a href="#instrument-presets">Instrument presets</a><ul><li><a href="#drums">Drums</a></li><li><a href="#bass">Bass</a></li><li><a href="#chords">Chords</a></li><li><a href="#keyboard">Keyboard</a></li><li><a href="#sonicstrings">SonicStrings</a></li><li><a href="#sonicstrings-autostrum">SonicStrings (AutoStrum)</a></li></ul></li><li><a href="#effects">Effects</a></li><li><a href="#audio-files">Audio files</a></li><li><a href="#impulse-response-space">Impulse response (Space)</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#release-notes">Release notes</a></li><li><a href="#about-this-repository">About this repository</a></li></ul>
   </nav>
-  <main>
-<section id="at-a-glance"><h2><a class="anchor" href="#at-a-glance" aria-hidden="true">#</a>At a glance</h2><dl class="specs"><dt>Plugin</dt><dd>VST3, AU and Standalone for macOS</dd><dt>Decent Sampler</dt><dd>macOS, Windows and Linux</dd><dt>Version</dt><dd>2.1.0 (2026-08-01)</dd><dt>Price</dt><dd>Free, or pay what you want</dd><dt>Sample rate</dt><dd>48 kHz</dd><dt>Bit depth</dt><dd>24 bit</dd><dt>Samples</dt><dd>277 files</dd><dt>Sample content</dt><dd>241.3 MB</dd></dl></section>
-<section id="demo-video"><h2><a class="anchor" href="#demo-video" aria-hidden="true">#</a>Video</h2><p>A demonstration of the Omni-84 library for Decent Sampler.</p><figure class="video-item"><div class="video" data-youtube="dAxy1PFxv3U"><button class="video-play" type="button" aria-label="Play video: Free Omnichord sample plugin (Omni-84)"><img src="https://i.ytimg.com/vi/dAxy1PFxv3U/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button></div><figcaption class="video-caption"><strong>Free Omnichord sample plugin (Omni-84)</strong> <span class="duration">2:03</span> <a href="video/">Video page</a> · <a href="https://www.youtube.com/watch?v=dAxy1PFxv3U" target="_blank" rel="noopener">Watch on YouTube</a></figcaption></figure></section>
-<section id="included-formats"><h2><a class="anchor" href="#included-formats" aria-hidden="true">#</a>Included formats</h2><ul>
+  <main id="content">
+<section id="at-a-glance"><h2><a class="anchor" href="#at-a-glance" aria-hidden="true" tabindex="-1">#</a>At a glance</h2><dl class="specs"><dt>Plugin</dt><dd>VST3, AU and Standalone for macOS</dd><dt>Decent Sampler</dt><dd>macOS, Windows and Linux</dd><dt>Version</dt><dd>2.1.0 (2026-08-01)</dd><dt>Price</dt><dd>Free, or pay what you want</dd><dt>Sample rate</dt><dd>48 kHz</dd><dt>Bit depth</dt><dd>24 bit</dd><dt>Samples</dt><dd>277 files</dd><dt>Sample content</dt><dd>241.3 MB</dd></dl></section>
+<section id="demo-video"><h2><a class="anchor" href="#demo-video" aria-hidden="true" tabindex="-1">#</a>Video</h2><p>A demonstration of the Omni-84 library for Decent Sampler.</p><figure class="video-item"><div class="video" data-youtube="dAxy1PFxv3U"><button class="video-play" type="button" aria-label="Play video: Free Omnichord sample plugin (Omni-84)"><img src="https://i.ytimg.com/vi/dAxy1PFxv3U/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span></button></div><figcaption class="video-caption"><strong>Free Omnichord sample plugin (Omni-84)</strong> <span class="duration">2:03</span> <a href="video/">Video page</a> · <a href="https://www.youtube.com/watch?v=dAxy1PFxv3U" target="_blank" rel="noopener">Watch on YouTube</a></figcaption></figure></section>
+<section id="included-formats"><h2><a class="anchor" href="#included-formats" aria-hidden="true" tabindex="-1">#</a>Included formats</h2><ul>
 <li>VST3 (macOS)</li>
 <li>AU (macOS)</li>
 <li>Standalone application (macOS)</li>
 <li>Decent Sampler (macOS, Windows and Linux)</li>
 </ul>
 <p>The plugin version is currently released for macOS only. Windows and Linux versions are planned. Until then, the Decent Sampler version covers those platforms.</p></section>
-<section id="the-plugin-version"><h2><a class="anchor" href="#the-plugin-version" aria-hidden="true">#</a>The plugin version</h2><p>The plugin is a self-contained instrument, available as VST3, AU and Standalone. Samples, graphics and impulse responses are all embedded in the plugin itself, losslessly compressed, so there are no external files to install or locate. Only the samples for the selected preset are loaded into memory, and a fresh instance lets you choose which preset to load before anything is decoded.</p>
+<section id="the-plugin-version"><h2><a class="anchor" href="#the-plugin-version" aria-hidden="true" tabindex="-1">#</a>The plugin version</h2><p>The plugin is a self-contained instrument, available as VST3, AU and Standalone. Samples, graphics and impulse responses are all embedded in the plugin itself, losslessly compressed, so there are no external files to install or locate. Only the samples for the selected preset are loaded into memory, and a fresh instance lets you choose which preset to load before anything is decoded.</p>
 <p>The plugin has all the controls and features from the Decent Sampler version, including MIDI learn, the master volume fader with output meter, value readouts for the knobs and full DAW automation. On top of that, the plugin version adds:</p>
 <ul>
 <li>Drift wheels next to the pitch and modulation wheels, adding a subtle random pitch and volume drift to each voice.</li>
@@ -1173,16 +1229,16 @@ footer img {
 <li>An improved AutoStrum mode that works like the real instrument. See the section "SonicStrings (AutoStrum)".</li>
 <li>Labels above the on-screen keyboard for the chord and strum keys.</li>
 </ul></section>
-<section id="the-decent-sampler-version"><h2><a class="anchor" href="#the-decent-sampler-version" aria-hidden="true">#</a>The Decent Sampler version</h2><p>This version of Omni-84 is an instrument preset / sample library for Decent Sampler. If you're new to Decent Sampler, I recommend checking out <a href="https://www.decentsamples.com/how-to-use-decent-sampler/" target="_blank" rel="noopener">this guide</a> first.</p></section>
-<section id="technical-specification"><h2><a class="anchor" href="#technical-specification" aria-hidden="true">#</a>Technical specification</h2><ul>
+<section id="the-decent-sampler-version"><h2><a class="anchor" href="#the-decent-sampler-version" aria-hidden="true" tabindex="-1">#</a>The Decent Sampler version</h2><p>This version of Omni-84 is an instrument preset / sample library for Decent Sampler. If you're new to Decent Sampler, I recommend checking out <a href="https://www.decentsamples.com/how-to-use-decent-sampler/" target="_blank" rel="noopener">this guide</a> first.</p></section>
+<section id="technical-specification"><h2><a class="anchor" href="#technical-specification" aria-hidden="true" tabindex="-1">#</a>Technical specification</h2><ul>
 <li>Sample rate: 48 kHz</li>
 <li>Bit depth: 24 bit</li>
 <li>Number of samples: 277</li>
 <li>File size for samples: 241.3 MB</li>
 <li>Channels: 1 (mono), 2 (stereo) for impulse response</li>
 </ul></section>
-<section id="instrument-presets"><h2><a class="anchor" href="#instrument-presets" aria-hidden="true">#</a>Instrument presets</h2><p>This instrument includes 5 (plus 1 looped) presets, one for each part of the Omnichord. Drums, Bass, Chords, Keyboard and SonicStrings. There's 2 presets for chords, a regular preset "Chords" (best in most cases) and the looped preset "Chords (Looped)". For the regular version, each sample are approximately 11 seconds long. For the looped version, to achieve the best possible loop point, some of the loops are short and some are longer. Some of the loops will however have some minor artifacts. For best audio quality, you should always use the regular version. And only if you have notes held for more than 11 seconds, use the the looped version.</p>
-<h3 id="drums"><a class="anchor" href="#drums" aria-hidden="true">#</a>Drums</h3>
+<section id="instrument-presets"><h2><a class="anchor" href="#instrument-presets" aria-hidden="true" tabindex="-1">#</a>Instrument presets</h2><p>This instrument includes 5 (plus 1 looped) presets, one for each part of the Omnichord. Drums, Bass, Chords, Keyboard and SonicStrings. There's 2 presets for chords, a regular preset "Chords" (best in most cases) and the looped preset "Chords (Looped)". For the regular version, each sample are approximately 11 seconds long. For the looped version, to achieve the best possible loop point, some of the loops are short and some are longer. Some of the loops will however have some minor artifacts. For best audio quality, you should always use the regular version. And only if you have notes held for more than 11 seconds, use the the looped version.</p>
+<h3 id="drums"><a class="anchor" href="#drums" aria-hidden="true" tabindex="-1">#</a>Drums</h3>
 <figure class="shot"><a href="img/screenshots-drums.webp" target="_blank" rel="noopener"><img src="img/screenshots-drums.webp" alt="Omni-84 Drums" loading="lazy" width="1200" height="686"></a><figcaption>Omni-84 Drums</figcaption></figure>
 <ul>
 <li>Velocity<ul>
@@ -1195,14 +1251,14 @@ footer img {
 <li>G2-A2: Clave</li>
 </ul></li>
 </ul>
-<h3 id="bass"><a class="anchor" href="#bass" aria-hidden="true">#</a>Bass</h3>
+<h3 id="bass"><a class="anchor" href="#bass" aria-hidden="true" tabindex="-1">#</a>Bass</h3>
 <figure class="shot"><a href="img/screenshots-bass.webp" target="_blank" rel="noopener"><img src="img/screenshots-bass.webp" alt="Omni-84 Bass" loading="lazy" width="1200" height="662"></a><figcaption>Omni-84 Bass</figcaption></figure>
 <ul>
 <li>Release<ul>
 <li>How long the note sustains after the key is released</li>
 </ul></li>
 </ul>
-<h3 id="chords"><a class="anchor" href="#chords" aria-hidden="true">#</a>Chords</h3>
+<h3 id="chords"><a class="anchor" href="#chords" aria-hidden="true" tabindex="-1">#</a>Chords</h3>
 <ul>
 <li>Keys<ul>
 <li>C1-B1: Major chords</li>
@@ -1214,7 +1270,7 @@ footer img {
 <li>C7-B7: Augmented chords</li>
 </ul></li>
 </ul>
-<h3 id="keyboard"><a class="anchor" href="#keyboard" aria-hidden="true">#</a>Keyboard</h3>
+<h3 id="keyboard"><a class="anchor" href="#keyboard" aria-hidden="true" tabindex="-1">#</a>Keyboard</h3>
 <figure class="shot"><a href="img/screenshots-keyboard.webp" target="_blank" rel="noopener"><img src="img/screenshots-keyboard.webp" alt="Omni-84 Keyboard" loading="lazy" width="1200" height="662"></a><figcaption>Omni-84 Keyboard</figcaption></figure>
 <ul>
 <li>Voices<ul>
@@ -1227,7 +1283,7 @@ footer img {
 </ul></li>
 </ul>
 <p>The keyboard samples loop after about 12 seconds to achieve a continuous sound. Each loop point is carefully picked and phase aligned to avoid audible artifacts.</p>
-<h3 id="sonicstrings"><a class="anchor" href="#sonicstrings" aria-hidden="true">#</a>SonicStrings</h3>
+<h3 id="sonicstrings"><a class="anchor" href="#sonicstrings" aria-hidden="true" tabindex="-1">#</a>SonicStrings</h3>
 <figure class="shot"><a href="img/screenshots-sonicstrings.webp" target="_blank" rel="noopener"><img src="img/screenshots-sonicstrings.webp" alt="Omni-84 SonicStrings" loading="lazy" width="1200" height="662"></a><figcaption>Omni-84 SonicStrings</figcaption></figure>
 <ul>
 <li>Voice 1 (vibrato voice)<ul>
@@ -1240,7 +1296,7 @@ footer img {
 <li>The tone produced on the original Omnichord has the same length whether you keep your finger on the strum plate or release it. The length of the note is set by the control labeled sustain. To achieve the same behaviour in this plugin, the sustain knob affects both the decay time and the release time of the volume envelope.</li>
 </ul></li>
 </ul>
-<h3 id="sonicstrings-autostrum"><a class="anchor" href="#sonicstrings-autostrum" aria-hidden="true">#</a>SonicStrings (AutoStrum)</h3>
+<h3 id="sonicstrings-autostrum"><a class="anchor" href="#sonicstrings-autostrum" aria-hidden="true" tabindex="-1">#</a>SonicStrings (AutoStrum)</h3>
 <figure class="shot"><a href="img/screenshots-sonicstringsautostrum.webp" target="_blank" rel="noopener"><img src="img/screenshots-sonicstringsautostrum.webp" alt="Omni-84 SonicStrings (AutoStrum)" loading="lazy" width="1200" height="686"></a><figcaption>Omni-84 SonicStrings (AutoStrum)</figcaption></figure>
 <p>The notes are strummed in the same order as the original Omnichord. The preset contains strum patterns for all the individual chords from the Suzuki Omnichord OM-84. It has the same notes values for the chords as the Omni-84 'Chords' preset, which means you can send MIDI to both at the same time and get strummed SonicStrings on top of the chord sample.</p>
 <ul>
@@ -1272,7 +1328,7 @@ footer img {
 </ul></li>
 <li>Labels above the on-screen keyboard show which keys select chords and which keys strum.</li>
 </ul></section>
-<section id="effects"><h2><a class="anchor" href="#effects" aria-hidden="true">#</a>Effects</h2><figure class="shot shot-narrow"><a href="img/screenshots-effects.webp" target="_blank" rel="noopener"><img src="img/screenshots-effects.webp" alt="Omni-84 Effects" loading="lazy" width="575" height="202"></a><figcaption>Omni-84 Effects</figcaption></figure>
+<section id="effects"><h2><a class="anchor" href="#effects" aria-hidden="true" tabindex="-1">#</a>Effects</h2><figure class="shot shot-narrow"><a href="img/screenshots-effects.webp" target="_blank" rel="noopener"><img src="img/screenshots-effects.webp" alt="Omni-84 Effects" loading="lazy" width="575" height="202"></a><figcaption>Omni-84 Effects</figcaption></figure>
 <ul>
 <li>Filter<ul>
 <li>Controls the cutoff frequency for the lowpass filter</li>
@@ -1281,22 +1337,22 @@ footer img {
 <li>Controls the reverb amount for the impulse response / convolution reverb</li>
 </ul></li>
 </ul></section>
-<section id="audio-files"><h2><a class="anchor" href="#audio-files" aria-hidden="true">#</a>Audio files</h2><ul>
+<section id="audio-files"><h2><a class="anchor" href="#audio-files" aria-hidden="true" tabindex="-1">#</a>Audio files</h2><ul>
 <li>22 drum samples</li>
 <li>19 bass samples</li>
 <li>84 chord samples</li>
 <li>32 keyboard samples</li>
 <li>120 SonicStrings samples</li>
 </ul></section>
-<section id="impulse-response-space"><h2><a class="anchor" href="#impulse-response-space" aria-hidden="true">#</a>Impulse response (Space)</h2><ul>
+<section id="impulse-response-space"><h2><a class="anchor" href="#impulse-response-space" aria-hidden="true" tabindex="-1">#</a>Impulse response (Space)</h2><ul>
 <li>Roland PA-120 preamp</li>
 <li>Fulltone Tube Tape Echo</li>
 <li>Roland PA-120 spring reverb</li>
 <li>Roland Dimension D SDD-320</li>
 </ul>
 <p>The impulse signal was sent through a channel on the Roland PA-120 mixer so that the built-in spring reverb as well as a tape echo in the effects loop could be used. The preamplifier in the mixer also adds some nice saturation. The mixer and effects are all mono, so I ran it through a Dimension D to make it stereo and add some extra modulation.</p></section>
-<section id="faq"><h2><a class="anchor" href="#faq" aria-hidden="true">#</a>Frequently asked questions</h2><div class="faq"><details class="faq-item"><summary>What is Omni-84?</summary><div class="body"><p>Omni-84: the Suzuki Omnichord OM-84 sampled in full, from drums and bass to chords, keyboard and AutoStrum SonicStrings. Free for VST3 and AU.</p></div></details><details class="faq-item"><summary>Which formats does Omni-84 come in?</summary><div class="body"><p>Omni-84 is available as VST3, AU and Standalone for macOS, and as a Decent Sampler library for macOS, Windows and Linux.</p></div></details><details class="faq-item"><summary>Does Omni-84 run on Windows or Linux?</summary><div class="body"><p>The plugin version is released for macOS only. On Windows and Linux, the Decent Sampler version of Omni-84 covers the same instrument.</p></div></details><details class="faq-item"><summary>Does Omni-84 work in Logic Pro and Ableton Live?</summary><div class="body"><p>Yes. Omni-84 is available as both VST3 and AU, so it loads in any macOS host that reads those formats, including Logic Pro, Ableton Live, Cubase, Reaper and Studio One.</p></div></details><details class="faq-item"><summary>Do I need Decent Sampler to use Omni-84?</summary><div class="body"><p>Not for the plugin version. It is a self-contained instrument with its samples embedded, so there are no external files to install or locate. The Decent Sampler version is a sample library, and that one needs the free Decent Sampler application.</p></div></details><details class="faq-item"><summary>What sample rate and bit depth is Omni-84 recorded at?</summary><div class="body"><p>The samples are 48 kHz, 24 bit.</p></div></details><details class="faq-item"><summary>How many samples does Omni-84 contain?</summary><div class="body"><p>277 sample files, 241.3 MB of audio. Impulse responses for the effects are not counted in that figure.</p></div></details><details class="faq-item"><summary>How much does Omni-84 cost?</summary><div class="body"><p>Omni-84 is free, and the store lets you pay what you want for it.</p></div></details><details class="faq-item"><summary>Where can I download Omni-84?</summary><div class="body"><p>From the Dehli Musikk store at <a href="https://store.dehlimusikk.no/l/omni-84" target="_blank" rel="noopener">https://store.dehlimusikk.no/l/omni-84</a>.</p></div></details><details class="faq-item"><summary>Is the source code for Omni-84 available?</summary><div class="body"><p>Yes. The repository is public at <a href="https://github.com/benjamindehli/Omni-84" target="_blank" rel="noopener">https://github.com/benjamindehli/Omni-84</a> and licensed under GPL-3.0. The audio files are not in the repository and come with the download.</p></div></details></div></section>
-<section id="release-notes"><h2><a class="anchor" href="#release-notes" aria-hidden="true">#</a>Release notes</h2><details class="release" open><summary>Version 2.1.0<span class="date">2026-08-01</span></summary><div class="body"><p>Plugin version:</p>
+<section id="faq"><h2><a class="anchor" href="#faq" aria-hidden="true" tabindex="-1">#</a>Frequently asked questions</h2><div class="faq"><details class="faq-item"><summary>What is Omni-84?</summary><div class="body"><p>Omni-84: the Suzuki Omnichord OM-84 sampled in full, from drums and bass to chords, keyboard and AutoStrum SonicStrings. Free for VST3 and AU.</p></div></details><details class="faq-item"><summary>Which formats does Omni-84 come in?</summary><div class="body"><p>Omni-84 is available as VST3, AU and Standalone for macOS, and as a Decent Sampler library for macOS, Windows and Linux.</p></div></details><details class="faq-item"><summary>Does Omni-84 run on Windows or Linux?</summary><div class="body"><p>The plugin version is released for macOS only. On Windows and Linux, the Decent Sampler version of Omni-84 covers the same instrument.</p></div></details><details class="faq-item"><summary>Does Omni-84 work in Logic Pro and Ableton Live?</summary><div class="body"><p>Yes. Omni-84 is available as both VST3 and AU, so it loads in any macOS host that reads those formats, including Logic Pro, Ableton Live, Cubase, Reaper and Studio One.</p></div></details><details class="faq-item"><summary>Do I need Decent Sampler to use Omni-84?</summary><div class="body"><p>Not for the plugin version. It is a self-contained instrument with its samples embedded, so there are no external files to install or locate. The Decent Sampler version is a sample library, and that one needs the free Decent Sampler application.</p></div></details><details class="faq-item"><summary>What sample rate and bit depth is Omni-84 recorded at?</summary><div class="body"><p>The samples are 48 kHz, 24 bit.</p></div></details><details class="faq-item"><summary>How many samples does Omni-84 contain?</summary><div class="body"><p>277 sample files, 241.3 MB of audio. Impulse responses for the effects are not counted in that figure.</p></div></details><details class="faq-item"><summary>How much does Omni-84 cost?</summary><div class="body"><p>Omni-84 is free, and the store lets you pay what you want for it.</p></div></details><details class="faq-item"><summary>Where can I download Omni-84?</summary><div class="body"><p>From the Dehli Musikk store at <a href="https://store.dehlimusikk.no/l/omni-84" target="_blank" rel="noopener">https://store.dehlimusikk.no/l/omni-84</a>.</p></div></details><details class="faq-item"><summary>Is the source code for Omni-84 available?</summary><div class="body"><p>Yes. The repository is public at <a href="https://github.com/benjamindehli/Omni-84" target="_blank" rel="noopener">https://github.com/benjamindehli/Omni-84</a> and licensed under GPL-3.0. The audio files are not in the repository and come with the download.</p></div></details></div></section>
+<section id="release-notes"><h2><a class="anchor" href="#release-notes" aria-hidden="true" tabindex="-1">#</a>Release notes</h2><details class="release" open><summary>Version 2.1.0<span class="date">2026-08-01</span></summary><div class="body"><p>Plugin version:</p>
 <ul>
 <li>Added a translucent overlay graphic on top of the interface.</li>
 <li>Keys that are hovered or held on the keyboard are now shaded in a neutral way instead of turning yellow:<ul>
@@ -1333,7 +1389,7 @@ footer img {
 <details class="release"><summary>Version 1.0.0<span class="date">2023-04-06</span></summary><div class="body"><ul>
 <li>First version released</li>
 </ul></div></details></section>
-<section id="about-this-repository"><h2><a class="anchor" href="#about-this-repository" aria-hidden="true">#</a>About this repository</h2><p>This repository contains the source for both the Decent Sampler library (the DecentSampler folder) and the plugin version. The plugin is a thin wrapper around the shared Dehli Musikk sampler engine, and a converter translates the Decent Sampler library into the engine's native preset format at build time. The audio files are not part of this repository, since the samples are a paid product. The full version is available from <a href="https://store.dehlimusikk.no/" target="_blank" rel="noopener">store.dehlimusikk.no</a>.</p></section>
+<section id="about-this-repository"><h2><a class="anchor" href="#about-this-repository" aria-hidden="true" tabindex="-1">#</a>About this repository</h2><p>This repository contains the source for both the Decent Sampler library (the DecentSampler folder) and the plugin version. The plugin is a thin wrapper around the shared Dehli Musikk sampler engine, and a converter translates the Decent Sampler library into the engine's native preset format at build time. The audio files are not part of this repository, since the samples are a paid product. The full version is available from <a href="https://store.dehlimusikk.no/" target="_blank" rel="noopener">store.dehlimusikk.no</a>.</p></section>
   </main>
 </div>
 

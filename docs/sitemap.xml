@@ -3,11 +3,11 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://benjamindehli.github.io/Omni-84/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
   </url>
   <url>
     <loc>https://benjamindehli.github.io/Omni-84/video/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/dAxy1PFxv3U/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Free Omnichord sample plugin (Omni-84)</video:title>

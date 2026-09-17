@@ -65,6 +65,60 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* ── keyboard access ──────────────────────────────────────────────────────── */
+
+/* The table of contents alone is 19 links, so reaching the page's own text
+   without a mouse meant 27 tab stops. This is the first thing in the tab order
+   and stays off screen until it is focused. */
+.skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 20;
+    padding: 0.6rem 1rem;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 0 0 var(--radius) 0;
+    text-decoration: none;
+}
+
+.skip:focus {
+    left: 0;
+}
+
+/* Nothing here removes the browser's focus ring. This only makes it a
+   deliberate one, since a default ring against a filled pill button is easy
+   to lose. */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* An accent ring on an accent-filled button would be the same colour twice. */
+.btn-primary:focus-visible {
+    outline-color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
+
 a {
     color: var(--accent);
     text-decoration-thickness: 1px;
@@ -881,7 +935,7 @@ footer img {
   <a class="btn btn-primary btn-sm" href="https://store.dehlimusikk.no/l/omni-84" target="_blank" rel="noopener">Get it</a>
 </header>
 
-<div class="hero">
+<main class="hero" id="content">
   <h1>Page not found</h1>
   <p class="tagline">That page does not exist on the Omni-84 site.
   It may have been renamed, or the link that brought you here may be out of date.</p>
@@ -889,7 +943,7 @@ footer img {
     <a class="btn btn-primary" href="/Omni-84/">Omni-84 product page</a>
     <a class="btn" href="https://store.dehlimusikk.no/l/omni-84" target="_blank" rel="noopener">Store</a>
   </div>
-</div>
+</main>
 
 <footer>
   <nav>
