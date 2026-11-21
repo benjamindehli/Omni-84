@@ -1017,7 +1017,7 @@
               "width": 49,
               "height": 49
             },
-            "label": "Voice1",
+            "label": "Volume Voice1",
             "valueType": "float",
             "min": 0.0,
             "max": 2.0,
@@ -1048,7 +1048,7 @@
               "width": 49,
               "height": 49
             },
-            "label": "Voice2",
+            "label": "Volume Voice2",
             "valueType": "float",
             "min": 0.0,
             "max": 2.0,
