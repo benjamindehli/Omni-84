@@ -1,0 +1,93 @@
+{
+    "scale": 2,
+    "shots": [
+        {
+            "file": "Bass.png",
+            "mode": "Bass",
+            "window": true,
+            "set": {
+                "Sustain": 0.1318,
+                "Lowpass": 0.7833,
+                "Reverb": 8.3333,
+                "btn_0": 1
+            }
+        },
+        {
+            "file": "Chords.png",
+            "mode": "Chords",
+            "window": true,
+            "set": {
+                "Lowpass": 0.65,
+                "Reverb": 28.3333,
+                "btn_0": 1
+            }
+        },
+        {
+            "file": "Drums.png",
+            "mode": "Drums",
+            "window": true,
+            "set": {
+                "btn_0": 1
+            }
+        },
+        {
+            "file": "Effects.png",
+            "mode": "Chords (Looped)",
+            "crop": {
+                "x": 298,
+                "y": 164,
+                "width": 288,
+                "height": 101
+            },
+            "set": {
+                "Lowpass": 0.3833,
+                "Reverb": 63.3333,
+                "btn_0": 1
+            }
+        },
+        {
+            "file": "Keyboard.png",
+            "mode": "Keyboard",
+            "window": true,
+            "set": {
+                "Lowpass": 0.8667,
+                "Reverb": 41.6667,
+                "btn_0": 1,
+                "pitchDrift": 0.31,
+                "volumeDrift": 0.16
+            }
+        },
+        {
+            "file": "SonicStrings.png",
+            "mode": "SonicStrings",
+            "window": true,
+            "set": {
+                "Volume Voice2": 1.3,
+                "Sustain": 4.7542,
+                "Lowpass": 0.9,
+                "Reverb": 36.6667,
+                "btn_0": 1,
+                "pitchDrift": 0.46,
+                "volumeDrift": 0.32,
+                "Mod wheel": 73
+            }
+        },
+        {
+            "file": "SonicStringsAutoStrum.png",
+            "mode": "SonicStrings (AutoStrum)",
+            "window": true,
+            "set": {
+                "Volume Voice2": 1.3,
+                "Sustain": 4.7542,
+                "Lowpass": 0.9,
+                "Reverb": 36.6667,
+                "Strum speed": 16.4667,
+                "btn_0": 1,
+                "pitchDrift": 0.46,
+                "volumeDrift": 0.32,
+                "Mod wheel": 73,
+                "seqTempoSync": 1
+            }
+        }
+    ]
+}
