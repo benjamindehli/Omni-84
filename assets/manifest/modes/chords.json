@@ -796,6 +796,7 @@
         "buttons": [
           {
             "id": "btn_0",
+            "label": "Effects",
             "rect": {
               "x": 323,
               "y": 195,

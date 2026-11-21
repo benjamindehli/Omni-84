@@ -12,6 +12,17 @@
         "SonicStrings (AutoStrum)": "Resources/overlay_labels.png"
     },
     "overlayScope": "instrument",
+    "labels": {
+        "btn_0": "Effects",
+        "Drums": {
+            "btn_0": "Velocity",
+            "btn_1": "Effects"
+        },
+        "Keyboard": {
+            "btn_0": "Voices",
+            "btn_1": "Effects"
+        }
+    },
     "keyboardLabels": {
         "Chords": [
             { "loNote": 36, "hiNote": 47, "text": "Major" },

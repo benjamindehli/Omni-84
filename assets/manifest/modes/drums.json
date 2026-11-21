@@ -289,6 +289,7 @@
         "buttons": [
           {
             "id": "btn_0",
+            "label": "Velocity",
             "rect": {
               "x": 417,
               "y": 90,
@@ -351,6 +352,7 @@
           },
           {
             "id": "btn_1",
+            "label": "Effects",
             "rect": {
               "x": 323,
               "y": 195,
