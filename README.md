@@ -13,6 +13,27 @@ I've also added the effects I tend to use when recording and playing the Omnicho
 
 ## Release notes
 
+### Version 2.2.0 (2026-11-25)
+
+Plugin version:
+
+- The plugin is now also available for Windows and Linux, as VST3 and Standalone. These versions have not yet been tested on Windows and Linux computers.
+- The window can be resized from its own size to twice that, by dragging its bottom-right corner or with the new window size setting in the settings menu. The size is saved with the project.
+- Added Undo and Redo buttons. Knob moves, button presses and menu choices can be undone, also with Cmd+Z and Shift+Cmd+Z (Ctrl+Z and Shift+Ctrl+Z on Windows and Linux). Automation is not recorded as steps.
+- Every control has a name for screen readers such as VoiceOver, and a screen reader goes through the window in a sensible order.
+- The buttons and menus have names in the DAW's automation list instead of numbers. Existing automation of them keeps working.
+- If the samples cannot be found, the plugin now says so and where they should be, instead of playing silence.
+- The plugin tells the DAW how long its reverb and release tails last, so they are not cut off at the end of an export.
+- An optional check for new versions. The first time the plugin opens, it asks whether it may check. It reads one small file from the product page and sends nothing about you. A new version is shown in the bottom strip.
+- A damaged value in a saved project or preset is set back to its default instead of reaching the sound.
+- Built on JUCE 9.0.6.
+
+DecentSampler version:
+
+- The SonicStrings knobs have clearer names, also in screen readers and DAWs. DAW automation and saved values for the renamed knobs need to be set again.
+
+The DecentSampler changes are also included in the plugin version.
+
 ### Version 2.1.0 (2026-08-01)
 
 Plugin version:
@@ -59,19 +80,17 @@ The DecentSampler changes are also included in the plugin version.
 
 ## Included formats
 
-- VST3 (macOS)
+- VST3 (macOS, Windows and Linux)
 - AU (macOS)
-- Standalone application (macOS)
+- Standalone application (macOS, Windows and Linux)
 - Decent Sampler (macOS, Windows and Linux)
 
-The plugin version is currently released for macOS only.
-Windows and Linux versions are planned.
-Until then, the Decent Sampler version covers those platforms.
+The Windows and Linux versions of the plugin are new and have not yet been tested on those systems.
 
 ## The plugin version
 
 The plugin is a self-contained instrument, available as VST3, AU and Standalone.
-Samples, graphics and impulse responses are all embedded in the plugin itself, losslessly compressed, so there are no external files to install or locate.
+The graphics are embedded in the plugin, and the samples and impulse responses come in one losslessly compressed file that the installer puts in place, so there is nothing to locate by hand.
 Only the samples for the selected preset are loaded into memory, and a fresh instance lets you choose which preset to load before anything is decoded.
 
 The plugin has all the controls and features from the Decent Sampler version, including MIDI learn, the master volume fader with output meter, value readouts for the knobs and full DAW automation.
@@ -81,6 +100,8 @@ On top of that, the plugin version adds:
 - A velocity curve setting in the settings menu, and tempo sync for the AutoStrum speed.
 - An improved AutoStrum mode that works like the real instrument. See the section "SonicStrings (AutoStrum)".
 - Labels above the on-screen keyboard for the chord and strum keys.
+- A resizable window, from its own size to twice that.
+- Undo and Redo.
 
 ## The Decent Sampler version
 
