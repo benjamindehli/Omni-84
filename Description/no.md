@@ -14,7 +14,7 @@ AutoStrum fungerer slik instrumentet gjør: akkordtastene velger akkorden, to eg
 
 Space-kontrollen er en konvolusjonsromklang bygd fra kjeden det ekte instrumentet ble spilt gjennom: forforsterkeren i en Roland PA-120-mikser og fjærklangen dens, en Fulltone Tube Tape Echo i effektsløyfen og en Roland Dimension D SDD-320 for bredde i stereobildet.
 
-277 sampler i 48 kHz / 24 bit, bygd inn i pluginen som tapsfri FLAC. Bare den aktive modusen dekodes inn i minnet.
+277 sampler i 48 kHz / 24 bit, lagret som tapsfri FLAC i én samplefil som installasjonsprogrammet legger på plass. Bare den aktive modusen dekodes inn i minnet.
 
 ## Funksjoner
 
@@ -26,4 +26,4 @@ Space-kontrollen er en konvolusjonsromklang bygd fra kjeden det ekte instrumente
 - Lavpassfilter, monofon eller polyfon keyboardstemme, sustain-forming på SonicStrings.
 - Drums-modusen legger basstromme, skarptromme, hi-hat og clave ut på tangentene med etiketter over tangentbrettet.
 - Loopet akkordmodus for toner som holdes i mer enn elleve sekunder.
-- 277 sampler i 48 kHz / 24 bit, bygd inn tapsfritt (241 MB kildebibliotek).
+- 277 sampler i 48 kHz / 24 bit, lagret tapsfritt (241 MB kildebibliotek).

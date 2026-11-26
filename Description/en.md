@@ -14,7 +14,7 @@ AutoStrum works the way the instrument does: the chord keys choose the chord, tw
 
 The Space control is a convolution reverb built from the chain the real instrument was played through: a Roland PA-120 mixer preamp and its spring reverb, a Fulltone Tube Tape Echo in the effects loop, and a Roland Dimension D SDD-320 for stereo width.
 
-277 samples at 48 kHz / 24-bit, embedded in the plugin as lossless FLAC. Only the active mode is decoded into RAM.
+277 samples at 48 kHz / 24-bit, stored as lossless FLAC in one sample file that the installer puts in place. Only the active mode is decoded into RAM.
 
 ## Features
 
@@ -26,4 +26,4 @@ The Space control is a convolution reverb built from the chain the real instrume
 - Lowpass filter, monophonic or polyphonic keyboard voice, sustain shaping on SonicStrings.
 - Drum mode maps kick, snare, hi-hat and clave with labels above the keyboard.
 - Looped chord mode for notes held longer than eleven seconds.
-- 277 samples at 48 kHz / 24-bit, embedded losslessly (241 MB source library).
+- 277 samples at 48 kHz / 24-bit, stored losslessly (241 MB source library).
